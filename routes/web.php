@@ -20,6 +20,16 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'signIn']);
 Route::get('/logout', [AuthController::class, 'signOut']);
 
+Route::get('/dewan-pengurus', [HomeController::class, 'dewanPengurus']);
+Route::get('/sejarah', [HomeController::class, 'sejarah']);
+Route::get('/visi-misi', [HomeController::class, 'visiMisi']);
+Route::get('/lambang', [HomeController::class, 'lambang']);
+
+Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
+Route::get('/wisata', [HomeController::class, 'wisata']);
+Route::get('/hotel', [HomeController::class, 'hotel']);
+Route::get('/restoran', [HomeController::class, 'restoran']);
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
 });
