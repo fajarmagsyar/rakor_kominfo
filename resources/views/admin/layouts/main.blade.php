@@ -23,6 +23,7 @@
         referrerpolicy="origin"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -31,7 +32,7 @@
         <script>
             Swal.fire(
                 'Berhasil',
-                {{session('success')}},
+                {{ session('success') }},
                 'success'
             )
         </script>
