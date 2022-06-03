@@ -36,7 +36,7 @@ class AuthController extends Controller
         $validator = Validator::make($input, $rules, $messages);
 
         if (Auth::attempt($input)) {
-            
+
             Auth::logoutOtherDevices($request->input('password'));
 
             $request->session()->regenerate();
@@ -47,7 +47,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect('/login')->withErrors($validator)->withInput()->with('loginError', 'Login Gagal!');
+        return redirect('/login')->with('error', 'Login Gagal!');
     }
 
     public function signOut(Request $request)
