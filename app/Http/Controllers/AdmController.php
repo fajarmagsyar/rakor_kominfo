@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class PesertaController extends Controller
+class AdmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,9 @@ class PesertaController extends Controller
     public function index()
     {
         // dd(User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get());
-        return view('admin.peserta.index', [
-            'pageTitle' => 'Peserta',
-            'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
+        return view('admin.adm.index', [
+            'pageTitle' => 'Admin',
+            'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'Admin')->get(),
         ]);
     }
 
@@ -29,8 +30,8 @@ class PesertaController extends Controller
      */
     public function create()
     {
-        return view('admin.peserta.create', [
-            'pageTitle' => 'Tambah Peserta',
+        return view('admin.adm.create', [
+            'pageTitle' => 'Tambah Admin',
         ]);
     }
 
@@ -42,19 +43,18 @@ class PesertaController extends Controller
      */
     public function store(Request $request)
     {
-        $role = Roles::where('role_name', 'User')->first();
+        $role = Roles::where('role_name', 'Admin')->first();
         $data = [
             'nama' => $request->input('nama'),
             'email' => $request->input('email'),
-            'asal' => $request->input('asal'),
             'hp' => $request->input('no_hp'),
-            'jabatan' => $request->input('jabatan'),
+            'password' => Hash::make($request->input('password')),
             'role_id' => $role->role_id,
         ];
 
         User::create($data);
 
-        return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/admin/adm')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -76,8 +76,8 @@ class PesertaController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.peserta.edit', [
-            'pageTitle' => 'Tambah Peserta',
+        return view('admin.adm.edit', [
+            'pageTitle' => 'Edit Admin',
             'peserta' => User::find($id),
         ]);
     }
@@ -91,19 +91,23 @@ class PesertaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $role = Roles::where('role_name', 'User')->first();
+        $role = Roles::where('role_name', 'Admin')->first();
+        $user = User::find($id);
+        $pass = $user->password;
+        if ($request->input('password')) {
+            $pass = Hash::make($request->input('password'));
+        }
         $data = [
             'nama' => $request->input('nama'),
             'email' => $request->input('email'),
-            'asal' => $request->input('asal'),
             'hp' => $request->input('no_hp'),
-            'jabatan' => $request->input('jabatan'),
+            'password' => $pass,
             'role_id' => $role->role_id,
         ];
 
         User::find($id)->update($data);
 
-        return redirect('/admin/peserta')->with('success', 'Data berhasil diubah!');
+        return redirect('/admin/adm')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -115,6 +119,6 @@ class PesertaController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('/admin/peserta')->with('success', 'Data berhasil dihapus!');
+        return redirect('/admin/adm')->with('success', 'Data berhasil dihapus!');
     }
 }
