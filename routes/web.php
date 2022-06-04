@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdmController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,10 +39,19 @@ Route::get('/restoran', [HomeController::class, 'restoran']);
 Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
 
+
+
+
+
 Route::group(['prefix' => 'admin'], function () {
+
     Route::get('/dashboard', [AdminController::class, 'index']);
 
     Route::resource('/profil', ProfilController::class);
     Route::resource('/kegiatan', KegiatanController::class);
+
+    Route::resource('/peserta', PesertaController::class);
+
     Route::resource('/adm', AdmController::class);
 });
+
