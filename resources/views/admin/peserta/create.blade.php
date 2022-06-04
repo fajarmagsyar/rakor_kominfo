@@ -11,7 +11,7 @@
                             Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera.
                         </p>
 
-                        <form action="/admin/kegiatan" class="parsley-examples" id="form-valid-parsley" method="post"
+                        <form action="/admin/peserta" class="parsley-examples" id="form-valid-parsley" method="post"
                             enctype="multipart/form-data">
                             @method('post')
                             @csrf
@@ -23,27 +23,12 @@
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Nama Peserta
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="nama_peserta" parsley-trigger="change" required
-                                        placeholder="Masukkan Nama Peserta "
-                                        class="form-control @error('nama_peserta') is-invalid @enderror" id="userName"
-                                        value="{{ old('nama_peserta') }}" />
-                                    @error('nama_peserta')
-                                        <div id="nama_peserta" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-
-                                <div class="mb-3">
-                                    <label for="jabatan" class="form-label">Jabatan Peserta
-                                        <span class="text-danger">*</span></label>
-                                    <input type="text" name="jabatan" parsley-trigger="change" required
-                                        placeholder="Masukkan jabatan Peserta"
-                                        class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
-                                        value="{{ old('jabatan') }}" />
-                                    @error('jabatan')
-                                        <div id="jabatan" class="invalid-feedback">
+                                    <input type="text" name="nama" parsley-trigger="change" required
+                                        placeholder="Masukkan Peserta"
+                                        class="form-control @error('nama') is-invalid @enderror" id="nama"
+                                        value="{{ old('nama') }}" />
+                                    @error('nama')
+                                        <div id="nama" class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -55,8 +40,8 @@
                                     <label for="userName" class="form-label">Email
                                         <span class="text-danger">*</span></label>
                                     <input type="email" name="email" parsley-trigger="change" required
-                                     placeholder="Masukkan Email Peserta "
-                                        class="form-control @error('email') is-invalid @enderror" id="userName"
+                                    placeholder="Masukkan Email"
+                                        class="form-control @error('email') is-invalid @enderror" id="email"
                                         value="{{ old('email') }}" />
                                     @error('email')
                                         <div id="email" class="invalid-feedback">
@@ -66,35 +51,33 @@
                                 </div>
 
 
-
-
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Asal
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="asal" parsley-trigger="change" required
-                                    placeholder="Masukkan Asal Peserta "
-                                        class="form-control @error('asal') is-invalid @enderror" id="userName"
+                                        <input type="text" name="asal" parsley-trigger="change" required
+                                        placeholder="Masukkan asal peserta"
+                                        class="form-control @error('asal') is-invalid @enderror" id="asal"
                                         value="{{ old('asal') }}" />
-                                    @error('asal')
+                                        @error('asal')
                                         <div id="asal" class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                    @enderror
-                                </div>
+                                        @enderror
+                                    </div>
 
-                                <div class="mb-3">
+                                    <div class="mb-3">
                                     <label for="userName" class="form-label">No.handphone
                                         <span class="text-danger">*</span></label>
-                                    <input type="number" name="number" parsley-trigger="change" required
-                                    placeholder="Masukkan No.handphone Peserta "
-                                        class="form-control @error('number') is-invalid @enderror" id="userName"
-                                        value="{{ old('number') }}" />
-                                    @error('number')
-                                        <div id="number" class="invalid-feedback">
+                                        <input type="number" name="hp" parsley-trigger="change" required
+                                        placeholder="Masukkan no.handphone"
+                                        class="form-control @error('hp') is-invalid @enderror" id="hp"
+                                        value="{{ old('hp') }}" />
+                                        @error('hp')
+                                        <div id="hp" class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                    @enderror
-                                </div>
+                                        @enderror
+                                    </div>
 
                                 <div class="text-end">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit"><i

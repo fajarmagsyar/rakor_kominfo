@@ -1,134 +1,69 @@
 @extends('admin.layouts.main')
 @section('isi')
     @if (session()->has('success'))
-        <div class="toast-container" style="position: absolute; bottom: 80px; right: 10px; z-index: 999">
-            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-toggle="toast">
-                <div class="toast-header">
-                    <img src="/admin/assets/img/apeksi.png" alt="brand-logo" height="12" class="me-1" />
-                    <strong class="me-auto">APEKSI</strong>
-                    <small>Sukses</small>
-                    <button type="button" class="btn-close ms-2" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    {{ session('success') }}
-                </div>
-            </div>
-        </div>
+        <script>
+            Swal.fire(
+                'Berhasil',
+                {{ session('success') }},
+                'success'
+            )
+        </script>
     @endif
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card ">
-
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-body">
-
-                                <div class="float-end">
-                                    <a class="btn btn-sm btn-outline-success" href="/admin/peserta/create">+
-                                        TAMBAH</a>
-                                    <a href="/admin/cetak-kegiatan/pdf" class="btn btn-sm btn-outline-info"><i
-                                            class="mdi mdi-printer"></i>
-                                        Cetak
-                                        Laporan</a>
-                                </div>
-
-
-                                <h4 class="mt-0 header-title">{{ $pageTitle }}</h4>
-                                <p class="text-muted font-14 mb-3">
-                                    Olah {{ $pageTitle }}.
-                                </p>
-
-                                <div class="table-responsive">
-                                    <table class="table mb-0">
-                                        <thead class="table-dark">
+                    <div class="card-header pb-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="mb-2 ml-2">Data Peserta</h4>
+                            <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">Tambah</a>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="table-responsive">
+                            <table class="table align-items-center ">
+                                <tbody>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>HP</th>
+                                        <th>asal</th>
+                                        <th></th>
+                                    </tr>
+                                    @if (count($pesertaRows) > 0)
+                                        @foreach ($pesertaRows as $key => $k)
                                             <tr>
-                                                <th>#</th>
-                                                <th>Nama</th>
-                                                <th>Email</th>
-                                                <th>Asal</th>
-                                                <th>No. Hp</th>
-                                                <th></th>
+                                                <td>{{ $key = $key + 1 }}</td>
+                                                <td>{{ $k->nama }}</td>
+                                                <td>{{ $k->email }}</td>
+                                                <td>{{ $k->hp }}</td>
+                                                <td>{{ $k->asal }}</td>
+                                                <td>
+                                                    <form action="/admin/peserta/{{ $k->user_id }}" method="post">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <a href="/admin/peserta/{{ $k->user_id }}/edit"
+                                                            class="btn btn-primary btn-sm"><i
+                                                                class="ni ni-ruler-pencil"></i></a>
+                                                        <button onclick="return confirm('Yakin?')" type="submit"
+                                                            class="btn btn-danger btn-sm"><i
+                                                                class="ni ni-fat-remove"></i></button>
+                                                    </form>
+                                                </td>
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if (count($pesertarows) < 1)
-                                                <tr>
-                                                    <td colspan="10" class="text-center">Data belum ada, silahkan
-                                                        tambah
-                                                        data</td>
-                                                </tr>
-                                            @else
-                                                @foreach ($pesertarows as $key => $r)
-                                                    <tr>
-                                                        <th class="align-middle" scope="row">
-                                                            {{ $key = $key + 1 }}
-                                                        </th>
-
-
-
-                                                        <td class="align-middle">
-                                                            {{ $r->nama }}
-                                                        </td>
-
-                                                        <td class="align-middle">
-                                                            {{ $r->email }}
-                                                        </td>
-
-                                                        <td class="align-middle">
-                                                            {{ $r->asal }}
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            {{ $r->hp }}
-                                                        </td>
-                                                        <td class="text-center align-middle">
-                                                            <form action="/admin/peserta/{{ $r->role_id }}"
-                                                                method="post" class="d-inline">
-                                                                <a class="btn btn-sm btn-warning mb-2"
-                                                                    href=" /admin/peserta/{{ $r->role_id }}/edit"><i
-                                                                        class="mdi mdi-pencil"></i></a>
-                                                                @csrf
-                                                                @method('delete')
-
-                                                                <input type="hidden" value="{{ $r->role_id }} "
-                                                                    name="kegiatan_id">
-
-
-                                                                <button type="submit"
-                                                                    class="btn btn-sm  btn-danger mb-2 d-inline"
-                                                                    onclick="return confirm('Data ini akan dihapus. Lanjutkan?')"><i
-                                                                        class="mdi mdi-delete"></i></i></button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            @endif
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-                            <!-- end row -->
-
-                        </div> <!-- container-fluid -->
-
-                    </div> <!-- content -->
-
+                                        @endforeach
+                                    @else
+                                        <tr>
+                                            <td colspan="7" class="text-center">Data belum ada</td>
+                                        </tr>
+                                    @endif
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <script>
-        $(document).ready(function() {
-            $(".parsley-examples").parsley()
-        }), $(function() {
-            $("#demo-form").parsley().on("field:validated", function() {
-                var e = 0 === $(".parsley-error").length;
-                $(".alert-info").toggleClass("d-none", !e), $(".alert-warning").toggleClass("d-none", e)
-            }).on("form:submit", function() {
-                return !1
-            })
-        });
-    </script>
 @endsection
