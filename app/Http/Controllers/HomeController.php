@@ -55,6 +55,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function wisataSingle()
+    {
+        return view('home.wisata-single', [
+            'pageTitle' => 'Nama Wisata',
+        ]);
+    }
+
+
+
     public function hotel()
     {
         return view('home.hotel', [
@@ -62,11 +71,24 @@ class HomeController extends Controller
         ]);
     }
 
+    public function hotelSingle()
+    {
+        return view('home.hotel-single', [
+            'pageTitle' => 'Nama Hotel',
+        ]);
+    }
     
     public function restoran()
     {
-        return view('home.restoran', [
-            'pageTitle' => 'Restoran',
+        return view('admin.peserta.index', [
+            'pageTitle' => 'Peserta',
+        ]);
+    }
+
+    public function restoranSingle()
+    {
+        return view('home.restoran-single', [
+            'pageTitle' => 'Nama Restoran',
         ]);
     }
 
