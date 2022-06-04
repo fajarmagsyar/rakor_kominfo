@@ -27,7 +27,6 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
-
     @if (session()->has('success'))
         <script>
             Swal.fire(
@@ -112,14 +111,11 @@
                     <a class="nav-link " href="/admin/fasilitas">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-collection text-info text-sm opacity-10"></i>
+                            <i class="ni ni-building text-info text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Fasilitas</span>
                     </a>
                 </li>
-
-
-
                 <li class="nav-item">
                     <a class="nav-link " href="/admin/user">
                         <div

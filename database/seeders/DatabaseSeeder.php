@@ -28,6 +28,11 @@ class DatabaseSeeder extends Seeder
             'role_name_detail' => 'Role for Admin',
         ])->getAttributes();
 
+        $role2 = Roles::create([
+            'role_name' => 'User',
+            'role_name_detail' => 'Role for Users',
+        ])->getAttributes();
+
         $user1 = User::create([
             'nama' => 'user1',
             'email' => 'example@mail.com',
