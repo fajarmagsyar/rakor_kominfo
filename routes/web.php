@@ -57,5 +57,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/peserta', PesertaController::class);
 
     Route::resource('/adm', AdmController::class);
+    Route::get('/peserta-kegiatan/{id}', [AdminController::class, 'pesertaKegiatan']);
+    Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);
+    Route::post('/peserta-kegiatan/store', [AdminController::class, 'pesertaStore']);
+    Route::post('/peserta-kegiatan/destroy/{id}/{id_keg}', [AdminController::class, 'pesertaDestroy']);
 });
 

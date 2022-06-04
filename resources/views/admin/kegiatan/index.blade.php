@@ -39,12 +39,7 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Nama</th>
-                                                <th>Tanggal</th>
-                                                <th>Jam Masuk</th>
-                                                <th>Jam Keluar</th>
-                                                <th>Kuota</th>
-                                                <th>Lokasi</th>
+                                                <th>Deskripsi Kegiatan</th>
                                                 <th>Koordinat</th>
                                                 <th>Deskripsi</th>
                                                 <th></th>
@@ -63,34 +58,113 @@
                                                         <th class="align-middle text-center" scope="row">
                                                             {{ $key = $key + 1 }}
                                                         </th>
-                                                        <td class="align-middle">
-                                                            {{ $r->nama_kegiatan }}
+                                                        <td>
+                                                            <ol class="list-group list-group">
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><i
+                                                                                class="ni ni-badge"></i> Nama Kegiatan
+                                                                        </div>
+                                                                        <span
+                                                                            class="text-sm text-muted">{{ $r->nama_kegiatan }}</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><i
+                                                                                class="ni ni-pin-3"></i> Lokasi</div>
+                                                                        <span
+                                                                            class="text-sm text-muted">{{ $r->lokasi }}</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><i
+                                                                                class="ni ni-calendar-grid-58"></i> Tanggal
+                                                                        </div>
+                                                                        <span
+                                                                            class="text-sm text-muted">{{ $r->tanggal }}</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><i
+                                                                                class="ni ni-watch-time"></i> Waktu</div>
+                                                                        <span class="text-sm text-muted">Mulai
+                                                                            :{{ $r->jam_masuk }}
+                                                                        </span> <br>
+                                                                        <span class="text-sm text-muted">Selesai
+                                                                            :{{ $r->jam_keluar }}
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                            </ol>
                                                         </td>
-
-                                                        <td class="align-middle">
-                                                            {{ $r->tanggal }}
+                                                        <td>
+                                                            @php
+                                                                $longlatPecah = explode('|', $r->long_lat);
+                                                            @endphp
+                                                            <ol class="list-group list-group">
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold">Longitude</div>
+                                                                        <span
+                                                                            class="text-sm text-muted">{{ $longlatPecah[0] }}</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold">Latiude</div>
+                                                                        <span
+                                                                            class="text-sm text-muted">{{ $longlatPecah[1] }}</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><a
+                                                                                href="maps.google.com"><i
+                                                                                    class="ni ni-square-pin"></i> Lihat
+                                                                                Map</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ol>
                                                         </td>
-
-                                                        <td class="align-middle">
-                                                            {{ $r->jam_masuk }}
+                                                        <td>
+                                                            <ol class="list-group list-group">
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><i
+                                                                                class="ni ni-single-02"></i> Kuota
+                                                                            {{ $r->kuota }} Orang</div>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="list-group-item d-flex justify-content-between align-items-start">
+                                                                    <div class="ms-2 me-auto">
+                                                                        <div class="fw-bold"><i
+                                                                                class="ni ni-align-left-2"></i> Deskripsi
+                                                                        </div>
+                                                                        <span class="text-sm text-muted">
+                                                                            {{ $r->deskripsi }}
+                                                                            <br>
+                                                                            <a href="/admin/peserta-kegiatan/{{ $r->kegiatan_id }}"
+                                                                                class="btn btn-primary mt-4"><i
+                                                                                    class="ni ni-circle-08"></i>
+                                                                                Peserta</a>
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                            </ol>
                                                         </td>
-                                                        <td class="align-middle">
-                                                            {{ $r->jam_keluar }}
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            {{ $r->kuota }}
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            {{ $r->lokasi }}
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            {{ $r->long_lat }}
-                                                        </td>
-                                                        <td class="align-middle">
-                                                            {{ $r->deskripsi }}
-                                                        </td>
-
-
                                                         <td class="text-center align-middle">
                                                             <form action="/admin/kegiatan/{{ $r->kegiatan_id }}"
                                                                 method="post" class="d-inline">
@@ -102,8 +176,6 @@
 
                                                                 <input type="hidden" value="{{ $r->kegiatan_id }} "
                                                                     name="kegiatan_id">
-
-
                                                                 <button type="submit"
                                                                     class="btn btn-sm  btn-danger mb-2 d-inline"
                                                                     onclick="return confirm('Data ini akan dihapus. Lanjutkan?')"><i
