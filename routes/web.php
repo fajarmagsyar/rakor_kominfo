@@ -29,6 +29,7 @@ Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
 Route::get('/hotel', [HomeController::class, 'hotel']);
 Route::get('/restoran', [HomeController::class, 'restoran']);
+Route::get('/contact', [HomeController::class, 'contact']);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
