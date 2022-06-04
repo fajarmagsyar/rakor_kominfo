@@ -24,59 +24,44 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="float-end">
-                                    <a class="btn btn-outline-primary" href="/admin/artikel/create">+Tambah</a>
-                                </div>
                                 <h4 class="mt-0 header-title">{{ $pageTitle }}</h4>
                                 <p class="text-muted font-14 mb-3">
                                     Olah {{ $pageTitle }}.
                                 </p>
 
                                 <div class="table-responsive">
-                                    <table class="table text-center mb-0">
+                                    <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Isi</th>
-                                                <th>Aksi</th>
+                                                <th>#</th>
+                                                <th>Kegiatan</th>
+                                                <th>Peserta</th>
+                                                <th>Status Peserta</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @if (count($artikelRows) < 1)
+                                            @if (count($absenRows) < 1)
                                                 <tr>
                                                     <td colspan="10" class="text-center">Data belum ada, silahkan
                                                         tambah
                                                         data</td>
                                                 </tr>
                                             @else
-                                                @foreach ($artikelRows as $key => $r)
+                                                @foreach ($absenRows as $key => $r)
                                                     <tr>
                                                         <th class="align-middle text-center" scope="row">
                                                             {{ $key = $key + 1 }}
                                                         </th>
-                                                        <td >
+                                                        <td class="align-middle">
+                                                            {{ $r->nama_kegiatan }}
+                                                        </td>
+
+                                                        <td class="align-middle">
                                                             {{ $r->nama }}
                                                         </td>
-                                                        <td >
-                                                            {!! $r->isi !!}
-                                                        </td>
 
-
-                                                        <td class="text-center align-middle">
-                                                            <form action="/admin/artikel/{{ $r->artikel_id }}"
-                                                                method="post" class="d-inline">
-                                                                <a class="btn btn-sm btn-warning mb-2"
-                                                                    href=" /admin/artikel/{{ $r->artikel_id }}/edit"><i
-                                                                    class="fa fa-pencil"-square" aria-hidden="true"></i></a>
-                                                                @csrf
-                                                                @method('delete')
-                                                                <input type="hidden" value="{{ $r->artikel }} "name="artikel_id">
-                                                                 <button type="submit"
-                                                                    class="btn btn-sm  btn-danger mb-2 d-inline"
-                                                                    onclick="return confirm('Data ini akan dihapus. Lanjutkan?')"><i
-                                                                    class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                            </form>
+                                                        <td class="align-middle">
+                                                            {{ $r->status_peserta }}
                                                         </td>
                                                     </tr>
                                                 @endforeach

@@ -80,8 +80,8 @@ class HomeController extends Controller
     
     public function restoran()
     {
-        return view('home.restoran', [
-            'pageTitle' => 'Restoran',
+        return view('admin.peserta.index', [
+            'pageTitle' => 'Peserta',
         ]);
     }
 

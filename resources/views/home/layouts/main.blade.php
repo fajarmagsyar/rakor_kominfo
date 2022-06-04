@@ -49,6 +49,7 @@
                     <li><a class="nav-link scrollto" href="/wisata">Wisata</a></li>
                     <li><a class="nav-link scrollto" href="/hotel">Hotel</a></li>
                     <li><a href="/restoran">Restoran</a></li>
+                    <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
                     <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
