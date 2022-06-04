@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdmController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\AbsenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,12 +35,14 @@ Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
 Route::get('/hotel', [HomeController::class, 'hotel']);
 Route::get('/restoran', [HomeController::class, 'restoran']);
+Route::get('/artikel', [ArtikelController::class, 'artikel']);
 Route::get('/contact', [HomeController::class, 'contact']);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
 
     Route::resource('/profil', ProfilController::class);
+    Route::resource('/absen', AbsenController::class);
     Route::resource('/kegiatan', KegiatanController::class);
     Route::resource('/adm', AdmController::class);
 });
