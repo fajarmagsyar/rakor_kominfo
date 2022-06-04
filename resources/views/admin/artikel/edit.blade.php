@@ -10,32 +10,25 @@
                         <p class="text-muted font-14">
                             Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera.
                         </p>
-
-                        <form action="/admin/artikel" class="parsley-examples" id="form-valid-parsley" method="post"
-                            enctype="multipart/form-data">
-                            @method('post')
-                            @csrf 
+                        <form action="/admin/artikel/{{ $data->artikel_id }}" class="parsley-examples"
+                            id="form-valid-parsley" method="post" enctype="multipart/form-data">
+                            @method('PATCH')
+                            @csrf
+                            <input type="hidden" value="{{ $data->artikel_id }}" name="artikel_id">
                             <div class="row">
                                 <div class="mb-3">
-                                    <label for="user_id" class="form-label">Nama <span
+                                    <label for="id_rayon" class="form-label">Nama <span
                                             class="text-danger">*</span></label>
-                                    <select class="form-select @error('user_id') is-invalid @enderror"
-                                        value="{{old('user_id')}}" aria-label="unit kerja"
-                                        id="user_id" name="user_id">
-                                        <option value="">Pilih Nama</option>
-                                        @foreach ($rowsArtikel as $d)
-                                        <option
-                                            {{old('user_id')==$d['user_id'] ? 'selected' : '' }}
-                                            value="{{ $d['user_id'] }}">
-                                            {{ $d['nama'] }}
-                                        </option>
+
+                                    <select class="form-select" value="{{ $data['user_id'] }}"
+                                        aria-label="user_id" name="user_id" id="user_id">
+
+                                        @foreach ($rowsArtikel as $r)
+                                        <option value="{{ $r['user_id'] }}"
+                                            {{ $r->user_id == $data->user_id ? 'selected' : '' }}>
+                                            {{ $r['nama'] }}</option>
                                         @endforeach
                                     </select>
-                                    @error('user_id')
-                                    <div id="user_id" class="invalid-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Isi
@@ -43,14 +36,15 @@
                                     <textarea placeholder="Masukan isi" name="isi"
                                         value="{{ old('isi') }}"
                                         class="form-control @error('isi') is-invalid @enderror"
-                                        id="">{{ old('isi') }}</textarea>
+                                        id="">{{ old('isi', $data->isi) }}</textarea>
                                     @error('isi')
                                     <div id="isi" class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                     @enderror
                                 </div>
-                                    <div class="text-end">
+                              
+                                  <div class="text-end">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit"><i
                                             class="mdi mdi-pencil-box"></i> Simpan</button>
                                     <button type="reset" class="btn btn-secondary waves-effect"><i
@@ -77,3 +71,4 @@
         });
     </script>
 @endsection
+
