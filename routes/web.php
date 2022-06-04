@@ -31,8 +31,11 @@ Route::get('/lambang', [HomeController::class, 'lambang']);
 
 Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
+Route::get('/wisata-single', [HomeController::class, 'wisataSingle']);
 Route::get('/hotel', [HomeController::class, 'hotel']);
+Route::get('/hotel-single', [HomeController::class, 'hotelSingle']);
 Route::get('/restoran', [HomeController::class, 'restoran']);
+Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
 
 Route::group(['prefix' => 'admin'], function () {
