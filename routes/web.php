@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\KegiatanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,21 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'signIn']);
 Route::get('/logout', [AuthController::class, 'signOut']);
 
+Route::get('/dewan-pengurus', [HomeController::class, 'dewanPengurus']);
+Route::get('/sejarah', [HomeController::class, 'sejarah']);
+Route::get('/visi-misi', [HomeController::class, 'visiMisi']);
+Route::get('/lambang', [HomeController::class, 'lambang']);
+
+Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
+Route::get('/wisata', [HomeController::class, 'wisata']);
+Route::get('/hotel', [HomeController::class, 'hotel']);
+Route::get('/restoran', [HomeController::class, 'restoran']);
+Route::get('/contact', [HomeController::class, 'contact']);
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
 
     Route::resource('/profil', ProfilController::class);
+    Route::resource('/kegiatan', KegiatanController::class);
     Route::resource('/peserta', PesertaController::class);
 });
