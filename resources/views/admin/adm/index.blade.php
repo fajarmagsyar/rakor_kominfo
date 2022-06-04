@@ -15,8 +15,8 @@
                 <div class="card ">
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
-                            <h4 class="mb-2 ml-2">Data Peserta</h4>
-                            <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">Tambah</a>
+                            <h4 class="mb-2 ml-2">Data Admin</h4>
+                            <a href="/admin/adm/create" class="btn btn-outline-primary mx-4 float-end">Tambah</a>
                         </div>
                     </div>
                     <div class="p-5">
@@ -26,8 +26,6 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama</th>
-                                        <th>Jabatan</th>
-                                        <th>Asal</th>
                                         <th>Email</th>
                                         <th>HP</th>
                                         <th></th>
@@ -37,15 +35,13 @@
                                             <tr>
                                                 <td>{{ $key = $key + 1 }}</td>
                                                 <td>{{ $r->nama }}</td>
-                                                <td>{{ $r->jabatan }}</td>
-                                                <td>{{ $r->asal }}</td>
                                                 <td>{{ $r->email }}</td>
                                                 <td>{{ $r->hp }}</td>
                                                 <td>
-                                                    <form action="/admin/peserta/{{ $r->user_id }}" method="post">
+                                                    <form action="/admin/adm/{{ $r->user_id }}" method="post">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <a href="/admin/peserta/{{ $r->user_id }}/edit"
+                                                        <a href="/admin/adm/{{ $r->user_id }}/edit"
                                                             class="btn btn-primary btn-sm"><i
                                                                 class="ni ni-ruler-pencil"></i></a>
                                                         <button onclick="return confirm('Yakin?')" type="submit"
