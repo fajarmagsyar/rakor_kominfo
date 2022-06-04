@@ -12,4 +12,62 @@ class HomeController extends Controller
             'pageTitle' => 'Home',
         ]);
     }
+
+    public function dewanPengurus()
+    {
+        return view('home.dewan-pengurus', [
+            'pageTitle' => 'Dewan Pengurus',
+        ]);
+    }
+
+    public function sejarah()
+    {
+        return view('home.sejarah', [
+            'pageTitle' => 'Sejarah',
+        ]);
+    }
+
+    public function visiMisi()
+    {
+        return view('home.visi-misi', [
+            'pageTitle' => 'Visi & Misi',
+        ]);
+    }
+
+    public function lambang()
+    {
+        return view('home.lambang', [
+            'pageTitle' => 'Lambang',
+        ]);
+    }
+
+    public function kegiatan()
+    {
+        return view('home.kegiatan', [
+            'pageTitle' => 'List Kegiatan',
+        ]);
+    }
+
+    public function wisata()
+    {
+        return view('home.wisata', [
+            'pageTitle' => 'Wisata',
+        ]);
+    }
+
+    public function hotel()
+    {
+        return view('home.hotel', [
+            'pageTitle' => 'Hotel',
+        ]);
+    }
+
+    
+    public function restoran()
+    {
+        return view('home.restoran', [
+            'pageTitle' => 'Restoran',
+        ]);
+    }
+
 }
