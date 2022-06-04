@@ -29,13 +29,16 @@
 <body class="g-sidenav-show   bg-gray-100">
 
     @if (session()->has('success'))
-        <script>
-            Swal.fire(
-                'Berhasil',
-                {{ session('success') }},
-                'success'
-            )
-        </script>
+    <script>
+    Swal.fire(
+        'Berhasil', {
+            {
+                session('success')
+            }
+        },
+        'success'
+    )
+    </script>
     @endif
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     <aside
