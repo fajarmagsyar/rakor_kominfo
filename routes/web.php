@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,11 +34,20 @@ Route::get('/wisata', [HomeController::class, 'wisata']);
 Route::get('/hotel', [HomeController::class, 'hotel']);
 Route::get('/restoran', [HomeController::class, 'restoran']);
 
+
+
+
+
 Route::group(['prefix' => 'admin'], function () {
+
     Route::get('/dashboard', [AdminController::class, 'index']);
 
     Route::resource('/profil', ProfilController::class);
 
     //Kegiatan
     Route::resource('/kegiatan', KegiatanController::class);
+
+    Route::resource('/peserta', PesertaController::class);
+
 });
+
