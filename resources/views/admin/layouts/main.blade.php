@@ -27,7 +27,6 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
-
     @if (session()->has('success'))
         <script>
             Swal.fire(
@@ -80,6 +79,7 @@
                         <span class="nav-link-text ms-1">Kegiatan</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link " href="/admin/peserta">
                         <div
@@ -108,7 +108,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/user">
+                    <a class="nav-link " href="/admin/fasilitas">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-building text-info text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Fasilitas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/admin/adm">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
@@ -118,10 +127,7 @@
                 </li>
             </ul>
         </div>
-        <div class="sidenav-footer mx-3 ">
-            <a class="btn btn-danger btn-sm mb-0 w-100" href="/logout" type="button"><i
-                    class="ni ni-user-run text-white text-sm opacity-10"></i></a>
-        </div>
+
     </aside>
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->

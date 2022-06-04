@@ -25,12 +25,7 @@
                             <div class="card-body">
 
                                 <div class="float-end">
-                                    <a class="btn btn-sm btn-outline-success" href="/admin/kegiatan/create">+
-                                        TAMBAH</a>
-                                    <a href="/admin/cetak-kegiatan/pdf" class="btn btn-sm btn-outline-info"><i
-                                            class="mdi mdi-printer"></i>
-                                        Cetak
-                                        Laporan</a>
+                                    <a class="btn btn-outline-primary" href="/admin/kegiatan/create">Tambah</a>
                                 </div>
 
 
@@ -41,7 +36,7 @@
 
                                 <div class="table-responsive">
                                     <table class="table mb-0">
-                                        <thead class="table-dark">
+                                        <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>Nama</th>
@@ -65,12 +60,9 @@
                                             @else
                                                 @foreach ($kegiatanRows as $key => $r)
                                                     <tr>
-                                                        <th class="align-middle" scope="row">
+                                                        <th class="align-middle text-center" scope="row">
                                                             {{ $key = $key + 1 }}
                                                         </th>
-
-
-
                                                         <td class="align-middle">
                                                             {{ $r->nama_kegiatan }}
                                                         </td>
@@ -102,9 +94,9 @@
                                                         <td class="text-center align-middle">
                                                             <form action="/admin/kegiatan/{{ $r->kegiatan_id }}"
                                                                 method="post" class="d-inline">
-                                                                <a class="btn btn-sm btn-warning mb-2"
+                                                                <a class="btn btn-sm btn-primary mb-2"
                                                                     href=" /admin/kegiatan/{{ $r->kegiatan_id }}/edit"><i
-                                                                        class="mdi mdi-pencil"></i></a>
+                                                                        class="ni ni-ruler-pencil"></i></a>
                                                                 @csrf
                                                                 @method('delete')
 
@@ -115,7 +107,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-sm  btn-danger mb-2 d-inline"
                                                                     onclick="return confirm('Data ini akan dihapus. Lanjutkan?')"><i
-                                                                        class="mdi mdi-delete"></i></i></button>
+                                                                        class="ni ni-fat-remove"></i></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>

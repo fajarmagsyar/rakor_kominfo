@@ -70,4 +70,11 @@ class HomeController extends Controller
         ]);
     }
 
+    public function contact()
+    {
+        return view('home.contact', [
+            'pageTitle' => 'Contact',
+        ]);
+    }
+
 }
