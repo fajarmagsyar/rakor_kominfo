@@ -49,7 +49,8 @@
                     <li><a class="nav-link scrollto" href="/wisata">Wisata</a></li>
                     <li><a class="nav-link scrollto" href="/hotel">Hotel</a></li>
                     <li><a href="/restoran">Restoran</a></li>
-                    <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
+                    <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
@@ -84,7 +85,7 @@
 
                     <div class="col-lg-6 col-md-6 footer-newsletter">
                         <h4>Maps</h4>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.327057338288!2d123.61736141444075!3d-10.154047892745647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683a80e62f69b%3A0x2f6997c3984f527!2sKantor%20Walikota%20Kupang!5e0!3m2!1sid!2sid!4v1654256740830!5m2!1sid!2sid" width="450" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.327057338288!2d123.61736141444075!3d-10.154047892745647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683a80e62f69b%3A0x2f6997c3984f527!2sKantor%20Walikota%20Kupang!5e0!3m2!1sid!2sid!4v1654256740830!5m2!1sid!2sid" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     </div>
 
@@ -105,7 +106,7 @@
                         <!-- You can delete the links only if you purchased the pro version. -->
                         <!-- Licensing information: https://bootstrapmade.com/license/ -->
                         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-                        Designed by Diskominfo Kota Kupang</a>
+                        Make by DISKOMINFO Dev Team</a>
                     </div>
                 </div>
 
