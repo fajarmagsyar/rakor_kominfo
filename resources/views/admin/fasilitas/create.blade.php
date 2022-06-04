@@ -50,8 +50,6 @@
                                 @enderror
                             </div>
 
-
-
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Deskripsi
                                     <span class="text-danger">*</span></label>
@@ -65,10 +63,6 @@
                                 </div>
                                 @enderror
                             </div>
-
-
-
-
 
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Koordinat

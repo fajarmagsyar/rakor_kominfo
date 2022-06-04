@@ -72,12 +72,14 @@
                                                     {{ $r->kategori }}
                                                 </td>
 
-                                                <td class="align-middle">
-                                                    {{ $r->tanggal }}
-                                                </td>
+
 
                                                 <td class="align-middle">
                                                     {{ $r->nama_fasilitas }}
+                                                </td>
+                                                <td class="align-middle">
+                                                    {!! $r->deskripsi !!}
+
                                                 </td>
                                                 <td class="align-middle">
                                                     {{ $r->lokasi }}
