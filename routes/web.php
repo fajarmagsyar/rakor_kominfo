@@ -10,7 +10,9 @@ use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\ScanController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,15 +48,21 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
     Route::resource('/profil', ProfilController::class);
-    Route::resource('/artikel',ArtikelController::class);
+    Route::resource('/artikel', ArtikelController::class);
     Route::resource('/absen', AbsenController::class);
     Route::resource('/kegiatan', KegiatanController::class);
     Route::resource('/fasilitas', FasilitasController::class);
     Route::resource('/peserta', PesertaController::class);
     Route::resource('/adm', AdmController::class);
-  
+
     Route::get('/peserta-kegiatan/{id}', [AdminController::class, 'pesertaKegiatan']);
     Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);
     Route::post('/peserta-kegiatan/store', [AdminController::class, 'pesertaStore']);
     Route::post('/peserta-kegiatan/destroy/{id}/{id_keg}', [AdminController::class, 'pesertaDestroy']);
+
+    Route::get('qrCode', 'QRController@generateQrCode');
+    Route::post('download-qr-code/{type}', 'QRController@downloadQRCode')->name('qrcode.download');
 });
+
+Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);
+Route::post('/scan/apeksi22/absen/store', [ScanController::class, 'absenStore']);
