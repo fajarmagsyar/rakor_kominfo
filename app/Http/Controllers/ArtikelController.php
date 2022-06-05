@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Artikel;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -51,7 +50,7 @@ class ArtikelController extends Controller
         $input = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
-            
+             
         ];
 
         $messages = [
@@ -100,8 +99,8 @@ class ArtikelController extends Controller
         return view('admin.artikel.edit', [
             'page' => 'Edit Artikel | Apeksi',
             'pageTitle' => 'Edit Artikel',
-            'data' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id' )->first(),
-            'rowsArtikel' => User::latest()->get(),
+            'data' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id' )-git >where('artikel_id',$id)->first(),
+            'rowsArtikel' => User::latest()->get()
         ]);
         return redirect('/admin/artikel')->with('success', 'Artikel berhasil diubah');
     }
@@ -171,17 +170,4 @@ class ArtikelController extends Controller
         Artikel::destroy($id);
         return redirect('/admin/artikel')->with('success', 'Data berhasil dihapus!');
     }
-=======
-use Illuminate\Http\Request;
-
-class ArtikelController extends Controller
-{
-    public function artikel()
-    {
-        return view('home.artikel', [
-            'pageTitle' => 'Artikel',
-        ]);
-    }
-
->>>>>>> 7bb3bd2d37f8eb76dca8f25453e3f2dd28a72515
 }

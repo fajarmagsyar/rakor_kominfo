@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
+use App\Models\Profil;
 use App\Models\Fasilitas;
 use Illuminate\Http\Request;
 
@@ -18,13 +20,16 @@ class HomeController extends Controller
     {
         return view('home.dewan-pengurus', [
             'pageTitle' => 'Dewan Pengurus',
+            'profilRow' => Profil::get(),
         ]);
     }
 
     public function sejarah()
     {
+        // dd(Profil::get());
         return view('home.sejarah', [
             'pageTitle' => 'Sejarah',
+            'profilRow' => Profil::first(),
         ]);
     }
 
@@ -32,6 +37,7 @@ class HomeController extends Controller
     {
         return view('home.visi-misi', [
             'pageTitle' => 'Visi & Misi',
+            'profilRow' => Profil::get(),
         ]);
     }
 
@@ -96,6 +102,14 @@ class HomeController extends Controller
         return view('home.restoran-single', [
             'pageTitle' => 'Nama Restoran',
             'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get() ,
+        ]);
+    }
+
+    //Artikel
+    public function artikel(){
+        return view('home.artikel', [
+            'pageTitle' => 'Artikel',
+            'artikelRows' => Artikel::join('users', 'users.user_id', '=' , 'artikel.user_id')->get(),
         ]);
     }
 
