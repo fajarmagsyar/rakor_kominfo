@@ -19,8 +19,7 @@ class FasilitasController extends Controller
         //
         return view('admin.fasilitas.index', [
             'page' => 'Data Fasilitas | APEKSI',
-            'pageTitle' => 'Data Fasilitas',
-          
+            'pageTitle' => 'Data Fasilitas',  
             'fasilitasRows' => Fasilitas::orderBy('created_at', 'DESC')->paginate(10),
         ]);
     }
@@ -56,7 +55,7 @@ class FasilitasController extends Controller
             'deskripsi' => 'required',
             'lokasi' => 'required',
             'long_lat' => 'required',
-            'foto' => 'file|mimes:png,jpg,jpeg|max:1000',
+            'foto' => 'file|mimes:png,jpg,jpeg|max:2000',
            
         ];
 
