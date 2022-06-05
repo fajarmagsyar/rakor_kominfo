@@ -154,7 +154,9 @@
                                                                                 class="ni ni-align-left-2"></i> Deskripsi
                                                                         </div>
                                                                         <span class="text-sm text-muted">
-                                                                            {{ $r->deskripsi }}
+                                                                            <?php
+                                                                            echo $r->deskripsi;
+                                                                            ?>
                                                                             <br>
                                                                             <a href="/admin/peserta-kegiatan/{{ $r->kegiatan_id }}"
                                                                                 class="btn btn-primary mt-4"><i

@@ -9,6 +9,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\ScanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,3 +64,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/peserta-kegiatan/destroy/{id}/{id_keg}', [AdminController::class, 'pesertaDestroy']);
 });
 
+
+Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);
+Route::post('/scan/apeksi22/absen/store', [ScanController::class, 'absenStore']);
