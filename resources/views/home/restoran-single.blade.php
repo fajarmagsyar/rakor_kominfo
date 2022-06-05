@@ -16,7 +16,7 @@
 
                     <div class="col-lg-4">
 
-                        <div class="info">
+                        <div class="info" style="text-align: justify;">
                             <h3>{{ $fasilitasRows[0]['nama_fasilitas'] }}</h3>
                             <p style="text-align: justify;">{!! $fasilitasRows[0]['deskripsi'] !!}</p>
 
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <img src="{{ $fasilitasRows[0]['foto'] }}" alt="" class="img-fluid">
+                        <img src="{{ $fasilitasRows[0]['foto'] }}" alt="" class="img-fluid" style="width:100%;" >
                     </div><!-- End Contact Form -->
 
               
