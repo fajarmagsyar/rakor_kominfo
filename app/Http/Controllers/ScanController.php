@@ -33,12 +33,13 @@ class ScanController extends Controller
         $absen = Absen::where('kegiatan_id', $req->input('kegiatan_id'))->where('user_id', $req->input('user_id'))->exists();
         $absenData = Absen::where('kegiatan_id', $req->input('kegiatan_id'))->where('user_id', $req->input('user_id'))->first();
 
-        if ($absenData->absensi == 1) {
-            return redirect('/scan/apeksi22/absen/' . $req->input('user_id'))->with('sudah', 'Peserta berhasil diabsen');
-        }
 
         if ($absen) {
             Absen::find($absenData->absen_id)->update(['absensi' => 1]);
+            
+            if ($absenData->absensi == 1) {
+                return redirect('/scan/apeksi22/absen/' . $req->input('user_id'))->with('sudah', 'Peserta berhasil diabsen');
+            }
         } else {
             $data = [
                 'kegiatan_id' => $req->input('kegiatan_id'),
