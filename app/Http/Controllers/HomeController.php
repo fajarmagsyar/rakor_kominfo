@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -89,6 +90,14 @@ class HomeController extends Controller
     {
         return view('home.restoran-single', [
             'pageTitle' => 'Nama Restoran',
+        ]);
+    }
+
+    //Artikel
+    public function artikel(){
+        return view('home.artikel', [
+            'pageTitle' => 'Artikel',
+            'artikelRows' => Artikel::join('users', 'users.user_id', '=' , 'artikel.user_id')->get(),
         ]);
     }
 

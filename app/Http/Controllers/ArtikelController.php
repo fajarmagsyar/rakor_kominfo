@@ -50,7 +50,7 @@ class ArtikelController extends Controller
         $input = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
-            
+             
         ];
 
         $messages = [
@@ -170,4 +170,5 @@ class ArtikelController extends Controller
         Artikel::destroy($id);
         return redirect('/admin/artikel')->with('success', 'Data berhasil dihapus!');
     }
+    
 }
