@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Profil;
 use App\Models\Fasilitas;
+use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -50,8 +51,20 @@ class HomeController extends Controller
 
     public function kegiatan()
     {
+        $kegiatan = Kegiatan::orderBy('tanggal', 'asc')->get();
+        foreach ($kegiatan as $k => $v) {
+            $events[$k] = [
+                'title' => $v->nama_kegiatan,
+                'start' => $v->tanggal,
+                'end' => $v->tanggal,
+                'display' => 'list-item'
+            ];
+        }
+        // dd(json_encode($events));
         return view('home.kegiatan', [
             'pageTitle' => 'List Kegiatan',
+            'events' => $events,
+            'kegiatan' => $kegiatan,
         ]);
     }
 
@@ -59,7 +72,7 @@ class HomeController extends Controller
     {
         return view('home.wisata', [
             'pageTitle' => 'Wisata',
-            'fasilitasRows' => Fasilitas::where('kategori', 'Wisata')->get() ,
+            'fasilitasRows' => Fasilitas::where('kategori', 'Wisata')->get(),
         ]);
     }
 
@@ -67,7 +80,7 @@ class HomeController extends Controller
     {
         return view('home.wisata-single', [
             'pageTitle' => 'Nama Wisata',
-            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get() ,
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
         ]);
     }
 
@@ -77,7 +90,7 @@ class HomeController extends Controller
     {
         return view('home.hotel', [
             'pageTitle' => 'Hotel',
-            'fasilitasRows' => Fasilitas::where('kategori', 'Hotel')->get() ,
+            'fasilitasRows' => Fasilitas::where('kategori', 'Hotel')->get(),
         ]);
     }
 
@@ -85,15 +98,15 @@ class HomeController extends Controller
     {
         return view('home.hotel-single', [
             'pageTitle' => 'Nama Hotel',
-            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get() ,
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
         ]);
     }
-    
+
     public function restoran()
     {
         return view('home.restoran', [
             'pageTitle' => 'Nama Restoran',
-            'fasilitasRows' => Fasilitas::where('kategori', 'Restaurant')->get() ,
+            'fasilitasRows' => Fasilitas::where('kategori', 'Restaurant')->get(),
         ]);
     }
 
@@ -101,15 +114,16 @@ class HomeController extends Controller
     {
         return view('home.restoran-single', [
             'pageTitle' => 'Nama Restoran',
-            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get() ,
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
         ]);
     }
 
     //Artikel
-    public function artikel(){
+    public function artikel()
+    {
         return view('home.artikel', [
             'pageTitle' => 'Artikel',
-            'artikelRows' => Artikel::join('users', 'users.user_id', '=' , 'artikel.user_id')->get(),
+            'artikelRows' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id')->get(),
         ]);
     }
 
@@ -119,5 +133,4 @@ class HomeController extends Controller
             'pageTitle' => 'Contact',
         ]);
     }
-
 }
