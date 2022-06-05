@@ -64,7 +64,8 @@
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
                                                                         <div class="fw-bold"><i
-                                                                                class="ni ni-badge"></i> Nama Kegiatan
+                                                                                class="ni ni-badge"></i> Nama
+                                                                            Kegiatan
                                                                         </div>
                                                                         <span
                                                                             class="text-sm text-muted">{{ $r->nama_kegiatan }}</span>
@@ -74,7 +75,8 @@
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
                                                                         <div class="fw-bold"><i
-                                                                                class="ni ni-pin-3"></i> Lokasi</div>
+                                                                                class="ni ni-pin-3"></i> Lokasi
+                                                                        </div>
                                                                         <span
                                                                             class="text-sm text-muted">{{ $r->lokasi }}</span>
                                                                     </div>
@@ -93,7 +95,8 @@
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
                                                                         <div class="fw-bold"><i
-                                                                                class="ni ni-watch-time"></i> Waktu</div>
+                                                                                class="ni ni-watch-time"></i>
+                                                                            Waktu</div>
                                                                         <span class="text-sm text-muted">Mulai
                                                                             :{{ $r->jam_masuk }}
                                                                         </span> <br>
@@ -143,7 +146,8 @@
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
                                                                         <div class="fw-bold"><i
-                                                                                class="ni ni-single-02"></i> Kuota
+                                                                                class="ni ni-single-02"></i>
+                                                                            Kuota
                                                                             {{ $r->kuota }} Orang</div>
                                                                     </div>
                                                                 </li>
@@ -151,12 +155,11 @@
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
                                                                         <div class="fw-bold"><i
-                                                                                class="ni ni-align-left-2"></i> Deskripsi
+                                                                                class="ni ni-align-left-2"></i>
+                                                                            Deskripsi
                                                                         </div>
                                                                         <span class="text-sm text-muted">
-                                                                            <?php
-                                                                            echo $r->deskripsi;
-                                                                            ?>
+                                                                            {!! $r->deskripsi !!}
                                                                             <br>
                                                                             <a href="/admin/peserta-kegiatan/{{ $r->kegiatan_id }}"
                                                                                 class="btn btn-primary mt-4"><i

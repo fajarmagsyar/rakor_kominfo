@@ -12,18 +12,17 @@
 
                     <div class="col-lg-5">
                         <div class="about-img">
-                            <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
+                            <img src="{{ $fasilitasRows[0]['foto'] }}" class="img-fluid" alt="">
                         </div>
                     </div>
 
                     <div class="col-lg-7">
-                        <h3 class="pt-0 pt-lg-5">Goa Kristal</h3>
+                        <h3 class="pt-0 pt-lg-5">{{ $fasilitasRows[0]['nama_fasilitas'] }}</h3>
                         <h6 class="fst-italic">
-                            <i class="bi bi-geo-alt-fill" size="8px" style="color:#B22222 ;"></i> Bolok, Kec. Kupang Bar., Kabupaten Kupang, Nusa Tenggara Tim.
+                            <i class="bi bi-geo-alt-fill" size="8px" style="color:#B22222 ;"></i> {{ $fasilitasRows[0]['lokasi'] }}
                         </h6>
                         <br>
-                        <p style="text-align: justify;">Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang dipenuhi bebatuan. 
-                            Yang menjadi daya tarik utama tentu air di dasar kolam yang begitu jernih dan menampakkan bebatuan di dalamnya bak kristal.</p>
+                        <p style="text-align: justify;">{!! $fasilitasRows[0]['deskripsi'] !!}</p>
                         </div>
 
                     </div>
