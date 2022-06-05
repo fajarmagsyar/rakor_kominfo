@@ -23,7 +23,9 @@ Swal.fire(
                     </div>
                 </div>
                 <div class="p-5">
+
                     <div class="table-responsive">
+
                         <table class="table align-items-center ">
                             <tbody>
                                 <tr>
@@ -77,6 +79,7 @@ Swal.fire(
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>
