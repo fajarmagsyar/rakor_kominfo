@@ -45,11 +45,13 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
     Route::resource('/profil', ProfilController::class);
+    Route::resource('/artikel',ArtikelController::class);
     Route::resource('/absen', AbsenController::class);
     Route::resource('/kegiatan', KegiatanController::class);
     Route::resource('/fasilitas', FasilitasController::class);
     Route::resource('/peserta', PesertaController::class);
     Route::resource('/adm', AdmController::class);
+  
     Route::get('/peserta-kegiatan/{id}', [AdminController::class, 'pesertaKegiatan']);
     Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);
     Route::post('/peserta-kegiatan/store', [AdminController::class, 'pesertaStore']);
