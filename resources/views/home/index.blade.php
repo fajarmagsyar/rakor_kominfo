@@ -161,7 +161,7 @@
 
                         </div>
                     </div>
-                    {!! QrCode::color(255, 0, 0)->generate('nama'); !!}
+
                 </div><!-- End Service Item -->
 
             </div>
