@@ -67,24 +67,9 @@
                                                     {{ $key = $key + 1 }}
                                                 </th>
 
-
-
                                                 <td>
                                                     {{ $r->kategori }}
                                                 </td>
-
-<<<<<<< HEAD
-                                                <td class="align-middle">
-                                                    {{ $r->nama_fasilitas }}
-                                                </td>
-                                                
-                                                <td class="align-middle">
-                                                    {{ $r->deskripsi }}
-                                                </td>
-
-                                                <td class="align-middle">
-=======
-
 
                                                 <td>
                                                     {{ $r->nama_fasilitas }}
@@ -94,7 +79,6 @@
 
                                                 </td>
                                                 <td>
->>>>>>> a09108bd7c438f0636357328d06ba5970f44de20
                                                     {{ $r->lokasi }}
                                                 </td>
                                                 <td>

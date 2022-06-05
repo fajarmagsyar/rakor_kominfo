@@ -16,13 +16,14 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-7">
+                    <div class="col-lg-7" style="text-align: justify;">
                         <h3 class="pt-0 pt-lg-5">{{ $fasilitasRows[0]['nama_fasilitas'] }}</h3>
                         <h6 class="fst-italic">
                             <i class="bi bi-geo-alt-fill" size="8px" style="color:#B22222 ;"></i> {{ $fasilitasRows[0]['lokasi'] }}
                         </h6>
                         <br>
                         <p style="text-align: justify;">{!! $fasilitasRows[0]['deskripsi'] !!}</p>
+                        
                         </div>
 
                     </div>
