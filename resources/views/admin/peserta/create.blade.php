@@ -34,6 +34,19 @@
                                     @enderror
                                 </div>
 
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Jabatan
+                                        <span class="text-danger">*</span></label>
+                                    <input type="text" name="jabatan" parsley-trigger="change" required
+                                    placeholder="Masukkan Email"
+                                        class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
+                                        value="{{ old('jabatan') }}" />
+                                    @error('jabatan')
+                                        <div id="jabatan" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
 
 
                                 <div class="mb-3">
@@ -68,8 +81,8 @@
                                     <div class="mb-3">
                                     <label for="userName" class="form-label">No.handphone
                                         <span class="text-danger">*</span></label>
-                                        <input type="number" name="hp" parsley-trigger="change" required
-                                        placeholder="Masukkan no.handphone"
+                                        <input type="number" name="hp" parsley-trigger="change"
+                                        placeholder="Masukkan no.handphone" minlength="12" maxlength="12" required
                                         class="form-control @error('hp') is-invalid @enderror" id="hp"
                                         value="{{ old('hp') }}" />
                                         @error('hp')

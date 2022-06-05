@@ -34,6 +34,7 @@ class PesertaController extends Controller
         $dt = [
 
             'nama' => $request->input('nama'),
+            'jabatan' => $request->input('jabatan'),
             'email' => $request->input('email'),
             'asal'  =>$request->input ('asal'),
             'hp' => $request->input('hp'),
@@ -41,6 +42,8 @@ class PesertaController extends Controller
         ];
 
 
+
+        // ddd($dt);
         User::create($dt);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
 
@@ -61,13 +64,16 @@ class PesertaController extends Controller
         $user = User::find($id);
 
         $data = [
+
             'nama' => $request->input('nama'),
+            'jabatan' => $request->input('jabatan'),
             'email' => $request->input('email'),
             'asal'  =>$request->input ('asal'),
             'hp' => $request->input('hp'),
             'role_id' => $role->role_id,
         ];
 
+        // ddd($data);
         User::find($id)->update($data);
 
         return redirect('/admin/peserta')->with('success', 'Data berhasil diubah!');
