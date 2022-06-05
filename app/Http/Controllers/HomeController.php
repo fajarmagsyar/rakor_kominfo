@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use App\Models\Fasilitas;
 use Illuminate\Http\Request;
 
@@ -96,6 +97,14 @@ class HomeController extends Controller
         return view('home.restoran-single', [
             'pageTitle' => 'Nama Restoran',
             'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get() ,
+        ]);
+    }
+
+    //Artikel
+    public function artikel(){
+        return view('home.artikel', [
+            'pageTitle' => 'Artikel',
+            'artikelRows' => Artikel::join('users', 'users.user_id', '=' , 'artikel.user_id')->get(),
         ]);
     }
 

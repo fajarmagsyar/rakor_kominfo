@@ -38,8 +38,9 @@ Route::get('/wisata-single/{fasilitas_id}', [HomeController::class, 'wisataSingl
 Route::get('/hotel', [HomeController::class, 'hotel']);
 Route::get('/hotel-single/{fasilitas_id}', [HomeController::class, 'hotelSingle']);
 Route::get('/restoran', [HomeController::class, 'restoran']);
+Route::get('/artikel', [HomeController::class, 'artikel']);
+Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
 Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'restoranSingle']);
-Route::get('/artikel', [ArtikelController::class, 'artikel']);
 Route::get('/contact', [HomeController::class, 'contact']);
 
 Route::group(['prefix' => 'admin'], function () {
