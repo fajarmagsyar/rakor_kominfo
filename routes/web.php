@@ -66,3 +66,4 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);
 Route::post('/scan/apeksi22/absen/store', [ScanController::class, 'absenStore']);
+Route::get('/admin/cetak-peserta/pdf/{id}', [PesertaController::class, 'cetakPDFPeserta']);

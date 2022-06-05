@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Roles;
 use Illuminate\Http\Request;
-
+use PDF;
+use File;
 class PesertaController extends Controller
 {
     public function index()
@@ -86,5 +87,11 @@ class PesertaController extends Controller
         User::destroy($id);
         return redirect('/admin/peserta')->with('success', 'Data berhasil dihapus!');
     }
+    public function cetakPDFPeserta($id)
+    {
 
+        $rowspeserta = User::where('user_id', $id)->get();
+        $pdf = PDF::loadview('admin.template.pdf.peserta', ['rowspeserta' => $rowspeserta]);
+        return $pdf->stream('peserta-' . '-' . time() .     '.pdf', array('Attachment' => 0));
+    }
 }
