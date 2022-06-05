@@ -12,6 +12,7 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,4 +55,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);
     Route::post('/peserta-kegiatan/store', [AdminController::class, 'pesertaStore']);
     Route::post('/peserta-kegiatan/destroy/{id}/{id_keg}', [AdminController::class, 'pesertaDestroy']);
+    Route::get('qrCode', 'QRController@generateQrCode');
 });
