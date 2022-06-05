@@ -23,9 +23,7 @@ Swal.fire(
                     </div>
                 </div>
                 <div class="p-5">
-
                     <div class="table-responsive">
-
                         <table class="table align-items-center ">
                             <tbody>
                                 <tr>
@@ -33,8 +31,8 @@ Swal.fire(
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>HP</th>
-                                    <th>asal</th>
-                                    <th>Qr</th>
+                                    <th>Asal</th>
+                                    <th class="text-center">Qr</th>
                                     <th></th>
                                 </tr>
                                 @if (count($pesertaRows) > 0)
@@ -45,28 +43,35 @@ Swal.fire(
                                     <td>{{ $k->email }}</td>
                                     <td>{{ $k->hp }}</td>
                                     <td>{{ $k->asal }}</td>
-                                    <td> {!! QrCode::color(255, 0, 0)->generate(" $k->user_id "); !!}
+                                    <td class="text-center"> {!! QrCode::errorCorrection('L')->color(75, 93,
+                                        234)->style('round')->eye('circle')->generate('http://' .
+                                        $_SERVER['SERVER_NAME'] . '/scan/apeksi22/absen/' . $k->user_id) !!}
                                         <form class="form-horizontal"
-                                            action="{{ route('qrcode.download',['type' => 'jpg'])}}" method="post">
+                                            action="{{ route('qrcode.download', ['type' => 'jpg']) }}" method="post">
                                             @csrf
                                             <input type='hidden' value="jpg" name="qr_type" />
                                             <input type='hidden' value="{{ 'jpg' }}" name="section" />
-                                            <button type="submit"
-                                                class="align-middle btn btn-outline-primary btn-sm ml-1">
-                                                <i class="fas fa-fw fa-download"></i>
-                                                JPG
-                                            </button>
+                                            {{-- <button type="submit"
+                                                            class="align-middle btn btn-outline-primary btn-sm ml-1">
+                                                            <i class="fas fa-fw fa-download"></i>
+                                                            JPG
+                                                        </button> --}}
                                         </form>
 
                                     </td>
                                     <td>
+                                        <a href="/admin/cetak-peserta/pdf/{{ $k->user_id }}"
+                                            class="btn btn-sm btn-outline-info"><i class="fa fa-download"
+                                                aria-hidden="true"></i></a>
                                         <form action="/admin/peserta/{{ $k->user_id }}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <a href="/admin/peserta/{{ $k->user_id }}/edit"
-                                                class="btn btn-primary btn-sm"><i class="ni ni-ruler-pencil"></i></a>
+                                                class="btn btn-primary btn-sm"><i class="fa fa-pencil-square"
+                                                    aria-hidden="true"></i></a>
                                             <button onclick="return confirm('Yakin?')" type="submit"
-                                                class="btn btn-danger btn-sm"><i class="ni ni-fat-remove"></i></button>
+                                                class="btn btn-danger btn-sm"><i class="fa fa-trash-o"
+                                                    aria-hidden="true"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -79,8 +84,8 @@ Swal.fire(
                             </tbody>
                         </table>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>

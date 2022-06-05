@@ -11,9 +11,12 @@
                 </div>
 
                 <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
-                    <img src="/assets/img/sejarah-apeksi.png" class="img-fluid" alt="">
+                    <?php 
+                        echo $profilRow->sejarah;
+                    ?>
+                    <!-- <img src="{{ $profilRow->sejarah }}" class="img-fluid" alt=""> -->
                 </div>
-
+ 
             </div>
         </section><!-- End About Section -->
     </main><!-- End #main -->

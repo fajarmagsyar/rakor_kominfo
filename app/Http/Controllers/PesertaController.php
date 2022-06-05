@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Roles;
 use Illuminate\Http\Request;
-
+use PDF;
+use File;
 class PesertaController extends Controller
 {
     public function index()
@@ -34,6 +35,7 @@ class PesertaController extends Controller
         $dt = [
 
             'nama' => $request->input('nama'),
+            'jabatan' => $request->input('jabatan'),
             'email' => $request->input('email'),
             'asal'  =>$request->input ('asal'),
             'hp' => $request->input('hp'),
@@ -41,6 +43,8 @@ class PesertaController extends Controller
         ];
 
 
+
+        // ddd($dt);
         User::create($dt);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
 
@@ -61,13 +65,16 @@ class PesertaController extends Controller
         $user = User::find($id);
 
         $data = [
+
             'nama' => $request->input('nama'),
+            'jabatan' => $request->input('jabatan'),
             'email' => $request->input('email'),
             'asal'  =>$request->input ('asal'),
             'hp' => $request->input('hp'),
             'role_id' => $role->role_id,
         ];
 
+        // ddd($data);
         User::find($id)->update($data);
 
         return redirect('/admin/peserta')->with('success', 'Data berhasil diubah!');
@@ -80,5 +87,11 @@ class PesertaController extends Controller
         User::destroy($id);
         return redirect('/admin/peserta')->with('success', 'Data berhasil dihapus!');
     }
+    public function cetakPDFPeserta($id)
+    {
 
+        $rowspeserta = User::where('user_id', $id)->get();
+        $pdf = PDF::loadview('admin.template.pdf.peserta', ['rowspeserta' => $rowspeserta]);
+        return $pdf->stream('peserta-' . '-' . time() .     '.pdf', array('Attachment' => 0));
+    }
 }

@@ -16,40 +16,36 @@
 
                     <div class="col-lg-4">
 
-                        <div class="info">
-                            <h3>Taman Laut Handayani</h3>
-                            <p style="text-align: justify;"> Restoran ini menawarkan menu seperti Indonesian food, seafood, dan Chinesse food.Beragam pilihan menu halal dan lezat ini bakal disuguhkan. </p>
+                        <div class="info" style="text-align: justify;">
+                            <h3>{{ $fasilitasRows[0]['nama_fasilitas'] }}</h3>
+                            <p style="text-align: justify;">{!! $fasilitasRows[0]['deskripsi'] !!}</p>
 
                             <div class="info-item d-flex">
                                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                                 <div>
                                     <h4>Lokasi:</h4>
-                                    <p>Jl. Timor Raya, Oesapa Sel., Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim. 85228</p>
+                                    <p>{{ $fasilitasRows[0]['lokasi'] }}</p>
                                 </div>
                             </div><!-- End Info Item -->
 
                             <div class="info-item d-flex">
-                                <i class="bi bi-clock flex-shrink-0"></i>
                                 <div>
-                                    <h4>Jam Buka - Jam Tutup:</h4>
-                                    <p>10.00 Wita - 22.00 Wita</p>
+                                    <?php
+                                    $map = explode('|', $fasilitasRows[0]['long_lat']);
+                                    
+                                    ?>
+                                <iframe src="http://maps.google.com/?q={{$map[0]}},{{$map[1]}}" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div><!-- End Info Item -->
 
-                            <div class="info-item d-flex">
-                                <i class="bi bi-phone flex-shrink-0"></i>
-                                <div>
-                                    <h4>Telepon:</h4>
-                                    <p>(0380)8438307</p>
-                                </div>
-                            </div><!-- End Info Item -->
+                           
 
                         </div>
 
                     </div>
 
                     <div class="col-lg-8">
-                        <img src="/assets/img/restoran/handayani.jpg" alt="" class="img-fluid">
+                        <img src="{{ $fasilitasRows[0]['foto'] }}" alt="" class="img-fluid" style="width:100%;" >
                     </div><!-- End Contact Form -->
 
               
