@@ -99,8 +99,8 @@ class ArtikelController extends Controller
         return view('admin.artikel.edit', [
             'page' => 'Edit Artikel | Apeksi',
             'pageTitle' => 'Edit Artikel',
-            'data' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id' )->first(),
-            'rowsArtikel' => User::latest()->get(),
+            'data' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id' )-git >where('artikel_id',$id)->first(),
+            'rowsArtikel' => User::latest()->get()
         ]);
         return redirect('/admin/artikel')->with('success', 'Artikel berhasil diubah');
     }
