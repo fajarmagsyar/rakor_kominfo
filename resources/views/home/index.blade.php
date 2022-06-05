@@ -50,7 +50,7 @@
                         <div class="service-item position-relative text-center mx-auto">
                             <div class="icon"><i class="bi bi-grid"></i></div>
                             <h4><a href="/lambang" class="stretched-link">Lambang</a></h4>
-                            <p class="fst-italic">Lambang/icon ASOSIASI PEMERINTAH KOTA SELURUH INDONESIA</p>
+                            <p class="fst-italic">Lambang ASOSIASI PEMERINTAH KOTA SELURUH INDONESIA KOMWIL IV</p>
                         </div>
                     </div><!-- End Service Item -->
 
