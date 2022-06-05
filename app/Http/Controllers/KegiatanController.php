@@ -18,8 +18,7 @@ class KegiatanController extends Controller
         //
         //
         return view('admin.kegiatan.index', [
-            'page' => 'Data Kegiatan | APEKSI',
-            'pageTitle' => 'Data Kegiatan',
+            'pageTitle' => 'Kegiatan',
             'kegiatanRows' => Kegiatan::orderBy('created_at', 'DESC')->paginate(10),
         ]);
     }
@@ -33,7 +32,6 @@ class KegiatanController extends Controller
     {
         //
         return view('admin.kegiatan.create', [
-            'page' => 'Kegiatan | APEKSI',
             'pageTitle' => 'Tambah Kegiatan',
 
         ]);
@@ -88,7 +86,7 @@ class KegiatanController extends Controller
         if ($validator->fails()) {
             return redirect("/admin/kegiatan/create")->withErrors($validator)->withInput();
         }
-
+ $long=$request->input('long_lat') . "|". $request->input('lati_tude');
         $data = [
             'nama_kegiatan' => $request->input('nama_kegiatan'),
             'tanggal' => $request->input('tanggal'),
@@ -96,7 +94,7 @@ class KegiatanController extends Controller
             'jam_keluar' => $request->input('jam_keluar'),
             'kuota' => $request->input('kuota'),
             'lokasi' => $request->input('lokasi'),
-            'long_lat' => $request->input('long_lat'),
+            'long_lat' => $long,
             'deskripsi' => $request->input('deskripsi'),
         ];
 
@@ -178,7 +176,7 @@ class KegiatanController extends Controller
             return redirect("/admin/kegiatan/$id/edit")->withErrors($validator)->withInput();
         }
 
-
+        $long=$request->input('long_lat') . "|". $request->input('lati_tude');
         $data = [
             'nama_kegiatan' => $request->input('nama_kegiatan'),
             'tanggal' => $request->input('tanggal'),
@@ -186,7 +184,7 @@ class KegiatanController extends Controller
             'jam_keluar' => $request->input('jam_keluar'),
             'kuota' => $request->input('kuota'),
             'lokasi' => $request->input('lokasi'),
-            'long_lat' => $request->input('long_lat'),
+            'long_lat' => $long,
             'deskripsi' => $request->input('deskripsi'),
         ];
 

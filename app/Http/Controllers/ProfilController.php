@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profil;
 use Illuminate\Http\Request;
 
-class ProfilController extends Controller
+class ProfilController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class ProfilController extends Controller
             'pageTitle' => 'Profil',
             'profilRow' => Profil::first(),
         ]);
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.
