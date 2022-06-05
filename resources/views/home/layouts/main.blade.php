@@ -38,6 +38,7 @@
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
             <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+            <img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
                 <h1>APEKSI<span>.</span></h1>
             </a>
 
