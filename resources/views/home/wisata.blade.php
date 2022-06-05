@@ -22,103 +22,24 @@
             <div class="container" data-aos="fade-up">
                 
                 <div class="row gy-5">
-
+                  @foreach ($fasilitasRows as $fasilitasRow)
                     <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                         <div class="service-item">
                             <div class="img">
-                                <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
+                                <img src="{{ $fasilitasRow->foto }}" class="img-fluid" alt="">
                             </div>
                             <div class="details position-relative">    
                                 <a href="/wisata-single" class="stretched-link">
-                                    <h3>Goa Kristal</h3>
+                                    <h3>{{ $fasilitasRow->nama_fasilitas }}</h3>
                                 </a>
-                                <p>Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang...</p>
-                                    <a href="/wisata-single" class="readmore stretched-link"><span><h6>Read More</h6></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="service-item">
-                            <div class="img">
-                                <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="details position-relative">
-                                <a href="/wisata-single" class="stretched-link">
-                                    <h3>Goa Kristal</h3>
-                                </a>
-                                <p>Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang...</p>
-                                    <a href="/wisata-single" class="readmore stretched-link"><span><h6>Read More</h6></span>
+                                <p>{!! substr($fasilitasRow->deskripsi, 0, 120)  !!}...</p>
+                                    <a href="/wisata-single/{{ $fasilitasRow->fasilitas_id}}" class="readmore stretched-link"><span><h6>Read More</h6></span>
                                 </a>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
-
-                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="service-item">
-                            <div class="img">
-                                <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="details position-relative">
-                                <a href="/wisata-single" class="stretched-link">
-                                    <h3>Goa Kristal</h3>
-                                </a>
-                                <p>Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang...</p>
-                                    <a href="/wisata-single" class="readmore stretched-link"><span><h6>Read More</h6></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="service-item">
-                            <div class="img">
-                                <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="details position-relative">
-                                <a href="/wisata-single" class="stretched-link">
-                                    <h3>Goa Kristal</h3>
-                                </a>
-                                <p>Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang...</p>
-                                    <a href="/wisata-single" class="readmore stretched-link"><span><h6>Read More</h6></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="service-item">
-                            <div class="img">
-                                <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="details position-relative">
-                                <a href="/wisata-single" class="stretched-link">
-                                    <h3>Goa Kristal</h3>
-                                </a>
-                                <p>Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang...</p>
-                                    <a href="/wisata-single" class="readmore stretched-link"><span><h6>Read More</h6></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
-                        <div class="service-item">
-                            <div class="img">
-                                <img src="/assets/img/wisata/krissstal.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="details position-relative">
-                                <a href="/wisata-single" class="stretched-link">
-                                    <h3>Goa Kristal</h3>
-                                </a>
-                                <p>Letak Gua Kristal berada di dalam celah Goa Karst. Di sini kamu akan melihat pemandangan dinding-dinding goa yang...</p>
-                                    <a href="/wisata-single" class="readmore stretched-link"><span><h6>Read More</h6></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div><!-- End Service Item -->
-
+                   @endforeach 
+                   
                 </div>
 
             </div>

@@ -22,45 +22,20 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="row">
-
+                    @foreach ($fasilitasRows as $fasilitasRow)
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="post-box">
-                            <div class="post-img"><img src="/assets/img/hotel/aston.jpg" class="img-fluid"
+                            <div class="post-img"><img src="{{ $fasilitasRow->foto }}" class="img-fluid"
                                     alt=""></div>
                             
-                            <h3 class="post-title">Hotel Aston Kupang</h3>
-                            <p>Berlokasi di jantung kota yang menghadap langsung menuju Laut Sawu, Aston Kupang...</p>
-                            <a href="/hotel-single" class="readmore stretched-link"><span>Read More</span><i
+                            <h3 class="post-title">{{ $fasilitasRow->nama_fasilitas }}</h3>
+                            <p>{!! substr($fasilitasRow->deskripsi, 0, 80)  !!}...</p>
+                            <a href="/hotel-single/{{ $fasilitasRow->fasilitas_id}}" class="readmore stretched-link"><span>Read More</span><i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="post-box">
-                            <div class="post-img"><img src="/assets/img/hotel/aston.jpg" class="img-fluid"
-                                    alt=""></div>
-                           
-                            <h3 class="post-title">Hotel Aston Kota Kupang
-                            </h3>
-                            <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum
-                                assumenda. Quisquam omnis aliquid necessitatibus tempora consectetur doloribus...</p>
-                            <a href="/hotel-single" class="readmore stretched-link"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="post-box">
-                            <div class="post-img"><img src="/assets/img/hotel/aston.jpg" class="img-fluid"
-                                    alt=""></div>
-                           
-                            <h3 class="post-title">Hotel Aston Kota Kupang</h3>
-                            <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis
-                                repellat sed quae consectetur magnam veritatis dicta nihil...</p>
-                            <a href="/hotel-single" class="readmore stretched-link"><span>Read More</span><i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
+                   @endforeach
 
                 </div>
 
