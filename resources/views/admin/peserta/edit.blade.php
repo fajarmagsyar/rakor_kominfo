@@ -22,9 +22,9 @@
 
 
                                 <div class="mb-3">
-                                    <label for="userName" class="form-label">Nama Kegiatan
+                                    <label for="userName" class="form-label">Nama
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="nama_kegiatan" parsley-trigger="change" required
+                                    <input type="text" name="nama" parsley-trigger="change" required
                                         value="{{$peserta->nama}}"
                                         class="form-control @error('nama_kegiatan') is-invalid @enderror" id="userName"
                                         value="{{ old('nama_kegiatan', $peserta->nama) }}" />
@@ -35,12 +35,24 @@
                                     @enderror
                                 </div>
 
-
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Jabatan
+                                        <span class="text-danger">*</span></label>
+                                    <input type="text" value="{{$peserta->jabatan}}" name="jabatan" parsley-trigger="change" required
+                                    placeholder="Masukkan Jabatan"
+                                        class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
+                                        value="{{ old('jabatan') }}" />
+                                    @error('jabatan')
+                                        <div id="jabatan" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
 
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Email
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="nama_kegiatan" parsley-trigger="change" required
+                                    <input type="text" name="email" parsley-trigger="change" required
                                         value="{{$peserta->email}}"
                                         class="form-control @error('nama_kegiatan') is-invalid @enderror" id="userName"
                                         value="{{ old('nama_kegiatan', $peserta->nama) }}" />
@@ -57,7 +69,7 @@
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Asal
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="nama_kegiatan" parsley-trigger="change" required
+                                    <input type="text" name="asal" parsley-trigger="change" required
                                         value="{{$peserta->asal}}"
                                         class="form-control @error('nama_kegiatan') is-invalid @enderror" id="userName"
                                         value="{{ old('nama_kegiatan', $peserta->asal) }}" />
@@ -71,7 +83,7 @@
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">hp
                                         <span class="text-danger">*</span></label>
-                                    <input type="number" name="nama_kegiatan" parsley-trigger="change" required
+                                    <input type="number" name="hp" parsley-trigger="change" required
                                         value="{{$peserta->hp}}"
                                         class="form-control @error('nama_kegiatan') is-invalid @enderror" id="userName"
                                         value="{{ old('nama_kegiatan', $peserta->hp) }}" />
