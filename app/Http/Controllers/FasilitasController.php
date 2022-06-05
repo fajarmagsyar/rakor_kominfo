@@ -52,10 +52,10 @@ class FasilitasController extends Controller
            $rules = [
         
             'kategori' => 'required',
-            'nama_fasilitas' => 'required',
-            'deskripsi' => 'required',
-            'lokasi' => 'required',
-            'long_lat' => 'required',
+            'nama_fasilitas' => 'required|unique:fasilitas',
+            'deskripsi' => 'required|unique:fasilitas',
+            'lokasi' => 'required|unique:fasilitas',
+            'long_lat' => 'required|unique:fasilitas',
             'foto' => 'file|mimes:png,jpg,jpeg|max:1000',
            
         ];
@@ -66,6 +66,7 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $request->input('long_lat'),
+            'long_lat' => $request->input('long_lat','|','lati_tude'),
              'foto' => $request->file('foto'),
         ];
 
@@ -74,6 +75,7 @@ class FasilitasController extends Controller
             'file' => '*File :attribute wajib dipilih.',
             'max' => '*Kolom :attribute maksimal :max.',
             'mimes' => '*Format file :attribute tidak didukung.',
+            'unique' => '*Kolom :attribute sudah terdaftar.',
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -87,13 +89,13 @@ class FasilitasController extends Controller
          $folder_foto= "unggah/fasilitas/" . $file_foto. ".jpg";
          move_uploaded_file($temp_foto, $folder_foto);
          $name_foto= '/unggah/fasilitas/' . $file_foto. '.jpg';
-
+         $long=$request->input('long_lat') . "|". $request->input('lati_tude');
         $data = [
             'kategori' => $request->input('kategori'),
             'nama_fasilitas' => $request->input('fasilitas'),
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
-            'long_lat' => $request->input('long_lat'),
+            'long_lat' => $long,
             'foto' => $name_foto,
         ];
 
@@ -141,7 +143,7 @@ class FasilitasController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $foto_fasilitas=$request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:1000':'';
+         $foto_fasilitas=$request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:2000':'';
         $rules = [
         
           'kategori' => 'required',
@@ -159,6 +161,7 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $request->input('long_lat'),
+         
              'foto' => $request->file('foto'),
         ];
 
@@ -167,6 +170,7 @@ class FasilitasController extends Controller
             'file' => '*File :attribute wajib dipilih.',
             'max' => '*Kolom :attribute maksimal :max.',
             'mimes' => '*Format file :attribute tidak didukung.',
+            
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -187,13 +191,14 @@ class FasilitasController extends Controller
             move_uploaded_file($temp_foto, $folder_foto);
             $path_foto = "/unggah/fasilitas/" . $newFile_foto;
         }
-
+        $long=$request->input('long_lat') . "|". $request->input('lati_tude');
         $data = [
            'kategori' => $request->input('kategori'),
             'nama_fasilitas' => $request->input('fasilitas'),
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
-            'long_lat' => $request->input('long_lat'),
+            'long_lat' => $long,
+           
             'foto' => $path_foto,     
         ];
 

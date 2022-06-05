@@ -39,7 +39,7 @@
                                 Olah {{ $pageTitle }}.
                             </p>
 
-                            <div class="table-responsive">
+                            <div class="table-s">
                                 <table class="table mb-0">
                                     <thead class="table-dark">
                                         <tr>
@@ -48,7 +48,8 @@
                                             <th>Nama</th>
                                             <th>Deskripsi</th>
                                             <th>Lokasi</th>
-                                            <th>LongLatude</th>
+                                            <th>Longitude</th>
+                                            <th>Latitude</th>
                                             <th>Foto</th>
                                             <th></th>
                                         </tr>
@@ -62,30 +63,32 @@
                                             @else
                                             @foreach ($fasilitasRows as $key => $r)
                                             <tr>
-                                                <th class="align-middle" scope="row">
+                                                <th scope="row">
                                                     {{ $key = $key + 1 }}
                                                 </th>
 
 
 
-                                                <td class="align-middle">
+                                                <td>
                                                     {{ $r->kategori }}
                                                 </td>
 
-                                                <td class="align-middle">
-                                                    {{ $r->tanggal }}
-                                                </td>
 
-                                                <td class="align-middle">
+
+                                                <td>
                                                     {{ $r->nama_fasilitas }}
                                                 </td>
-                                                <td class="align-middle">
+                                                <td>
+                                                    {!! $r->deskripsi !!}
+
+                                                </td>
+                                                <td>
                                                     {{ $r->lokasi }}
                                                 </td>
-                                                <td class="align-middle">
+                                                <td>
                                                     {{ $r->long_lat }}
                                                 </td>
-                                                <td class="align-middle">
+                                                <td>
                                                     <img src="{{ $r->foto }}" width="100px">
                                                 </td>
 
