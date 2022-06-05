@@ -32,11 +32,13 @@
                         <div class="post-box">
 
                             <div class="meta">
-                                <span class="post-date">{{ $r->created_at }}</span>
+                                <span class="post-date">{{ $r->created_at }}</span> 
                                 <span class="post-author"> / {{ $r->nama }}</span>
                             </div>
                             <div id="overflowTest">
-                                <p class="fst-italic">{{ ($r->isi) }}</p>
+                                <p class="fst-italic"><?php 
+                                        echo $r->isi;
+                                    ?></p>
                             </div>
                         </div>
                     </div>

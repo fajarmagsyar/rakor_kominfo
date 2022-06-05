@@ -18,7 +18,7 @@ class ProfilController extends Controller
             'pageTitle' => 'Profil',
             'profilRow' => Profil::first(),
         ]);
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.

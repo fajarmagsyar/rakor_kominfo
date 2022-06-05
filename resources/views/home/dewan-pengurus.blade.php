@@ -11,7 +11,9 @@
                 </div>
 
                 <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
-                    <img src="/assets/img/struktur-apeksi-2022-2024.png" class="img-fluid" alt="">
+                @foreach ($profilRow as $key => $r)
+                    <img src="{{ $r->struktur }}" class="img-fluid" alt="">
+                    @endforeach
                 </div>
 
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Profil;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,13 +19,16 @@ class HomeController extends Controller
     {
         return view('home.dewan-pengurus', [
             'pageTitle' => 'Dewan Pengurus',
+            'profilRow' => Profil::get(),
         ]);
     }
 
     public function sejarah()
     {
+        // dd(Profil::get());
         return view('home.sejarah', [
             'pageTitle' => 'Sejarah',
+            'profilRow' => Profil::first(),
         ]);
     }
 
@@ -32,6 +36,7 @@ class HomeController extends Controller
     {
         return view('home.visi-misi', [
             'pageTitle' => 'Visi & Misi',
+            'profilRow' => Profil::get(),
         ]);
     }
 
