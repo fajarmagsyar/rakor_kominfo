@@ -41,10 +41,10 @@
                                     <span class="text-danger">*</span></label>
                                 <input type="text" name="fasilitas" parsley-trigger="change" required
                                     placeholder="Masukkan fasilitas"
-                                    class="form-control @error('fasilitas') is-invalid @enderror" id="userName"
-                                    value="{{ old('fasilitas') }}" />
-                                @error('fasilitas')
-                                <div id="fasilitas" class="invalid-feedback">
+                                    class="form-control @error('nama_fasilitas') is-invalid @enderror" id="userName"
+                                    value="{{ old('nama_fasilitas') }}" />
+                                @error('nama_fasilitas')
+                                <div id="nama_fasilitas" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
@@ -64,11 +64,12 @@
                                 @enderror
                             </div>
 
+
                             <div class="mb-3">
-                                <label for="userName" class="form-label">Koordinat
+                                <label for="userName" class="form-label">Longitude
                                     <span class="text-danger">*</span></label>
                                 <input type="text" name="long_lat" parsley-trigger="change" required
-                                    placeholder="Masukkan Koordinat"
+                                    placeholder="Masukkan Longitude"
                                     class="form-control @error('long_lat') is-invalid @enderror" id="userName"
                                     value="{{ old('long_lat') }}" />
                                 @error('long_lat')
@@ -77,6 +78,22 @@
                                 </div>
                                 @enderror
                             </div>
+
+
+                            <div class="mb-3">
+                                <label for="userName" class="form-label">Latitude
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" name="lati_tude" parsley-trigger="change" required
+                                    placeholder="Masukkan Latitude"
+                                    class="form-control @error('long_lat') is-invalid @enderror" id="userName"
+                                    value="{{ old('long_lat') }}" />
+                                @error('long_lat')
+                                <div id="long_lat" class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
 
 
 
