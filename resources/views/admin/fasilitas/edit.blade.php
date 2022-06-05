@@ -10,11 +10,11 @@
                     <p class="text-muted font-14">
                         Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera.
                     </p>
-                    <form action="/admin/kegiatan/{{ $data->kegiatan_id }}" class="parsley-examples"
+                    <form action="/admin/fasilitas/{{ $data->fasilitas_id }}" class="parsley-examples"
                         id="form-valid-parsley" method="post" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
-                        <input type="hidden" value="{{ $data->kegiatan_id }}" name="kegiatan_id">
+                        <input type="hidden" value="{{ $data->fasilitas_id }}" name="fasilitas_id">
 
 
                         <div class="row">
@@ -22,12 +22,23 @@
 
 
                             <div class="mb-3">
-                                <label for="userName" class="form-label">Nama Kegiatan
+                                <label for="userName" class="form-label">Kategori
                                     <span class="text-danger">*</span></label>
-                                <input type="text" name="nama_kegiatan" parsley-trigger="change" required
-                                    placeholder="Masukkan Nama Kegiatan"
-                                    class="form-control @error('nama_kegiatan') is-invalid @enderror" id="userName"
-                                    value="{{ old('nama_kegiatan', $data->nama_kegiatan) }}" />
+                                <select name="kategori" id=""
+                                    class="form-control @error('kategori') is-invalid @enderror"
+                                    value="{{ old('kategori', $data['kategori']) }}" aria-label="badan unit"
+                                    name="kategori" id="kategori">
+                                    @error('kategori')
+                                    <div id="kategori" class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                    <option value="">Pilih Badan Unit</option>
+                                    @foreach($rowsKategori as $gd)
+                                    <option {{old('kategori', $data['kategori'])==$gd ? 'selected' : '' }}
+                                        value="{{ $gd }}">{{ $gd }}</option>
+                                    @endforeach
+                                </select>
                                 @error('nama_kegiatan')
                                 <div id="nama_kegiatan" class="invalid-feedback">
                                     {{ $message }}
@@ -38,64 +49,18 @@
 
 
                             <div class="mb-3">
-                                <label for="userName" class="form-label">Tanggal
+                                <label for="userName" class="form-label">Nama Fasilitas
                                     <span class="text-danger">*</span></label>
-                                <input type="date" name="tanggal" parsley-trigger="change" required
-                                    class="form-control @error('tanggal') is-invalid @enderror" id="userName"
-                                    value="{{ old('tanggal', $data->tanggal) }}" />
-                                @error('tanggal')
-                                <div id="tanggal" class="invalid-feedback">
+                                <input type="text" name="fasilitas" parsley-trigger="change" required
+                                    class="form-control @error('fasilitas') is-invalid @enderror" id="userName"
+                                    value="{{ old('fasilitas', $data->nama_fasilitas) }}" />
+                                @error('fasilitas')
+                                <div id="fasilitas" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
 
-
-
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Jam Masuk
-                                    <span class="text-danger">*</span></label>
-                                <input type="time" name="jam_masuk" parsley-trigger="change" required
-                                    class="form-control @error('jam_masuk') is-invalid @enderror" id="userName"
-                                    value="{{ old('jam_masuk', $data->jam_masuk) }}" />
-                                @error('jam_masuk')
-                                <div id="jam_masuk" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-
-
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Jam Keluar
-                                    <span class="text-danger">*</span></label>
-                                <input type="time" name="jam_keluar" parsley-trigger="change" required
-                                    class="form-control @error('jam_keluar') is-invalid @enderror" id="userName"
-                                    value="{{ old('jam_keluar', $data->jam_keluar) }}" />
-                                @error('jam_keluar')
-                                <div id="jam_keluar" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Kuota
-                                    <span class="text-danger">*</span></label>
-                                <input type="number" name="kuota" parsley-trigger="change" required
-                                    placeholder="Masukkan Jumlah Kuota"
-                                    class="form-control @error('kuota') is-invalid @enderror" id="userName"
-                                    value="{{ old('kuota', $data->kuota) }}" />
-                                @error('kuota')
-                                <div id="kuota" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
 
                             @php
                             $yes = explode('|', $data->long_lat)
@@ -129,9 +94,6 @@
                                 @enderror
                             </div>
 
-
-
-
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Lokasi
                                     <span class="text-danger">*</span></label>
@@ -147,7 +109,6 @@
                             </div>
 
 
-
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Deskripsi
                                     <span class="text-danger">*</span></label>
@@ -161,9 +122,19 @@
                                 </div>
                                 @enderror
                             </div>
-
-
-
+                            <label for="foto" class="form-label">Foto Kegiatan (Format: JPG
+                                Maksimal 1Mb)
+                                <span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror"
+                                    value="{{ old('foto') }}" id="foto" accept=".jpg" name="foto">
+                                <label class="input-group-text" for="foto">Upload</label>
+                                @error('foto')
+                                <div id="foto" class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
 
 
 

@@ -10,104 +10,68 @@
                     <p class="text-muted font-14">
                         Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera.
                     </p>
-                    <form action="/admin/kegiatan/{{ $data->kegiatan_id }}" class="parsley-examples"
-                        id="form-valid-parsley" method="post" enctype="multipart/form-data">
-                        @method('PATCH')
-                        @csrf
-                        <input type="hidden" value="{{ $data->kegiatan_id }}" name="kegiatan_id">
 
+                    <form action="/admin/fasilitas" class="parsley-examples" id="form-valid-parsley" method="post"
+                        enctype="multipart/form-data">
+                        @method('post')
+                        @csrf
 
                         <div class="row">
 
-
-
                             <div class="mb-3">
-                                <label for="userName" class="form-label">Nama Kegiatan
+                                <label for="userName" class="form-label">Kategori
                                     <span class="text-danger">*</span></label>
-                                <input type="text" name="nama_kegiatan" parsley-trigger="change" required
-                                    placeholder="Masukkan Nama Kegiatan"
-                                    class="form-control @error('nama_kegiatan') is-invalid @enderror" id="userName"
-                                    value="{{ old('nama_kegiatan', $data->nama_kegiatan) }}" />
-                                @error('nama_kegiatan')
-                                <div id="nama_kegiatan" class="invalid-feedback">
+                                <select class="form-select @error('kategori') is-invalid @enderror"
+                                    value="{{old('kategori')}}" aria-label="golongan darah" name="kategori"
+                                    id="kategori">
+                                    <option value="">Pilih Kategori</option>
+                                    @foreach ($rowsKategori as $gd)
+                                    <option {{old('kategori')==$gd ? 'selected' : '' }} value="{{ $gd }}">{{ $gd
+                                        }}</option>
+                                    @endforeach
+                                </select>
+                                @error('kategori')
+                                <div id="kategori" class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="userName" class="form-label">Nama Fasilitas
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" name="fasilitas" parsley-trigger="change" required
+                                    placeholder="Masukkan fasilitas"
+                                    class="form-control @error('nama_fasilitas') is-invalid @enderror" id="userName"
+                                    value="{{ old('nama_fasilitas') }}" />
+                                @error('nama_fasilitas')
+                                <div id="nama_fasilitas" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
 
-
-
                             <div class="mb-3">
-                                <label for="userName" class="form-label">Tanggal
+                                <label for="userName" class="form-label">Deskripsi
                                     <span class="text-danger">*</span></label>
-                                <input type="date" name="tanggal" parsley-trigger="change" required
-                                    class="form-control @error('tanggal') is-invalid @enderror" id="userName"
-                                    value="{{ old('tanggal', $data->tanggal) }}" />
-                                @error('tanggal')
-                                <div id="tanggal" class="invalid-feedback">
+                                <textarea placeholder="Masukan Deskripsi" name="deskripsi"
+                                    value="{{ old('deskripsi') }}"
+                                    class="form-control @error('deskripsi') is-invalid @enderror"
+                                    id="">{{ old('deskripsi') }}</textarea>
+                                @error('deskripsi')
+                                <div id="deskripsi" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
 
-
-
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Jam Masuk
-                                    <span class="text-danger">*</span></label>
-                                <input type="time" name="jam_masuk" parsley-trigger="change" required
-                                    class="form-control @error('jam_masuk') is-invalid @enderror" id="userName"
-                                    value="{{ old('jam_masuk', $data->jam_masuk) }}" />
-                                @error('jam_masuk')
-                                <div id="jam_masuk" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-
-
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Jam Keluar
-                                    <span class="text-danger">*</span></label>
-                                <input type="time" name="jam_keluar" parsley-trigger="change" required
-                                    class="form-control @error('jam_keluar') is-invalid @enderror" id="userName"
-                                    value="{{ old('jam_keluar', $data->jam_keluar) }}" />
-                                @error('jam_keluar')
-                                <div id="jam_keluar" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Kuota
-                                    <span class="text-danger">*</span></label>
-                                <input type="number" name="kuota" parsley-trigger="change" required
-                                    placeholder="Masukkan Jumlah Kuota"
-                                    class="form-control @error('kuota') is-invalid @enderror" id="userName"
-                                    value="{{ old('kuota', $data->kuota) }}" />
-                                @error('kuota')
-                                <div id="kuota" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-                            @php
-                            $yes = explode('|', $data->long_lat)
-                            @endphp
 
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Longitude
                                     <span class="text-danger">*</span></label>
                                 <input type="text" name="long_lat" parsley-trigger="change" required
-                                    placeholder="Masukkan Koordinat"
+                                    placeholder="Masukkan Longitude"
                                     class="form-control @error('long_lat') is-invalid @enderror" id="userName"
-                                    value="{{ old('long_lat', $yes[0]) }}" />
+                                    value="{{ old('long_lat') }}" />
                                 @error('long_lat')
                                 <div id="long_lat" class="invalid-feedback">
                                     {{ $message }}
@@ -115,19 +79,22 @@
                                 @enderror
                             </div>
 
+
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Latitude
                                     <span class="text-danger">*</span></label>
                                 <input type="text" name="lati_tude" parsley-trigger="change" required
-                                    placeholder="Masukkan Koordinat"
+                                    placeholder="Masukkan Latitude"
                                     class="form-control @error('long_lat') is-invalid @enderror" id="userName"
-                                    value="{{ old('long_lat', $yes[1]) }}" />
+                                    value="{{ old('long_lat') }}" />
                                 @error('long_lat')
                                 <div id="long_lat" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
+
+
 
 
 
@@ -138,25 +105,21 @@
                                 <input type="text" name="lokasi" parsley-trigger="change" required
                                     placeholder="Masukkan Lokasi"
                                     class="form-control @error('lokasi') is-invalid @enderror" id="userName"
-                                    value="{{ old('lokasi', $data->lokasi) }}" />
+                                    value="{{ old('lokasi') }}" />
                                 @error('lokasi')
                                 <div id="lokasi" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
-
-
-
                             <div class="mb-3">
-                                <label for="userName" class="form-label">Deskripsi
+                                <label for="userName" class="form-label">Foto
                                     <span class="text-danger">*</span></label>
-                                <textarea placeholder="Masukan Deskripsi" name="deskripsi"
-                                    value="{{ old('deskripsi', $data->deskripsi) }}"
-                                    class="form-control @error('deskripsi') is-invalid @enderror"
-                                    id="">{{ old('deskripsi', $data->deskripsi) }}</textarea>
-                                @error('deskripsi')
-                                <div id="deskripsi" class="invalid-feedback">
+                                <input type="file" name="foto" parsley-trigger="change" required
+                                    placeholder="Masukkan Foto" class="form-control @error('foto') is-invalid @enderror"
+                                    id="userName" value="{{ old('foto') }}" />
+                                @error('foto')
+                                <div id="foto" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror

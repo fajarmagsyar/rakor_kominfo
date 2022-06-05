@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdmController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PesertaController;
@@ -31,7 +32,6 @@ Route::get('/dewan-pengurus', [HomeController::class, 'dewanPengurus']);
 Route::get('/sejarah', [HomeController::class, 'sejarah']);
 Route::get('/visi-misi', [HomeController::class, 'visiMisi']);
 Route::get('/lambang', [HomeController::class, 'lambang']);
-
 Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
 Route::get('/wisata-single', [HomeController::class, 'wisataSingle']);
@@ -42,24 +42,18 @@ Route::get('/artikel', [ArtikelController::class, 'artikel']);
 Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
 
-
-
-
-
 Route::group(['prefix' => 'admin'], function () {
-
     Route::get('/dashboard', [AdminController::class, 'index']);
-
     Route::resource('/profil', ProfilController::class);
+    Route::resource('/artikel',ArtikelController::class);
     Route::resource('/absen', AbsenController::class);
     Route::resource('/kegiatan', KegiatanController::class);
-
+    Route::resource('/fasilitas', FasilitasController::class);
     Route::resource('/peserta', PesertaController::class);
-
     Route::resource('/adm', AdmController::class);
+  
     Route::get('/peserta-kegiatan/{id}', [AdminController::class, 'pesertaKegiatan']);
     Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);
     Route::post('/peserta-kegiatan/store', [AdminController::class, 'pesertaStore']);
     Route::post('/peserta-kegiatan/destroy/{id}/{id_keg}', [AdminController::class, 'pesertaDestroy']);
 });
-
