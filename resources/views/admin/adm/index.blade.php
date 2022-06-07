@@ -24,7 +24,7 @@
                             <table class="table align-items-center ">
                                 <tbody>
                                     <tr>
-                                        <th>#</th>
+                                        <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>HP</th>

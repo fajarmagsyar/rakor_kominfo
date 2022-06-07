@@ -36,6 +36,7 @@ Route::get('/sejarah', [HomeController::class, 'sejarah']);
 Route::get('/visi-misi', [HomeController::class, 'visiMisi']);
 Route::get('/lambang', [HomeController::class, 'lambang']);
 Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
+Route::get('/kegiatan-single/{kegiatan_id}', [HomeController::class, 'kegiatanSingle']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
 Route::get('/wisata-single/{fasilitas_id}', [HomeController::class, 'wisataSingle']);
 Route::get('/hotel', [HomeController::class, 'hotel']);

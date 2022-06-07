@@ -84,6 +84,14 @@ class HomeController extends Controller
         ]);
     }
 
+    public function kegiatanSingle($id)
+    {
+        return view('home.kegiatan-single', [
+            'pageTitle' => 'Nama Kegiatan',
+            'kegiatanRows' => Kegiatan::where('kegiatan_id', $id)->get(),
+        ]);
+    }
+
 
 
     public function hotel()
