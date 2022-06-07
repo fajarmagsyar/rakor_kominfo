@@ -18,12 +18,10 @@
 
                             <div class="row">
 
-
-
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Nama Peserta
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="nama" parsley-trigger="change" required
+                                    <input type="text" name="nama" parsley-trigger="change"
                                         placeholder="Masukkan Peserta"
                                         class="form-control @error('nama') is-invalid @enderror" id="nama"
                                         value="{{ old('nama') }}" />
@@ -37,7 +35,7 @@
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Jabatan
                                         <span class="text-danger">*</span></label>
-                                    <input type="text" name="jabatan" parsley-trigger="change" required
+                                    <input type="text" name="jabatan" parsley-trigger="change"
                                     placeholder="Masukkan Email"
                                         class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
                                         value="{{ old('jabatan') }}" />
@@ -52,7 +50,7 @@
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Email
                                         <span class="text-danger">*</span></label>
-                                    <input type="email" name="email" parsley-trigger="change" required
+                                    <input type="email" name="email" parsley-trigger="change"
                                     placeholder="Masukkan Email"
                                         class="form-control @error('email') is-invalid @enderror" id="email"
                                         value="{{ old('email') }}" />
@@ -67,7 +65,7 @@
                                 <div class="mb-3">
                                     <label for="userName" class="form-label">Asal
                                         <span class="text-danger">*</span></label>
-                                        <input type="text" name="asal" parsley-trigger="change" required
+                                        <input type="text" name="asal" parsley-trigger="change"
                                         placeholder="Masukkan asal peserta"
                                         class="form-control @error('asal') is-invalid @enderror" id="asal"
                                         value="{{ old('asal') }}" />
@@ -82,7 +80,7 @@
                                     <label for="userName" class="form-label">No.handphone
                                         <span class="text-danger">*</span></label>
                                         <input type="number" name="hp" parsley-trigger="change"
-                                        placeholder="Masukkan no.handphone" minlength="12" maxlength="12" required
+                                        placeholder="Masukkan no.handphone" minlength="12" maxlength="12"
                                         class="form-control @error('hp') is-invalid @enderror" id="hp"
                                         value="{{ old('hp') }}" />
                                         @error('hp')

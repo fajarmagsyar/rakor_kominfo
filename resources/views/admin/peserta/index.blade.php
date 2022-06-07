@@ -29,6 +29,7 @@ Swal.fire(
                                 <tr>
                                     <th>#</th>
                                     <th>Nama</th>
+                                    <th>Jabatan</th>
                                     <th>Email</th>
                                     <th>HP</th>
                                     <th>asal</th>
@@ -40,6 +41,7 @@ Swal.fire(
                                 <tr>
                                     <td>{{ $key = $key + 1 }}</td>
                                     <td>{{ $k->nama }}</td>
+                                    <td>{{$k->jabatan}}</td>
                                     <td>{{ $k->email }}</td>
                                     <td>{{ $k->hp }}</td>
                                     <td>{{ $k->asal }}</td>
