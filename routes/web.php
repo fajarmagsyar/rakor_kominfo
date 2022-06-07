@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('qrCode', [QRController::class, 'generateQrCode']);
     Route::post('download-qr-code/{type}', 'QRController@downloadQRCode')->name('qrcode.download');
+
 });
 
 Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);

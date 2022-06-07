@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Roles;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use PDF;
 use File;
@@ -15,6 +16,7 @@ class PesertaController extends Controller
         return view('admin.peserta.index', [
             'pageTitle' => 'Peserta',
             'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
+
         ]);
     }
     public function create()
@@ -32,8 +34,19 @@ class PesertaController extends Controller
 
         $role = Roles::where('role_name', 'User')->first();
 
-        $dt = [
 
+        $rules = [
+
+
+            'nama'      =>  'required',
+            'jabatan'   =>  'required',
+            'email'     =>  'email | required',
+            'asal'      =>  'required',
+            'hp'        =>  'required | numeric |  min:12',
+
+        ];
+
+        $input = [
             'nama' => $request->input('nama'),
             'jabatan' => $request->input('jabatan'),
             'email' => $request->input('email'),
@@ -42,12 +55,25 @@ class PesertaController extends Controller
             'role_id' => $role->role_id,
         ];
 
-        User::create($dt);
 
+        $messages = [
+            'required' => '*Kolom :attribute wajib diisi.',
+            'file' => '*File :attribute wajib dipilih.',
+            'max' => '*Kolom :attribute maksimal :max.',
+            'mimes' => '*Format file :attribute tidak didukung.',
+            'email' => '*Email tidak valid'
+        ];
+
+        $validator = Validator::make($input, $rules, $messages);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        User::create($rules);
+      
         if ($request->input('user')) {
             return redirect('/registrasi')->with('success', 'Data berhasil ditambahkan!');
         }
-        // ddd($dt);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
 

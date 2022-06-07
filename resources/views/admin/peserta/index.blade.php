@@ -29,39 +29,21 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama</th>
+                                        <th>Jabatan</th>
                                         <th>Email</th>
                                         <th>HP</th>
                                         <th>Asal</th>
-                                        <th class="text-center">Qr</th>
                                         <th></th>
                                     </tr>
                                     @if (count($pesertaRows) > 0)
                                         @foreach ($pesertaRows as $key => $k)
                                             <tr>
                                                 <td>{{ $key = $key + 1 }}</td>
-                                                <td>
-                                                    {{ $k->nama }}
-                                                    <br>
-                                                    <span
-                                                        class="text-sm text0muted">{{ $k->jabatan != null ? '(' . $k->jabatan . ')' : '(Jabatan tidak terisi)' }}</span>
-                                                </td>
+                                                <td>{{ $k->nama }}</td>
+                                                <td>{{ $k->jabatan }}</td>
                                                 <td>{{ $k->email }}</td>
                                                 <td>{{ $k->hp }}</td>
                                                 <td>{{ $k->asal }}</td>
-                                                <td class="text-center"> {!! QrCode::errorCorrection('L')->color(75, 93, 234)->style('round')->eye('circle')->generate('http://' . $_SERVER['SERVER_NAME'] . '/scan/apeksi22/absen/' . $k->user_id) !!}
-                                                    <form class="form-horizontal"
-                                                        action="{{ route('qrcode.download', ['type' => 'jpg']) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        <input type='hidden' value="jpg" name="qr_type" />
-                                                        <input type='hidden' value="{{ 'jpg' }}" name="section" />
-                                                        {{-- <button type="submit"
-                                                            class="align-middle btn btn-outline-primary btn-sm ml-1">
-                                                            <i class="fas fa-fw fa-download"></i>
-                                                            JPG
-                                                        </button> --}}
-                                                    </form>
-
                                                 </td>
                                                 <td>
                                                     <a href="/admin/cetak-peserta/pdf/{{ $k->user_id }}"
@@ -90,8 +72,8 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
