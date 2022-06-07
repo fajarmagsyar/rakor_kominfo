@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
     <title>
         {{ $pageTitle }}
     </title>
@@ -28,16 +28,16 @@
 
 <body class="g-sidenav-show   bg-gray-100">
     @if (session()->has('success'))
-    <script>
-    Swal.fire(
-        'Berhasil', {
-            {
-                session('success')
-            }
-        },
-        'success'
-    )
-    </script>
+        <script>
+            Swal.fire(
+                'Berhasil', {
+                    {
+                        session('success')
+                    }
+                },
+                'success'
+            )
+        </script>
     @endif
     <div class="min-height-300 bg-primary position-absolute w-100"></div>
     <aside
@@ -146,18 +146,15 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white"
-                                href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
+                                href="javascript:;">Admin</a></li>
+                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">{{ $pageTitle }}
+                        </li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+                    <h6 class="font-weight-bolder text-white mb-0">{{ $pageTitle }}</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
-                            <span class="input-group-text text-body"><i class="fas fa-search"
-                                    aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Pencarian">
-                        </div>
+
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
@@ -173,11 +170,6 @@
                                     <i class="sidenav-toggler-line bg-white"></i>
                                     <i class="sidenav-toggler-line bg-white"></i>
                                 </div>
-                            </a>
-                        </li>
-                        <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-white p-0">
-                                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
                         </li>
 

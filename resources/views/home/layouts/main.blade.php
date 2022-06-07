@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/favicon.ico" rel="icon">
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -28,7 +28,7 @@
     <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="/assets/css/variables.css" rel="stylesheet">
     <link href="/assets/css/main.css" rel="stylesheet">
-  
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -58,6 +58,7 @@
 
             <a class="scrollto" href="#"></a>
 
+
         </div>
     </header><!-- End Header -->
 
@@ -83,7 +84,6 @@
                             </p>
                         </div>
                     </div>
-
 
                     <div class="col-lg-6 col-md-6 footer-newsletter">
                         <h4>Maps</h4>

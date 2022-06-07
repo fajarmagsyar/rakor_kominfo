@@ -20,10 +20,15 @@ class Absen extends Model
      */
     protected $guarded = ['absen_id'];
 
-    public function scopeFilter($query, array $filters){
-        $query->when($filters['search'] ?? false, function($query, $search){
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
             return $query->where('status', 'ILIKE', $search);
         });
     }
 
+    static public function getAbsenByKegiatan($kegiatan_id)
+    {
+        return Absen::join('users', 'users.user_id', '=', 'absen.user_id')->where('absen.kegiatan_id', $kegiatan_id)->get(['users.nama', 'users.jabatan', 'users.asal', 'absen.status_peserta']);
+    }
 }
