@@ -54,6 +54,7 @@ class PesertaController extends Controller
 
 
         $messages = [
+
             'required' => '*Kolom :attribute wajib diisi.',
             'file' => '*File :attribute wajib dipilih.',
             'max' => '*Kolom :attribute maksimal :max.',
@@ -67,7 +68,6 @@ class PesertaController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // ddd($rules);
         $userBaru = User::create($input)->getAttributes();
 
         if ($request->input('user')) {
