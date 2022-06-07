@@ -26,7 +26,7 @@
                                                 <th>Kegiatan</th>
                                                 <th>Peserta</th>
                                                 <th>Status Peserta</th>
-                                                <th>Timestamp</th>
+                                                <th>Tanggal Dan waktu</th>
                                             </tr>
                                         </thead>
 
@@ -57,6 +57,7 @@
                                                 @endforeach
                                         </tbody>
                                     </table>
+                                    <small> dicetak </small>
                                 </div>
                             </div>
                        </div>
