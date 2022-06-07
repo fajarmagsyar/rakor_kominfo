@@ -36,14 +36,11 @@ class PesertaController extends Controller
 
 
         $rules = [
-
-
             'nama'      =>  'required',
             'jabatan'   =>  'required',
-            'email'     =>  'email | required',
+            'email'     =>  'email | required | unique:users',
             'asal'      =>  'required',
-            'hp'        =>  'required | numeric | min:12 | max: 12',
-
+            'hp'        =>  'required | numeric | min:12 | unique:users'
         ];
 
         $input = [
@@ -61,7 +58,8 @@ class PesertaController extends Controller
             'file' => '*File :attribute wajib dipilih.',
             'max' => '*Kolom :attribute maksimal :max.',
             'mimes' => '*Format file :attribute tidak didukung.',
-            'email' => '*Email tidak valid'
+            'email' => '*Email tidak valid',
+            'unique' => '*Sudah terdaftar'
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -70,7 +68,12 @@ class PesertaController extends Controller
         }
 
         // ddd($rules);
-        User::create($input);
+        $userBaru = User::create($input)->getAttributes();
+
+        if ($request->input('user')) {
+            return redirect('/registrasi-result/' . $userBaru['user_id'])->with('success', 'Data berhasil ditambahkan!');
+        }
+
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
 
@@ -141,6 +144,13 @@ class PesertaController extends Controller
         return view('home.registrasi', [
             'pageTitle' => 'Registrasi',
             'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
+        ]);
+    }
+    public function registrasiResult($id)
+    {
+        return view('home.registrasi-result', [
+            'pageTitle' => 'Registrasi',
+            'pesertaRow' => User::find($id),
         ]);
     }
 }
