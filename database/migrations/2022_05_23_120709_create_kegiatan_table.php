@@ -18,7 +18,7 @@ class CreateKegiatanTable extends Migration
         Schema::create('kegiatan', function (Blueprint $table) {
             $table->uuid('kegiatan_id')->primary();
             $table->longText('nama_kegiatan')->nullable();
-            $table->date('tanggal')->nullable()->unique();
+            $table->date('tanggal')->nullable();
             $table->text('jam_masuk')->nullable();
             $table->text('jam_keluar')->nullable();
             $table->integer('kuota')->nullable();

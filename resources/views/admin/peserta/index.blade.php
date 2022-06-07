@@ -22,43 +22,28 @@
                             <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">Tambah</a>
                         </div>
                     </div>
-                </div>
-                <div class="p-5">
-                    <div class="table-responsive">
-                        <table class="table align-items-center ">
-                            <tbody>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nama</th>
-                                    <th>Jabatan</th>
-                                    <th>Email</th>
-                                    <th>HP</th>
-                                    <th>asal</th>
-                                    <th>Qr</th>
-                                    <th></th>
-                                </tr>
-                                @if (count($pesertaRows) > 0)
-                                @foreach ($pesertaRows as $key => $k)
-                                <tr>
-                                    <td>{{ $key = $key + 1 }}</td>
-                                    <td>{{ $k->nama }}</td>
-                                    <td>{{$k->jabatan}}</td>
-                                    <td>{{ $k->email }}</td>
-                                    <td>{{ $k->hp }}</td>
-                                    <td>{{ $k->asal }}</td>
-                                    <td> {!! QrCode::color(255, 0, 0)->generate(" $k->user_id "); !!}
-                                        <form class="form-horizontal"
-                                            action="{{ route('qrcode.download',['type' => 'jpg'])}}" method="post">
-                                            @csrf
-                                            <input type='hidden' value="jpg" name="qr_type" />
-                                            <input type='hidden' value="{{ 'jpg' }}" name="section" />
-                                            <button type="submit"
-                                                class="align-middle btn btn-outline-primary btn-sm ml-1">
-                                                <i class="fas fa-fw fa-download"></i>
-                                                JPG
-                                            </button>
-                                        </form>
-
+                    <div class="p-5">
+                        <div class="table-responsive">
+                            <table class="table align-items-center ">
+                                <tbody>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama</th>
+                                        <th>Jabatan</th>
+                                        <th>Email</th>
+                                        <th>HP</th>
+                                        <th>Asal</th>
+                                        <th></th>
+                                    </tr>
+                                    @if (count($pesertaRows) > 0)
+                                        @foreach ($pesertaRows as $key => $k)
+                                            <tr>
+                                                <td>{{ $key = $key + 1 }}</td>
+                                                <td>{{ $k->nama }}</td>
+                                                <td>{{ $k->jabatan }}</td>
+                                                <td>{{ $k->email }}</td>
+                                                <td>{{ $k->hp }}</td>
+                                                <td>{{ $k->asal }}</td>
                                                 </td>
                                                 <td>
                                                     <a href="/admin/cetak-peserta/pdf/{{ $k->user_id }}"
@@ -87,10 +72,9 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
-</div>
 @endsection

@@ -34,33 +34,42 @@ class PesertaController extends Controller
 
         $role = Roles::where('role_name', 'User')->first();
 
-        $dt =  $request->validate([
+
+        $rules = [
 
 
             'nama'      =>  'required',
             'jabatan'   =>  'required',
-            'email'     =>  'Email',
+            'email'     =>  'email | required',
             'asal'      =>  'required',
             'hp'        =>  'required | numeric |  min:12',
-            'role_id'   =>  $role->role_id,
-        ],
+
+        ];
+
+        $input = [
             'nama' => $request->input('nama'),
             'jabatan' => $request->input('jabatan'),
             'email' => $request->input('email'),
             'asal'  => $request->input('asal'),
             'hp' => $request->input('hp'),
             'role_id' => $role->role_id,
-        ]);
+        ];
 
-             echo $dt['nama'];       echo "<br>";
-             echo $dt['jabatan'];    echo "<br>";
-             echo $dt['email'];      echo "<br>";
-             echo $dt['email'];      echo "<br>";
-             echo $dt['asal'];       echo "<br>";
-             echo $dt['role_id'];
+        $messages = [
+            'required' => '*Kolom :attribute wajib diisi.',
+            'file' => '*File :attribute wajib dipilih.',
+            'max' => '*Kolom :attribute maksimal :max.',
+            'mimes' => '*Format file :attribute tidak didukung.',
+            'email' => '*Email tidak valid'
+        ];
 
-        // ddd($dt);
-        User::create($dt);
+        $validator = Validator::make($input, $rules, $messages);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // ddd($rules);
+        User::create($rules);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
 
