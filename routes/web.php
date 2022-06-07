@@ -10,6 +10,7 @@ use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\QRController;
 use App\Http\Controllers\ScanController;
 use Illuminate\Support\Facades\Route;
 
@@ -60,7 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/peserta-kegiatan/store', [AdminController::class, 'pesertaStore']);
     Route::post('/peserta-kegiatan/destroy/{id}/{id_keg}', [AdminController::class, 'pesertaDestroy']);
 
-    Route::get('qrCode', 'QRController@generateQrCode');
+    Route::get('qrCode', [QRController::class, 'generateQrCode']);
     Route::post('download-qr-code/{type}', 'QRController@downloadQRCode')->name('qrcode.download');
 });
 

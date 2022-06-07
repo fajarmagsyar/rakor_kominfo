@@ -4,88 +4,89 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    body {
-        padding: 40px 0;
-    }
+        @page {
+            size: 300px 500px;
+            margin: 0;
+        }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        grid-gap: 20px;
-        align-items: stretch;
-    }
+        body {}
 
-    .grid>article {
-        border: 1px solid #ccc;
-        box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-gap: 20px;
+            align-items: stretch;
+        }
 
-    .grid>article img {
-        max-width: 100%;
-    }
+        .grid>article {
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        }
 
-    .grid .text {
-        padding: 20px;
-    }
+        .grid>article img {
+            max-width: 100%;
+        }
+
+        .grid .text {
+            padding: 20px;
+        }
+
+        .container {
+            width: 300px;
+            height: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 5px 10px;
+        }
+
+        .qr-code {
+            margin-top: 90px;
+        }
+
+        .title {
+            color: rgb(70, 92, 172);
+            opacity: 1;
+            margin-top: 18px;
+            font-weight: bolder;
+        }
+
+        .subtitle {
+            color: rgb(0, 0, 0, 0.5);
+            opacity: 1;
+            margin-top: 0px;
+            font-size: 11px
+        }
+
+        .table {
+            color: black;
+            opacity: 0.8;
+        }
     </style>
 </head>
 
-<body>
-    <div class="container">
-        @foreach ($rowspeserta as $key => $k)
-        <main class="grid">
-            <article>
-                {!! QrCode::errorCorrection('L')->color(75, 93,
-                234)->style('round')->eye('circle')->generate('http://' .
-                $_SERVER['SERVER_NAME'] . '/scan/apeksi22/absen/' . $k->user_id) !!}
-                <div class="text">
-                    <h3>{{ $k->nama }}</h3>
-                    <p>{{ $k->email }}</p>
+<body style="font-family: Arial, Helvetica, sans-serif; color: white">
 
-                </div>
-            </article>
-        </main>
-        @endforeach
+    <div class="container">
+        <img src="data:image/png;base64,{{ $card }}" alt="" style="position: absolute; z-index: -99999">
+        <center>
+            <div class="qr-code">
+                <img src="data:image/png;base64, {!! $qr !!}" alt="" width="180px">
+            </div>
+            <div class="title">{{ strtoupper($p->nama) }}</div>
+            <div class="subtitle">{{ $p->jabatan }}</div>
+            <div class="table">
+                <br>
+                <img src="data:image/png;base64,{{ $lemail }}" width="15px">
+                <br>
+                {{ $p->email }}
+                <br><br>
+                <img src="data:image/png;base64,{{ $ltelp }}" width="15px">
+                <br>
+                {{ $p->hp }}
+            </div>
+        </center>
     </div>
 
-    <!-- <table style="width:100%;" border="1" class="table table-bordered">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>HP</th>
-                <th>Asal</th>
-                <th class="text-center">Qr</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php $i=1 @endphp
-
-            <tr>
-                <td>{{ $key = $key + 1 }}</td>
-                <td></td>
-                <td></td>
-                <td>{{ $k->hp }}</td>
-                <td>{{ $k->asal }}</td>
-                <td class="text-center">
-                    <form class="form-horizontal" action="{{ route('qrcode.download', ['type' => 'jpg']) }}"
-                        method="post">
-                        @csrf
-                        <input type='hidden' value="jpg" name="qr_type" />
-                        <input type='hidden' value="{{ 'jpg' }}" name="section" />
-                        {{-- <button type="submit"
-                                                            class="align-middle btn btn-outline-primary btn-sm ml-1">
-                                                            <i class="fas fa-fw fa-download"></i>
-                                                            JPG
-                                                        </button> --}}
-                    </form>
-
-                </td>
-            </tr>
-
-        </tbody>
-    </table> -->
 </body>
 
 </html>
