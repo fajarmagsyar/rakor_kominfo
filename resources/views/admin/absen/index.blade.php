@@ -33,10 +33,11 @@
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Kegiatan</th>
-                                                <th>Peserta</th>
-                                                <th>Status Peserta</th>
+                                                <th class="text-center">#</th>
+                                                <th class="text-center">Kegiatan</th>
+                                                <th class="text-center">Peserta</th>
+                                                <th class="text-center">Status Peserta</th>
+                                                <th class="text-center">Timestamp</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -62,6 +63,9 @@
 
                                                         <td class="align-middle">
                                                             {{ $r->status_peserta }}
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            {{ $r->created_at }}
                                                         </td>
                                                     </tr>
                                                 @endforeach

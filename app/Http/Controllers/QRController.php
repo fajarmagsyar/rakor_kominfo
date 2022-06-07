@@ -8,11 +8,11 @@ class QRController extends Controller
 {
     public function generateQrCode()
     {
-        QrCode::size(500)
-            ->format('png')
-            ->generate('codingdriver.com', public_path('unggah/qrcode.png'));
+        \QrCode::size(500)
+            ->format('svg')
+            ->generate('codingdriver.com', public_path('unggah/qrcode.svg'));
 
-        return view('qr-Code');
+        return view('admin.qrCode');
     }
     public function downloadQRCode(Request $request, $id)
     {

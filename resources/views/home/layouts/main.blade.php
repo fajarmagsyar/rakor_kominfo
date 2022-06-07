@@ -38,7 +38,7 @@
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
             <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-            <img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
+                <img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
                 <h1>APEKSI<span>.</span></h1>
             </a>
 
@@ -56,7 +56,7 @@
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
 
-            <a class="btn-getstarted scrollto" href="#">Sign In</a>
+            <a class="scrollto" href="#"></a>
 
         </div>
     </header><!-- End Header -->
@@ -76,8 +76,9 @@
                         <div class="footer-info">
                             <h3>APEKSI</h3>
                             <p>
-                            Jl. S. K. Lerik No.1, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim. 85228<br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
+                                Jl. S. K. Lerik No.1, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.
+                                85228<br><br>
+                                <strong>Phone:</strong> +62 82313212322<br>
                                 <strong>Email:</strong> info@example.com<br>
                             </p>
                         </div>
@@ -86,7 +87,10 @@
 
                     <div class="col-lg-6 col-md-6 footer-newsletter">
                         <h4>Maps</h4>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.327057338288!2d123.61736141444075!3d-10.154047892745647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683a80e62f69b%3A0x2f6997c3984f527!2sKantor%20Walikota%20Kupang!5e0!3m2!1sid!2sid!4v1654256740830!5m2!1sid!2sid" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.327057338288!2d123.61736141444075!3d-10.154047892745647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683a80e62f69b%3A0x2f6997c3984f527!2sKantor%20Walikota%20Kupang!5e0!3m2!1sid!2sid!4v1654256740830!5m2!1sid!2sid"
+                            width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     </div>
 
@@ -100,7 +104,7 @@
 
                 <div class="d-flex flex-column align-items-center align-items-lg-start">
                     <div class="copyright">
-                        &copy;  <strong><span>APEKSI</span></strong> Kota Kupang 2022
+                        &copy; <strong><span>APEKSI</span></strong> Kota Kupang 2022
                     </div>
                     <div class="credits">
                         <!-- All the links in the footer should remain intact. -->
