@@ -29,6 +29,6 @@ class Absen extends Model
 
     static public function getAbsenByKegiatan($kegiatan_id)
     {
-        return Absen::join('users', 'users.user_id', '=', 'absen.user_id')->where('absen.kegiatan_id', $kegiatan_id)->get(['users.nama', 'users.jabatan', 'users.asal']);
+        return Absen::join('users', 'users.user_id', '=', 'absen.user_id')->where('absen.kegiatan_id', $kegiatan_id)->get(['users.nama', 'users.jabatan', 'users.asal', 'absen.status_peserta']);
     }
 }

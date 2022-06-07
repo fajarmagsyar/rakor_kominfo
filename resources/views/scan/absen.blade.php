@@ -98,12 +98,14 @@ use App\Models\Absen;
                                                         <th>#</th>
                                                         <th>Nama</th>
                                                         <th>Asal</th>
+                                                        <th>Status</th>
                                                     </tr>
                                                     @foreach (Absen::getAbsenByKegiatan($keg['kegiatan_id']) as $key => $r)
                                                         <tr>
                                                             <td>{{ $key = $key + 1 }}</td>
                                                             <td>{{ $r->nama }}</td>
                                                             <td>{{ $r->asal }}</td>
+                                                            <td>{{ $r->status_peserta }}</td>
                                                         </tr>
                                                     @endforeach
                                                 </table>
@@ -172,12 +174,14 @@ use App\Models\Absen;
                                                     <th>#</th>
                                                     <th>Nama</th>
                                                     <th>Asal</th>
+                                                    <th>Status</th>
                                                 </tr>
                                                 @foreach (Absen::getAbsenByKegiatan($kegiatan[0]['kegiatan_id']) as $key => $r)
                                                     <tr>
                                                         <td>{{ $key = $key + 1 }}</td>
                                                         <td>{{ $r->nama }}</td>
                                                         <td>{{ $r->asal }}</td>
+                                                        <td>{{ $r->status_peserta }}</td>
                                                     </tr>
                                                 @endforeach
                                             </table>

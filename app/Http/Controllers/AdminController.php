@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Absen;
+use App\Models\Fasilitas;
 use App\Models\Kegiatan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +15,9 @@ class AdminController extends Controller
         $this->authorize('Admin');
         return view('admin.index', [
             'pageTitle' => 'Dashboard',
+            'totalKegiatan' => Kegiatan::count(),
+            'totalPeserta' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->count(),
+            'totalFasilitas' => Fasilitas::count(),
         ]);
     }
     public function pesertaKegiatan($id)
