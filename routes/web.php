@@ -46,6 +46,7 @@ Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
 Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'restoranSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/download-qr', [PesertaController::class, 'cetakPDFPesertaByNoHP']);
+Route::get('/registrasi', [PesertaController::class, 'registrasi']);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);

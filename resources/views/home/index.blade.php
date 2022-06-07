@@ -7,7 +7,7 @@
             <p>RAPAT KERJA KOMISARIAT WILAYAH IV ASOSIASI PEMERINTAH KOTA SELURUH INDONESIA (APEKSI) DI KOTA KUPANG.</p>
 
             <div class="d-flex">
-                <a href="#about" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
+                <a href="/registrasi" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
             </div>
             <div class="row mt-4">
                 <center style="opacity: 0.6" class="mb-3">atau unduh ID Card anda?</center>

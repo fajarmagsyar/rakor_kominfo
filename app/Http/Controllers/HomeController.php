@@ -133,4 +133,5 @@ class HomeController extends Controller
             'pageTitle' => 'Contact',
         ]);
     }
+
 }
