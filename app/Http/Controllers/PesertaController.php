@@ -42,7 +42,7 @@ class PesertaController extends Controller
             'jabatan'   =>  'required',
             'email'     =>  'email | required',
             'asal'      =>  'required',
-            'hp'        =>  'required | numeric |  min:12',
+            'hp'        =>  'required | numeric | min:12 | max: 12',
 
         ];
 
@@ -69,7 +69,7 @@ class PesertaController extends Controller
         }
 
         // ddd($rules);
-        User::create($rules);
+        User::create($input);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
 
@@ -112,6 +112,22 @@ class PesertaController extends Controller
     {
         $qr = base64_encode(\QrCode::errorCorrection('L')->color(0, 0, 0)->style('round')->eye('circle')->generate(url()->to('/') . '/scan/apeksi22/absen/' . $id));
         $rowspeserta = User::where('user_id', $id)->first();
+        $gambar = base64_encode(file_get_contents('admin/id_card.png'));
+        $lemail = base64_encode(file_get_contents('admin/mail.png'));
+        $ltelp = base64_encode(file_get_contents('admin/telp.png'));
+        $pdf = PDF::loadview('admin.template.pdf.peserta', ['p' => $rowspeserta, 'qr' => $qr, 'card' => $gambar, 'lemail' => $lemail, 'ltelp' => $ltelp]);
+        return $pdf->stream('peserta-' . '-' . time() .     '.pdf', array('Attachment' => 0));
+    }
+    public function cetakPDFPesertaByNoHP(Request $req)
+    {
+        $nohp = $req->input('no_hp');
+        $rowspeserta = User::where('hp', $nohp)->first();
+
+        if ($rowspeserta == null) {
+            return redirect('/')->with('failed', 'No HP tidak ditemukan silahkan daftar terlebih dahulu');
+        }
+
+        $qr = base64_encode(\QrCode::errorCorrection('L')->color(0, 0, 0)->style('round')->eye('circle')->generate(url()->to('/') . '/scan/apeksi22/absen/' . $rowspeserta->user_id));
         $gambar = base64_encode(file_get_contents('admin/id_card.png'));
         $lemail = base64_encode(file_get_contents('admin/mail.png'));
         $ltelp = base64_encode(file_get_contents('admin/telp.png'));

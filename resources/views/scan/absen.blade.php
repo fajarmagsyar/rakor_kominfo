@@ -1,3 +1,7 @@
+@php
+use App\Models\Absen;
+
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,54 +54,134 @@
         </div>
     </div>
     <div class="container bg-white px-4 py-5 content" style="border-radius: 40px">
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow" style="border-radius: 20px; border: none;">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3"><b><i class="bi bi-activity"></i>
-                                {{ $kegiatan->nama_kegiatan }}</b> <span class="badge bg-success">Berlangsung</span>
-                        </h5>
-                        <h6 class="card-subtitle mb-3 text-muted"><i class="bi bi-clock mr-3"></i>
-                            {{ $kegiatan->tanggal }},
-                            {{ $kegiatan->jam_masuk }} - {{ $kegiatan->jam_keluar }} WITA</h6>
-                        <h6 class="card-subtitle mb-3 text-muted"><i class="bi bi-map mr-3"></i>
-                            {{ $kegiatan->lokasi }}</h6>
-                        <div class="card" style="border-radius: 15px">
-                            <div class="card-body py-0">
-                                <p class="card-text">
-                                <div class="text-muted">Deskripsi: </div>
-                                <?php
-                                echo $kegiatan->deskripsi;
-                                ?>
-                                </p>
+        @if (count($kegiatan) > 1)
+            @foreach ($kegiatan as $keg)
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <div class="card shadow" style="border-radius: 20px; border: none;">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3"><b><i class="bi bi-activity"></i>
+                                        {{ $keg['nama_kegiatan'] }}</b> <span
+                                        class="badge bg-success">Berlangsung</span>
+                                </h5>
+                                <h6 class="card-subtitle mb-3 text-muted"><i class="bi bi-clock mr-3"></i>
+                                    {{ $keg['tanggal'] }},
+                                    {{ $keg['jam_masuk'] }} - {{ $keg['jam_keluar'] }} WITA</h6>
+                                <h6 class="card-subtitle mb-3 text-muted"><i class="bi bi-map mr-3"></i>
+                                    {{ $keg['lokasi'] }}</h6>
+                                <div class="card" style="border-radius: 15px">
+                                    <div class="card-body py-0">
+                                        <p class="card-text">
+                                        <div class="text-muted">Deskripsi: </div>
+                                        <?php
+                                        echo $keg['deskripsi'];
+                                        ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="accordion accordion-flush mt-3" id="accordionExample">
+                                    <div class="accordion-item" style="border-radius: 15px">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#accord_{{ $keg['kegiatan_id'] }}"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                <i class="bi bi-person-fill"></i> &nbsp; {{ $keg['kuota'] }}
+                                                Kuota
+                                            </button>
+                                        </h2>
+                                        <div id="accord_{{ $keg['kegiatan_id'] }}" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <table class="table" style="border-radius: 15px">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Nama</th>
+                                                        <th>Asal</th>
+                                                    </tr>
+                                                    @foreach (Absen::getAbsenByKegiatan($keg['kegiatan_id']) as $key => $r)
+                                                        <tr>
+                                                            <td>{{ $key = $key + 1 }}</td>
+                                                            <td>{{ $r->nama }}</td>
+                                                            <td>{{ $r->asal }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="accordion accordion-flush mt-3" id="accordionExample">
-                            <div class="accordion-item" style="border-radius: 15px">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        <i class="bi bi-person-fill"></i> &nbsp; {{ $kegiatan->kuota }} Kuota
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <table class="table" style="border-radius: 15px">
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nama</th>
-                                                <th>Asal</th>
-                                            </tr>
-                                            @foreach ($peserta as $key => $r)
+                    </div>
+                </div>
+            @endforeach
+        @elseif (count($kegiatan) == 0)
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="card shadow" style="border-radius: 20px; border: none;">
+                        <div class="card-body">
+                            <div class="alert alert-danger mt-3" style="border-radius: 10px">
+                                <center>
+                                    Tidak ada kegiatan yang sedang berlangsung!
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @else
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow" style="border-radius: 20px; border: none;">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3"><b><i class="bi bi-activity"></i>
+                                    {{ $kegiatan[0]['nama_kegiatan'] }}</b> <span
+                                    class="badge bg-success">Berlangsung</span>
+                            </h5>
+                            <h6 class="card-subtitle mb-3 text-muted"><i class="bi bi-clock mr-3"></i>
+                                {{ $kegiatan[0]['tanggal'] }},
+                                {{ $kegiatan[0]['jam_masuk'] }} - {{ $kegiatan[0]['jam_keluar'] }} WITA</h6>
+                            <h6 class="card-subtitle mb-3 text-muted"><i class="bi bi-map mr-3"></i>
+                                {{ $kegiatan[0]['lokasi'] }}</h6>
+                            <div class="card" style="border-radius: 15px">
+                                <div class="card-body py-0">
+                                    <p class="card-text">
+                                    <div class="text-muted">Deskripsi: </div>
+                                    <?php
+                                    echo $kegiatan[0]['deskripsi'];
+                                    ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="accordion accordion-flush mt-3" id="accordionExample">
+                                <div class="accordion-item" style="border-radius: 15px">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            <i class="bi bi-person-fill"></i> &nbsp; {{ $kegiatan[0]['kuota'] }}
+                                            Kuota
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <table class="table" style="border-radius: 15px">
                                                 <tr>
-                                                    <td>{{ $key = $key + 1 }}</td>
-                                                    <td>{{ $r->nama }}</td>
-                                                    <td>{{ $r->asal }}</td>
+                                                    <th>#</th>
+                                                    <th>Nama</th>
+                                                    <th>Asal</th>
                                                 </tr>
-                                            @endforeach
-                                        </table>
+                                                @foreach (Absen::getAbsenByKegiatan($kegiatan[0]['kegiatan_id']) as $key => $r)
+                                                    <tr>
+                                                        <td>{{ $key = $key + 1 }}</td>
+                                                        <td>{{ $r->nama }}</td>
+                                                        <td>{{ $r->asal }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +189,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
         <div class="row mt-4">
             <div class="col-12">
                 <div class="card shadow" style="border-radius: 20px; border: none;">
@@ -116,7 +200,8 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div><i class="bi bi-exclamation-circle-fill"></i></div>
-                                        Peserta tidak terdaftar dalam list, peserta
+                                        Peserta tidak terdaftar dalam {{ count($kegiatan) }} list kegiatan yang
+                                        tertera, peserta
                                         akan absen sebagai <b>Peserta Tambahan</b>.
                                     </div>
                                 </div>
@@ -160,7 +245,21 @@
             <div class="col-12">
                 <form action="/scan/apeksi22/absen/store" method="post">
                     @csrf
-                    <input type="hidden" value="{{ $kegiatan->kegiatan_id }}" name="kegiatan_id">
+                    @if (count($kegiatan) > 1)
+                        <label for="text-muted">
+                            <span class="text-danger">*</span> Pilih untuk diabsen:
+                        </label>
+                        <select name="kegiatan_id" class="form-select mb-5">
+                            @foreach ($kegiatan as $kegSelect)
+                                <option value="{{ $kegSelect->kegiatan_id }}">
+                                    {{ $kegSelect->nama_kegiatan }}
+                                </option>
+                            @endforeach
+                        </select>
+                    @elseif (count($kegiatan) == 0)
+                    @else
+                        <input type="hidden" value="{{ $kegiatan[0]['kegiatan_id'] }}" name="kegiatan_id">
+                    @endif
                     <input type="hidden" value="{{ $pesertaScanned->user_id }}" name="user_id">
                     <button type="submit" class="btn btn-success w-100 btn-lg"
                         onclick="return confirm('Apakah anda yakin peserta sudah benar?')"
