@@ -36,8 +36,6 @@ class PesertaController extends Controller
 
 
         $rules = [
-
-
             'nama'      =>  'required',
             'jabatan'   =>  'required',
             'email'     =>  'email | required',
@@ -45,7 +43,6 @@ class PesertaController extends Controller
             'hp'        =>  'required |numeric',
 
         ];
-
         $input = [
             'nama' => $request->input('nama'),
             'jabatan' => $request->input('jabatan'),
@@ -54,7 +51,6 @@ class PesertaController extends Controller
             'hp' => $request->input('hp'),
             'role_id' => $role->role_id,
         ];
-
         $messages = [
 
             'required' => '*Kolom :attribute wajib diisi.',
@@ -63,7 +59,6 @@ class PesertaController extends Controller
             'mimes' => '*Format file :attribute tidak didukung.',
             'email' => '*Email tidak valid'
         ];
-
         $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
