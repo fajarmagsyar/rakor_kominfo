@@ -69,7 +69,7 @@ class PesertaController extends Controller
         }
 
         // ddd($rules);
-        User::create($rules);
+        User::create($input);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
 

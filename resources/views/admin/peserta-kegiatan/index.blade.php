@@ -18,7 +18,7 @@
                         <div class="d-flex justify-content-between">
                             <h4 class="mb-2 ml-2">Peserta Kegiatan {{ $kegiatan->nama_kegiatan }}</h4>
                             <a href="/admin/peserta-kegiatan/create/{{ $kegiatan->kegiatan_id }}"
-                                class="btn btn-outline-primary mx-4 float-end">Tambah
+                                class="btn btn-outline-primary mx-4 float-end">+Tambah
                                 Peserta</a>
                         </div>
                         <p class="text-sm text-center"><b>Terdaftar <span
@@ -31,7 +31,7 @@
                             <table class="table align-items-center ">
                                 <tbody>
                                     <tr>
-                                        <th>#</th>
+                                        <th>No</th>
                                         <th>Nama</th>
                                         <th>Asal</th>
                                         <th></th>

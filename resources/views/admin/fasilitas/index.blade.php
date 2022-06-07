@@ -39,7 +39,7 @@
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>No</th>
                                                 <th>Kategori</th>
                                                 <th>Nama</th>
                                                 <th>Deskripsi</th>
@@ -98,7 +98,7 @@
                                                                 method="post" class="d-inline">
                                                                 <a class="btn btn-sm btn-primary mb-2"
                                                                     href=" /admin/fasilitas/{{ $r->fasilitas_id }}/edit"><i
-                                                                        class="fa fa-pencil-square" aria-hidden="true"></i>
+                                                                        class="fa fa-pencil" aria-hidden="true"></i>
                                                                 </a>
                                                                 @csrf
                                                                 @method('delete')
