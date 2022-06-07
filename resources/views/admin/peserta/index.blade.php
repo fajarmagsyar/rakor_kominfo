@@ -16,7 +16,7 @@
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
                             <h4 class="mb-2 ml-2">Data Peserta</h4>
-                            <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">Tambah</a>
+                            <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">+Tambah</a>
                         </div>
                     </div>
                     <div class="p-5">
@@ -45,10 +45,10 @@
                                                         @csrf
                                                         <a href="/admin/peserta/{{ $k->user_id }}/edit"
                                                             class="btn btn-primary btn-sm"><i
-                                                                class="ni ni-ruler-pencil"></i></a>
+                                                                class="fa fa-pencil"></i></a>
                                                         <button onclick="return confirm('Yakin?')" type="submit"
                                                             class="btn btn-danger btn-sm"><i
-                                                                class="ni ni-fat-remove"></i></button>
+                                                                class="fa fa-trash-o"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>

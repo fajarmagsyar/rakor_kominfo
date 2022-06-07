@@ -48,7 +48,7 @@
                                                         method="post">
                                                         @csrf
                                                         <button onclick="return confirm('Yakin?')" type="submit"
-                                                            class="btn btn-danger"><i class="ni ni-fat-remove"></i></button>
+                                                            class="btn btn-danger"><i class="fa fa-pencil"git ></i></button>
                                                     </form>
                                                 </td>
                                             </tr>
