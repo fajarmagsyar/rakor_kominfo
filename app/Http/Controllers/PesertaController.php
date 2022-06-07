@@ -38,9 +38,9 @@ class PesertaController extends Controller
         $rules = [
             'nama'      =>  'required',
             'jabatan'   =>  'required',
-            'email'     =>  'email | required',
+            'email'     =>  'email| unique:users| required',
             'asal'      =>  'required',
-            'hp'        =>  'required |numeric',
+            'hp'        =>  'required |numeric|max:12|min:15',
 
         ];
         $input = [
@@ -57,9 +57,10 @@ class PesertaController extends Controller
 
             'required' => '*Kolom :attribute wajib diisi.',
             'file' => '*File :attribute wajib dipilih.',
-            'max' => '*Kolom :attribute maksimal :max.',
+            'max' => '* Nomor :attribute maksimal :max digit.',
             'mimes' => '*Format file :attribute tidak didukung.',
-            'email' => '*Email tidak valid'
+            'email' => '*Email tidak valid',
+            'unique' => '* Maaf Email sudah di gunakan.'
         ];
         $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {

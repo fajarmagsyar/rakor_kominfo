@@ -52,6 +52,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/profil', ProfilController::class);
     Route::resource('/artikel', ArtikelController::class);
     Route::resource('/absen', AbsenController::class);
+
     Route::resource('/kegiatan', KegiatanController::class);
     Route::resource('/fasilitas', FasilitasController::class);
     Route::resource('/peserta', PesertaController::class);
@@ -70,3 +71,5 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);
 Route::post('/scan/apeksi22/absen/store', [ScanController::class, 'absenStore']);
 Route::get('/admin/cetak-peserta/pdf/{id}', [PesertaController::class, 'cetakPDFPeserta']);
+Route::get('/admin/cetak-absen/pdf', [AbsenController::class,'cetak_pdf']);
+
