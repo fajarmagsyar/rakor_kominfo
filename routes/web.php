@@ -45,7 +45,9 @@ Route::get('/artikel', [HomeController::class, 'artikel']);
 Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
 Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'restoranSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::post('/download-qr', [PesertaController::class, 'cetakPDFPesertaByNoHP']);
 Route::get('/registrasi', [PesertaController::class, 'registrasi']);
+Route::get('/registrasi-result/{id}', [PesertaController::class, 'registrasiResult']);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
@@ -64,7 +66,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('qrCode', [QRController::class, 'generateQrCode']);
     Route::post('download-qr-code/{type}', 'QRController@downloadQRCode')->name('qrcode.download');
-
 });
 
 Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);

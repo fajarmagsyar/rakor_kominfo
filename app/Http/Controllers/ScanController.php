@@ -11,8 +11,8 @@ class ScanController extends Controller
 {
     public function absenMobile($id)
     {
-        $kegiatan = Kegiatan::where('jam_masuk', '<=', date('H:i'))->where('jam_keluar', '>=', date('H:i'))->where('tanggal', '=', date('Y-m-d'))->first();
-        $peserta = Absen::join('users', 'users.user_id', '=', 'absen.user_id')->where('absen.kegiatan_id', $kegiatan->kegiatan_id)->get(['users.nama', 'users.jabatan', 'users.asal']);
+        $kegiatan = Kegiatan::where('jam_masuk', '<=', date('H:i'))->where('jam_keluar', '>=', date('H:i'))->where('tanggal', '=', date('Y-m-d'))->get();
+        // $peserta = Absen::join('users', 'users.user_id', '=', 'absen.user_id')->where('absen.kegiatan_id', $kegiatan->kegiatan_id)->get(['users.nama', 'users.jabatan', 'users.asal']);
         // dd($peserta);
         $statusPeserta = "Peserta";
         $pesertaScanned = User::find($id);
@@ -23,7 +23,7 @@ class ScanController extends Controller
         return view('scan.absen', [
             'pageTitle' => 'Absen Peserta',
             'kegiatan' => $kegiatan,
-            'peserta' => $peserta,
+            // 'peserta' => $peserta,
             'pesertaScanned' => $pesertaScanned,
             'statusPeserta' => $statusPeserta,
         ]);
@@ -36,7 +36,7 @@ class ScanController extends Controller
 
         if ($absen) {
             Absen::find($absenData->absen_id)->update(['absensi' => 1]);
-            
+
             if ($absenData->absensi == 1) {
                 return redirect('/scan/apeksi22/absen/' . $req->input('user_id'))->with('sudah', 'Peserta berhasil diabsen');
             }
