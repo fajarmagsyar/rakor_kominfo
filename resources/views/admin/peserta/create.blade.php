@@ -78,7 +78,7 @@
                                     <label for="userName" class="form-label">No.handphone
                                         <span class="text-danger">*</span></label>
                                     <input type="number" name="hp" parsley-trigger="change"
-                                        placeholder="Masukkan no.handphone" minlength="12" maxlength="12"
+                                        placeholder="Masukkan no.handphone" maxlength="12"
                                         class="form-control @error('hp') is-invalid @enderror" id="hp"
                                         value="{{ old('hp') }}" />
                                     @error('hp')
