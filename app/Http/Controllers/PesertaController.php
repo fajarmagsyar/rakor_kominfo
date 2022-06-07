@@ -42,7 +42,7 @@ class PesertaController extends Controller
             'jabatan'   =>  'required',
             'email'     =>  'email | required',
             'asal'      =>  'required',
-            'hp'        =>  'required | numeric |  min:12',
+            'hp'        =>  'required |numeric',
 
         ];
 
@@ -56,6 +56,7 @@ class PesertaController extends Controller
         ];
 
         $messages = [
+
             'required' => '*Kolom :attribute wajib diisi.',
             'file' => '*File :attribute wajib dipilih.',
             'max' => '*Kolom :attribute maksimal :max.',
@@ -68,8 +69,8 @@ class PesertaController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // ddd($rules);
-        User::create($rules);
+    //    ddd($input);
+        User::create($input);
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
 
