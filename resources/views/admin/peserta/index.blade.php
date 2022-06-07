@@ -3,8 +3,11 @@
     @if (session()->has('success'))
         <script>
             Swal.fire(
-                'Berhasil',
-                {{ session('success') }},
+                'Berhasil', {
+                    {
+                        session('success')
+                    }
+                },
                 'success'
             )
         </script>
@@ -26,9 +29,10 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama</th>
+                                        <th>Jabatan</th>
                                         <th>Email</th>
                                         <th>HP</th>
-                                        <th>asal</th>
+                                        <th>Asal</th>
                                         <th></th>
                                     </tr>
                                     @if (count($pesertaRows) > 0)
@@ -36,19 +40,25 @@
                                             <tr>
                                                 <td>{{ $key = $key + 1 }}</td>
                                                 <td>{{ $k->nama }}</td>
+                                                <td>{{ $k->jabatan }}</td>
                                                 <td>{{ $k->email }}</td>
                                                 <td>{{ $k->hp }}</td>
                                                 <td>{{ $k->asal }}</td>
+                                                </td>
                                                 <td>
+                                                    <a href="/admin/cetak-peserta/pdf/{{ $k->user_id }}"
+                                                        class="btn btn-sm btn-outline-info w-100">
+                                                        ID Card &nbsp;&nbsp; <i class="fa fa-download"
+                                                            aria-hidden="true"></i></a>
                                                     <form action="/admin/peserta/{{ $k->user_id }}" method="post">
                                                         @method('DELETE')
                                                         @csrf
                                                         <a href="/admin/peserta/{{ $k->user_id }}/edit"
-                                                            class="btn btn-primary btn-sm"><i
-                                                                class="fa fa-pencil"></i></a>
+                                                            class="btn btn-primary btn-sm w-50"><i
+                                                                class="fa fa-pencil-square" aria-hidden="true"></i></a>
                                                         <button onclick="return confirm('Yakin?')" type="submit"
-                                                            class="btn btn-danger btn-sm"><i
-                                                                class="fa fa-trash-o"></i></button>
+                                                            class="btn btn-danger btn-sm w-50"><i class="fa fa-trash-o"
+                                                                aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -63,6 +73,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -53,10 +53,10 @@
             </a>
         </div>
         <hr class="horizontal dark mt-0">
-        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <div class="w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/admin/dashboard">
+                    <a class="nav-link {{ $pageTitle == 'Dashboard' ? 'active' : '' }}" href="/admin/dashboard">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/profil">
+                    <a class="nav-link {{ $pageTitle == 'Profil' ? 'active' : '' }}" href="/admin/profil">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/kegiatan">
+                    <a class="nav-link {{ $pageTitle == 'Kegiatan' ? 'active' : '' }}" href="/admin/kegiatan">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-app text-info text-sm opacity-10"></i>
@@ -84,7 +84,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/peserta">
+                    <a class="nav-link {{ $pageTitle == 'Peserta' ? 'active' : '' }}" href="/admin/peserta">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -93,7 +93,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/absen">
+                    <a class="nav-link {{ $pageTitle == 'Absen' ? 'active' : '' }}" href="/admin/absen">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/artikel">
+                    <a class="nav-link {{ $pageTitle == 'Artikel' ? 'active' : '' }}" href="/admin/artikel">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-collection text-info text-sm opacity-10"></i>
@@ -111,7 +111,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/fasilitas">
+                    <a class="nav-link {{ $pageTitle == 'Fasilitas' ? 'active' : '' }}" href="/admin/fasilitas">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-building text-info text-sm opacity-10"></i>
@@ -120,12 +120,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/admin/adm">
+                    <a class="nav-link {{ $pageTitle == 'Admin' ? 'active' : '' }}" href="/admin/adm">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Admin</span>
+                    </a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="/logout">
+                        <span class="nav-link-text ms-1 btn btn-danger" style="width: 100%"><i
+                                class="ni ni-user-run"></i></span>
                     </a>
                 </li>
             </ul>

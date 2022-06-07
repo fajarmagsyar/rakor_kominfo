@@ -18,8 +18,7 @@ class KegiatanController extends Controller
         //
         //
         return view('admin.kegiatan.index', [
-            'page' => 'Data Kegiatan | APEKSI',
-            'pageTitle' => 'Data Kegiatan',
+            'pageTitle' => 'Kegiatan',
             'kegiatanRows' => Kegiatan::orderBy('created_at', 'DESC')->paginate(10),
         ]);
     }
@@ -33,7 +32,6 @@ class KegiatanController extends Controller
     {
         //
         return view('admin.kegiatan.create', [
-            'page' => 'Kegiatan | APEKSI',
             'pageTitle' => 'Tambah Kegiatan',
 
         ]);

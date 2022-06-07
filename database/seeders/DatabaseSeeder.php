@@ -44,11 +44,11 @@ class DatabaseSeeder extends Seeder
 
         $user2 = User::create([
             'nama' => 'user1',
-            'email' => 'example@mail.com',
+            'email' => 'user@mail.com',
             'asal' => 'kota ambon',
             'hp' => '085277123234',
             'password' => Hash::make('Admin1234'),
-            'role_id' => $role1['role_id'],
+            'role_id' => $role2['role_id'],
         ])->getAttributes();
 
         $kegiatan1 = Kegiatan::create([
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
             Eveniet odit quisquam sit reiciendis. Adipisci, vel at eum numquam id quidem nam obcaecati reprehenderit deleniti veritatis magni consequatur est provident dolor, porro ducimus nulla iure minus ipsa eius omnis.',
             'struktur' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
         ])->getAttributes();
-         
+
         $fasilitas1 = Fasilitas::create([
             'kategori' => 'Hotel',
             'nama_fasilitas' => 'Hotel Citra',
@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'hotel.jpg',
             'lokasi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex consectetur libero laudantium nostrum ratione, facilis laboriosam vero accusantium officiis ea sequi labore eligendi aut veniam placeat saepe corrupti aliquid tempore.',
             'long_lat' => '-2.2393939393 | 1.939393939',
-          
+
         ])->getAttributes();
     }
 }

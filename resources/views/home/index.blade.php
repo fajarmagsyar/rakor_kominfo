@@ -5,11 +5,10 @@
             data-aos="zoom-out">
             <h2>Selamat Datang di <span>APEKSI</span></h2>
             <p>RAPAT KERJA KOMISARIAT WILAYAH IV ASOSIASI PEMERINTAH KOTA SELURUH INDONESIA (APEKSI) DI KOTA KUPANG.</p>
+
             <div class="d-flex">
-                <a href="#about" class="btn-get-started scrollto">Login</a>
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                    class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
-                        Video</span></a>
+                <a href="#about" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
+
             </div>
         </div>
     </section>
@@ -65,14 +64,14 @@
 
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="/assets/img/logo-apeksi.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-g20.png" class="img-fluid"
-                                alt=""></div>
+                        <div class="swiper-slide"><img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="/assets/img/logo-g20.png" class="img-fluid" alt=""></div>
                         <div class="swiper-slide"><img src="/assets/img/logo-kota-kupang.png" class="img-fluid"
-                                alt=""></div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-lanjudkan.png" class="img-fluid"
-                                alt=""></div>
+                                alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="/assets/img/logo-lanjudkan.png" class="img-fluid" alt="">
+                        </div>
                         <div class="swiper-slide"><img src="/assets/img/logo-diskominfo.png" class="img-fluid"
                                 alt=""></div>
                     </div>
@@ -87,7 +86,7 @@
 
                 <div class="section-header">
                     <h2>Our Services</h2>
-                    
+
                 </div>
 
                 <div class="row gy-5">
@@ -104,7 +103,8 @@
                                 <a href="/kegiatan" class="stretched-link">
                                     <h3>Kegiatan</h3>
                                 </a>
-                                <p>List kegiatan RAKER KOMWIL IV Asosiasi Pemerintah Kota Seluruh Indonesia (APEKSI) Tahun 2022.</p>
+                                <p>List kegiatan RAKER KOMWIL IV Asosiasi Pemerintah Kota Seluruh Indonesia (APEKSI) Tahun
+                                    2022.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
@@ -121,7 +121,8 @@
                                 <a href="/wisata" class="stretched-link">
                                     <h3>Wisata</h3>
                                 </a>
-                                <p>Wisatawan yang berkunjung ke kota Kupang terkesan dengan pesona wisata alam dan wisata kuliner.</p>
+                                <p>Wisatawan yang berkunjung ke kota Kupang terkesan dengan pesona wisata alam dan wisata
+                                    kuliner.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
@@ -138,12 +139,13 @@
                                 <a href="/hotel" class="stretched-link">
                                     <h3>Hotel</h3>
                                 </a>
-                                <p>Kota Kupang memiliki 65 hotel yang terdiri atas hotel kelas melati sampai hotel berbintang 4.</p>
+                                <p>Kota Kupang memiliki 65 hotel yang terdiri atas hotel kelas melati sampai hotel
+                                    berbintang 4.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
 
-                    
+
 
                     <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="500">
                         <div class="service-item">
@@ -158,14 +160,17 @@
                                     <h3>Restoran</h3>
                                 </a>
                                 <p>Penyajian makanan bersih dan segar dengan harga yang relatif murah.</p>
+
                             </div>
                         </div>
+
                     </div><!-- End Service Item -->
 
                 </div>
 
             </div>
         </section><!-- End Services Section -->
+
 
     </main><!-- End #main -->
 @endsection

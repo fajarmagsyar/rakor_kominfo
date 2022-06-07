@@ -50,7 +50,7 @@ class ArtikelController extends Controller
         $input = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
-            
+             
         ];
 
         $messages = [
