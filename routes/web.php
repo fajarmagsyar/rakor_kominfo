@@ -72,4 +72,8 @@ Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobil
 Route::post('/scan/apeksi22/absen/store', [ScanController::class, 'absenStore']);
 Route::get('/admin/cetak-peserta/pdf/{id}', [PesertaController::class, 'cetakPDFPeserta']);
 Route::get('/admin/cetak-absen/pdf', [AbsenController::class,'cetak_pdf']);
+Route::get('/admin/cetak-absenp/pdf{{ $nkegiatan }}', [AbsenController::class,'cetak_pdfsort']);
+
+
+
 
