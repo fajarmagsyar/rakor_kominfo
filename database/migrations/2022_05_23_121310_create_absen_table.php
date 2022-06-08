@@ -20,6 +20,7 @@ class CreateAbsenTable extends Migration
             $table->uuid('kegiatan_id')->nullable();
             $table->uuid('user_id')->nullable();
             $table->text('status_peserta')->nullable();
+            $table->text('absensi')->nullable();
             $table->timestamps();
         });
         DB::statement('ALTER TABLE absen ALTER COLUMN absen_id SET DEFAULT uuid_generate_v4();');

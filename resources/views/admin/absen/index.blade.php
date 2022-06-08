@@ -36,7 +36,7 @@
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">#</th>
+                                                <th class="text-center">No</th>
                                                 <th class="text-center">Kegiatan</th>
                                                 <th class="text-center">Peserta</th>
                                                 <th class="text-center">Status Peserta</th>

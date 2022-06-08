@@ -1,5 +1,6 @@
 @extends('home.layouts.main')
 @section('isi')
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
     <!-- ======= About Section ======= -->
@@ -15,18 +16,26 @@
                 calendar.render();
             });
         </script>
+      
         <div class="my-5 container text-center">
             <h1 data-aos-delay="200">Kegiatan</h1>
+           
         </div>
         <div class="container mt-5" data-aos="fade-up">
 
-
+          
             <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-4">
                     <ol class="list-group list-group-numbered">
+                        
                         @foreach ($kegiatan as $r)
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <!-- mulai modal  -->
+                  
+                       
+                  
+                      <br>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold">{{ $r->nama_kegiatan }}</div>
                                     <div class="text-muted">
@@ -37,9 +46,13 @@
                                         {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
                                     </div>
                                 </div>
+                                
                                 <span
                                     class="badge bg-primary rounded-pill">{{ date('D', strtotime($r->tanggal)) . ', ' . $r->tanggal }}</span>
-                            </li>
+                                  
+                                </li>
+                             
+                                <a href="/kegiatan-single/{{ $r->kegiatan_id }}" class="btn btn-sm btn-info">Baca Selengkapnya..</a>
                         @endforeach
                     </ol>
                 </div>
