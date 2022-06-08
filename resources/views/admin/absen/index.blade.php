@@ -25,19 +25,19 @@
 
                     <div class="float-end">
                         <div class="dropdown">
-                            <button class="btn btn-succes btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                              Dropdown button
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              Cetak Data
+
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="/admin/cetak-absen/pdf">Cetak</a></li>
-                            @forelse ( $absenRows as $key => $r )
-                            <li><a class="dropdown-item" href="/admin/cetak-absenp/pdf{{ $r -> id_kegitan }}">{{ $r -> nama_kegiatan }}</a></li>
+                              <li><a class="dropdown-item" href="/admin/cetak-absen/pdf/seluruh">Seluruh kegiatan</a></li>
+                            @forelse ( $kegiatanRows as $key => $k )
+                            <li><a class="dropdown-item" href="/admin/cetak-absen/pdf/{{ $k->kegiatan_id }}">{{ $k -> nama_kegiatan }}</a></li>
                             @empty
                             @endforelse
                             </ul>
                           </div>
                     </div>
-
                     <h4 class="mt-0 header-title">{{ $pageTitle }}</h4>
                     <p class="text-muted font-14 mb-3">
                         Olah {{ $pageTitle }}.
