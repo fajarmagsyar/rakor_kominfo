@@ -55,7 +55,6 @@
                                                 @endforeach
                                         </tbody>
                                     </table>
-                                    <small> dicetak </small>
                                 </div>
                             </div>
                        </div>
