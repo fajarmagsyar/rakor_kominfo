@@ -264,11 +264,13 @@ use App\Models\Absen;
                     @else
                         <input type="hidden" value="{{ $kegiatan[0]['kegiatan_id'] }}" name="kegiatan_id">
                     @endif
-                    <input type="hidden" value="{{ $pesertaScanned->user_id }}" name="user_id">
-                    <button type="submit" class="btn btn-success w-100 btn-lg"
-                        onclick="return confirm('Apakah anda yakin peserta sudah benar?')"
-                        style="font-size: 15px; border-radius: 15px"><i class="bi bi-plus-circle-fill"></i>
-                        Konfirmasi Peserta</button>
+                    @if (count($kegiatan) != 0)
+                        <input type="hidden" value="{{ $pesertaScanned->user_id }}" name="user_id">
+                        <button type="submit" class="btn btn-success w-100 btn-lg"
+                            onclick="return confirm('Apakah anda yakin peserta sudah benar?')"
+                            style="font-size: 15px; border-radius: 15px"><i class="bi bi-plus-circle-fill"></i>
+                            Konfirmasi Peserta</button>
+                    @endif
                 </form>
             </div>
         </div>
