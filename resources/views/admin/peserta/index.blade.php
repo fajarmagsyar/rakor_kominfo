@@ -19,7 +19,7 @@
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
                             <h4 class="mb-2 ml-2">Data Peserta</h4>
-                            <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">Tambah</a>
+                            <a href="/admin/peserta/create" class="btn btn-outline-primary mx-4 float-end">+Tambah</a>
                         </div>
                     </div>
                     <div class="p-5">
@@ -27,7 +27,7 @@
                             <table class="table align-items-center ">
                                 <tbody>
                                     <tr>
-                                        <th>#</th>
+                                        <th>No</th>
                                         <th>Nama</th>
                                         <th>Jabatan</th>
                                         <th>Email</th>
@@ -55,7 +55,7 @@
                                                         @csrf
                                                         <a href="/admin/peserta/{{ $k->user_id }}/edit"
                                                             class="btn btn-primary btn-sm w-50"><i
-                                                                class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                                                class="fa fa-pencil" aria-hidden="true"></i></a>
                                                         <button onclick="return confirm('Yakin?')" type="submit"
                                                             class="btn btn-danger btn-sm w-50"><i class="fa fa-trash-o"
                                                                 aria-hidden="true"></i></button>
