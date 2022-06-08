@@ -38,7 +38,7 @@
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>No</th>
                                                 <th>Deskripsi Kegiatan</th>
                                                 <th>Koordinat</th>
                                                 <th>Deskripsi</th>
@@ -175,7 +175,7 @@
                                                                 method="post" class="d-inline">
                                                                 <a class="btn btn-sm btn-primary mb-2"
                                                                     href=" /admin/kegiatan/{{ $r->kegiatan_id }}/edit"><i
-                                                                        class="ni ni-ruler-pencil"></i></a>
+                                                                        class="fa fa-pencil"></i></a>
                                                                 @csrf
                                                                 @method('delete')
 
@@ -184,7 +184,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-sm  btn-danger mb-2 d-inline"
                                                                     onclick="return confirm('Data ini akan dihapus. Lanjutkan?')"><i
-                                                                        class="ni ni-fat-remove"></i></i></button>
+                                                                        class="fa fa-trash-o"></i></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>

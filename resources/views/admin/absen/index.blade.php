@@ -19,10 +19,13 @@
         <div class="row">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card ">
-
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
+
+                                <div class="float-end">
+                                    <a class="btn btn-primary active" href="/admin/cetak-absen/pdf"><i class="ni ni-cloud-download-95"></i> Cetak</a>
+                                </div>
 
                                 <h4 class="mt-0 header-title">{{ $pageTitle }}</h4>
                                 <p class="text-muted font-14 mb-3">
@@ -33,7 +36,7 @@
                                     <table class="table mb-0">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">#</th>
+                                                <th class="text-center">No</th>
                                                 <th class="text-center">Kegiatan</th>
                                                 <th class="text-center">Peserta</th>
                                                 <th class="text-center">Status Peserta</th>
@@ -53,18 +56,18 @@
                                                         <th class="align-middle text-center" scope="row">
                                                             {{ $key = $key + 1 }}
                                                         </th>
-                                                        <td class="align-middle">
+                                                        <td class="align-middle  text-cente">
                                                             {{ $r->nama_kegiatan }}
                                                         </td>
 
-                                                        <td class="align-middle">
+                                                        <td class="align-middle  text-cente">
                                                             {{ $r->nama }}
                                                         </td>
 
-                                                        <td class="align-middle">
+                                                        <td class="align-middle  text-cente">
                                                             {{ $r->status_peserta }}
                                                         </td>
-                                                        <td class="align-middle">
+                                                        <td class="align-middle  text-cente">
                                                             {{ $r->created_at }}
                                                         </td>
                                                     </tr>

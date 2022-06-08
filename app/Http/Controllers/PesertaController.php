@@ -42,7 +42,6 @@ class PesertaController extends Controller
             'asal'      =>  'required',
             'hp'        =>  'required | numeric | min:12 | unique:users'
         ];
-
         $input = [
             'nama' => $request->input('nama'),
             'jabatan' => $request->input('jabatan'),
@@ -57,12 +56,11 @@ class PesertaController extends Controller
 
             'required' => '*Kolom :attribute wajib diisi.',
             'file' => '*File :attribute wajib dipilih.',
-            'max' => '*Kolom :attribute maksimal :max.',
+            'max' => '* Nomor :attribute maksimal :max digit.',
             'mimes' => '*Format file :attribute tidak didukung.',
             'email' => '*Email tidak valid',
             'unique' => '*Sudah terdaftar'
         ];
-
         $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();

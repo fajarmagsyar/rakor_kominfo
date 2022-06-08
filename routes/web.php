@@ -36,6 +36,7 @@ Route::get('/sejarah', [HomeController::class, 'sejarah']);
 Route::get('/visi-misi', [HomeController::class, 'visiMisi']);
 Route::get('/lambang', [HomeController::class, 'lambang']);
 Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
+Route::get('/kegiatan-single/{kegiatan_id}', [HomeController::class, 'kegiatanSingle']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
 Route::get('/wisata-single/{fasilitas_id}', [HomeController::class, 'wisataSingle']);
 Route::get('/hotel', [HomeController::class, 'hotel']);
@@ -54,6 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/profil', ProfilController::class);
     Route::resource('/artikel', ArtikelController::class);
     Route::resource('/absen', AbsenController::class);
+
     Route::resource('/kegiatan', KegiatanController::class);
     Route::resource('/fasilitas', FasilitasController::class);
     Route::resource('/peserta', PesertaController::class);
@@ -71,3 +73,5 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/scan/apeksi22/absen/{peserta}', [ScanController::class, 'absenMobile']);
 Route::post('/scan/apeksi22/absen/store', [ScanController::class, 'absenStore']);
 Route::get('/admin/cetak-peserta/pdf/{id}', [PesertaController::class, 'cetakPDFPeserta']);
+Route::get('/admin/cetak-absen/pdf', [AbsenController::class,'cetak_pdf']);
+
