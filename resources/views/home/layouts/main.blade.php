@@ -111,7 +111,8 @@
                         <!-- You can delete the links only if you purchased the pro version. -->
                         <!-- Licensing information: https://bootstrapmade.com/license/ -->
                         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-                        Make by DISKOMINFO Dev Team</a>
+                        Made with (ヘ･_･)ヘ┳━┳ <b>→</b> (╯°□°）╯︵ ┻━┻ by <img src="/assets/img/diskominfo.png"
+                            style="width: 80px;" alt="">
                     </div>
                 </div>
 
@@ -144,7 +145,7 @@
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
 
- 
+
 </body>
 
 </html>

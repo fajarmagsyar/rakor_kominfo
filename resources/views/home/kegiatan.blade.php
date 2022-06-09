@@ -35,7 +35,7 @@
 
                             <br>
                             <a href="/kegiatan-single/{{ $r->kegiatan_id }}">
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
                                     <div class="ms-2 me-auto">
                                         <div class="fw-bold">{{ $r->nama_kegiatan }}</div>
                                         <div class="text-muted">
@@ -49,7 +49,6 @@
 
                                     <div class="badge bg-primary rounded-pill">
                                         {{ date('D', strtotime($r->tanggal)) . ', ' . $r->tanggal }}</div>
-
                                 </li>
                             </a>
                         @endforeach
