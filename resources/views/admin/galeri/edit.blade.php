@@ -10,43 +10,50 @@
                     <p class="text-muted font-14">
                         Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera.
                     </p>
-
-                    <form action="/admin/galeri" class="parsley-examples" id="form-valid-parsley" method="post"
-                        enctype="multipart/form-data">
-                        @method('post')
+                    <form action="/admin/galeri/{{ $data->galeri_id }}" class="parsley-examples"
+                        id="form-valid-parsley" method="post" enctype="multipart/form-data">
+                        @method('PATCH')
                         @csrf
+                        <input type="hidden" value="{{ $data->galeri_id }}" name="galeri_id">
+
 
                         <div class="row">
 
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Kategori
                                     <span class="text-danger">*</span></label>
-                                <select class="form-select @error('kategori') is-invalid @enderror"
-                                    value="{{old('kategori')}}" aria-label="golongan darah" name="kategori"
-                                    id="kategori">
+                                <select name="kategori" id=""
+                                    class="form-control @error('kategori') is-invalid @enderror"
+                                    value="{{ old('kategori', $data['kategori']) }}" aria-label="badan unit"
+                                    name="kategori" id="kategori">
+                                    @error('kategori')
+                                    <div id="kategori" class="invalid-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                                     <option value="">Pilih Kategori</option>
-                                    @foreach ($rowsKategori as $gd)
-                                    <option {{old('kategori')==$gd ? 'selected' : '' }} value="{{ $gd }}">{{ $gd
-                                        }}</option>
+                                    @foreach($rowsKategori as $gd)
+                                    <option {{old('kategori', $data['kategori'])==$gd ? 'selected' : '' }}
+                                        value="{{ $gd }}">{{ $gd }}</option>
                                     @endforeach
                                 </select>
-                                @error('kategori')
-                                <div id="kategori" class="invalid-feedback">
+                                @error('nama_kegiatan')
+                                <div id="nama_kegiatan" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
 
-
-                            <div class="mb-3">
-                                <label for="userName" class="form-label">Foto
-                                    <span class="text-danger">*</span></label>
-                                <input type="file" name="foto" parsley-trigger="change" required
-                                    placeholder="Masukkan Foto" class="form-control @error('foto') is-invalid @enderror"
-                                    id="userName" value="{{ old('foto') }}" />
+                            <label for="foto" class="form-label">Foto(Format: JPG
+                                Maksimal 1Mb)
+                                <span class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+                                <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror"
+                                    value="{{ old('foto') }}" id="foto" accept=".jpg" name="foto">
+                                <label class="input-group-text" for="foto">Upload</label>
                                 @error('foto')
                                 <div id="foto" class="invalid-feedback">
-                                    {{ $message }}
+                                    {{$message}}
                                 </div>
                                 @enderror
                             </div>

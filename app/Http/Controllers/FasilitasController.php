@@ -19,7 +19,7 @@ class FasilitasController extends Controller
         //
         return view('admin.fasilitas.index', [
             'page' => 'Data Fasilitas | APEKSI',
-            'pageTitle' => 'Data Fasilitas',  
+            'pageTitle' => 'Data Fasilitas',
             'fasilitasRows' => Fasilitas::orderBy('created_at', 'DESC')->paginate(10),
         ]);
     }
@@ -49,7 +49,7 @@ class FasilitasController extends Controller
     public function store(Request $request)
     {
            $rules = [
-        
+
             'kategori' => 'required',
 
             'nama_fasilitas' => 'required|unique:fasilitas',
@@ -57,7 +57,7 @@ class FasilitasController extends Controller
             'lokasi' => 'required|unique:fasilitas',
             'long_lat' => 'required|unique:fasilitas',
             'foto' => 'file|mimes:png,jpg,jpeg|max:1000',
-           
+
         ];
 
         $input = [
@@ -102,7 +102,7 @@ class FasilitasController extends Controller
         Fasilitas::create($data);
 
         return redirect('/admin/fasilitas/')->with('success', 'Data Berhasil Ditambahkan!');
-      
+
     }
 
     /**
@@ -145,14 +145,14 @@ class FasilitasController extends Controller
     {
          $foto_fasilitas=$request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:2000':'';
         $rules = [
-        
+
           'kategori' => 'required',
             'nama_fasilitas' => 'required',
             'deskripsi' => 'required',
             'lokasi' => 'required',
             'long_lat' => 'required',
             'foto' => $foto_fasilitas,
-           
+
         ];
 
         $input = [
@@ -161,7 +161,7 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $request->input('long_lat'),
-         
+
              'foto' => $request->file('foto'),
         ];
 
@@ -170,7 +170,7 @@ class FasilitasController extends Controller
             'file' => '*File :attribute wajib dipilih.',
             'max' => '*Kolom :attribute maksimal :max.',
             'mimes' => '*Format file :attribute tidak didukung.',
-            
+
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -198,8 +198,8 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $long,
-           
-            'foto' => $path_foto,     
+
+            'foto' => $path_foto,
         ];
 
         Fasilitas::find($id)->update($data);

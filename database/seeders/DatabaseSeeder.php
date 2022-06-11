@@ -6,6 +6,7 @@ use App\Models\Absen;
 use App\Models\Artikel;
 use App\Models\Kegiatan;
 use App\Models\Fasilitas;
+use App\Models\Galeri;
 use App\Models\Profil;
 use App\Models\Roles;
 use App\Models\User;
@@ -21,7 +22,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+
+
         // \App\Models\User::factory(10)->create();
+        Galeri::factory(10)->create();
 
         $role1 = Roles::create([
             'role_name' => 'Admin',
@@ -43,11 +48,11 @@ class DatabaseSeeder extends Seeder
         ])->getAttributes();
 
         $user2 = User::create([
-            'nama' => 'user1',
+            'nama' => 'user2',
             'email' => 'user@mail.com',
             'asal' => 'kota ambon',
-            'hp' => '085277123234',
-            'password' => Hash::make('Admin1234'),
+            'hp' => '085277123134',
+            'password' => Hash::make('Admin12345'),
             'role_id' => $role2['role_id'],
         ])->getAttributes();
 
@@ -91,5 +96,7 @@ class DatabaseSeeder extends Seeder
             'long_lat' => '-2.2393939393 | 1.939393939',
 
         ])->getAttributes();
+
+
     }
 }
