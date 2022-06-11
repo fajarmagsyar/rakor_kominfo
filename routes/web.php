@@ -9,6 +9,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\QRController;
 use App\Http\Controllers\ScanController;
@@ -60,6 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/fasilitas', FasilitasController::class);
     Route::resource('/peserta', PesertaController::class);
     Route::resource('/adm', AdmController::class);
+    Route::resource('/galeri', GaleriController::class);
 
     Route::get('/peserta-kegiatan/{id}', [AdminController::class, 'pesertaKegiatan']);
     Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);
