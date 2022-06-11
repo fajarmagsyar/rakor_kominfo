@@ -34,7 +34,7 @@ class FasilitasController extends Controller
         //
         return view('admin.fasilitas.create', [
             'page' => 'Fasilitas | APEKSI',
-            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata'],
+            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata','Fasilitas Kesehatan','Pusat Perbelanjaan'],
             'pageTitle' => 'Tambah Fasilitas',
 
         ]);
@@ -127,8 +127,8 @@ class FasilitasController extends Controller
         //
         //
         return view('admin.fasilitas.edit', [
-            'page' => 'Edit Fasilitas | Gereja Moria',
-            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata'],
+            'page' => 'Edit Fasilitas | APEKSI',
+            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata','Fasilitas Kesehatan','Pusat Perbelanjaan'],
             'pageTitle' => 'Edit Fasilitas',
             'data' => Fasilitas::where('fasilitas_id', $id)->first(),
         ]);
