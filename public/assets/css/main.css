@@ -1467,7 +1467,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background: url("../img/background.JPG") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -1476,7 +1476,8 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(var(--color-secondary-dark-rgb), 0.8);
+  background: rgba(var(--color-primary-dark-rgb), 0.8);
+  opacity: 0.8;
 }
 .testimonials .section-header {
   margin-bottom: 40px;
@@ -1489,10 +1490,10 @@ section {
   color: var(--color-white);
 }
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
+  width: 200px;
   border-radius: 50%;
   border: 6px solid rgba(var(--color-white-rgb), 0.15);
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 .testimonials .testimonial-item h3 {
   font-size: 20px;
@@ -1504,6 +1505,9 @@ section {
   font-size: 14px;
   color: rgba(var(--color-white-rgb), 0.6);
   margin: 0 0 15px 0;
+}
+.testimonials .testimonial-item p {
+  font-size: 15px;
 }
 .testimonials .testimonial-item .stars {
   margin-bottom: 15px;
