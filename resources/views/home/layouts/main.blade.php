@@ -58,14 +58,19 @@
                     <div class="dropdown">
                         <a class="nav-link scrollto" type="#" id="dropdown" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Hostpot Kota
+                            Spot Kota Kupang
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item" href="/faskes">Kesehatan</a></li>
-                            <li><a class="dropdown-item" href="/wisata">Wisata</a></li>
-                            <li><a class="dropdown-item" href="/hotel">Hotel</a></li>
-                            <li><a class="dropdown-item" href="/retoran">Restoran</a></li>
-                            <li><a class="dropdown-item" href="/pusper">Perbelanjaan</a></li>
+                            <li><a class="dropdown-item" href="/faskes">Kesehatan <i class="bi bi-heart-pulse"></i></a>
+                            </li>
+                            <li><a class="dropdown-item" href="/wisata">Wisata <i
+                                        class="bi bi-play-circle-fill"></i></a></li>
+                            <li><a class="dropdown-item" href="/hotel">Hotel <i class="bi bi-building"></i></a>
+                            </li>
+                            <li><a class="dropdown-item" href="/retoran">Restoran <i class="bi bi-cup-straw"></i></a>
+                            </li>
+                            <li><a class="dropdown-item" href="/pusper">Perbelanjaan <i class="bi bi-basket"></i></a>
+                            </li>
 
                         </ul>
                     </div>
