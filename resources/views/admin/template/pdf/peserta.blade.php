@@ -60,6 +60,7 @@
         .table {
             color: black;
             opacity: 0.8;
+            font-size: 10px
         }
     </style>
 </head>
@@ -74,13 +75,14 @@
             </div>
             <div class="title">{{ strtoupper($p->nama) }}</div>
             <div class="subtitle">{{ $p->jabatan }}</div>
+            <div class="subtitle">{{ $p->asal }}</div>
             <div class="table">
-                <br>
-                <img src="data:image/png;base64,{{ $lemail }}" width="15px">
+                <br><br>
+                <img src="data:image/png;base64,{{ $lemail }}" width="11px">
                 <br>
                 {{ $p->email }}
                 <br><br>
-                <img src="data:image/png;base64,{{ $ltelp }}" width="15px">
+                <img src="data:image/png;base64,{{ $ltelp }}" width="11px">
                 <br>
                 {{ $p->hp }}
             </div>

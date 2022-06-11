@@ -34,6 +34,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Asal</th>
+                                        <th>Status Peserta</th>
                                         <th></th>
                                     </tr>
                                     @if (count($peserta) > 0)
@@ -42,6 +43,7 @@
                                                 <td>{{ $key = $key + 1 }}</td>
                                                 <td>{{ $r->nama }}</td>
                                                 <td>{{ $r->asal }}</td>
+                                                <td>{{ $r->status_peserta }}</td>
                                                 <td>
                                                     <form
                                                         action="/admin/peserta-kegiatan/destroy/{{ $r->absen_id }}/{{ $kegiatan->kegiatan_id }}"
