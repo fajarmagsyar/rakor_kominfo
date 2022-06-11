@@ -20,11 +20,6 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <!-- Vendor CSS Files -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -61,19 +56,20 @@
                     <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
                     <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
                     <div class="dropdown">
-                        <a class="nav-link scrollto" type="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        Hostpot Kota
+                        <a class="nav-link scrollto" type="#" id="dropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Hostpot Kota
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown">
-                          <li><a class="dropdown-item" href="/faskes">Kesehatan</a></li>
-                          <li><a class="dropdown-item" href="/wisata">Wisata</a></li>
-                          <li><a class="dropdown-item" href="/hotel">Hotel</a></li>
-                          <li><a class="dropdown-item" href="/retoran">Restoran</a></li>
-                          <li><a class="dropdown-item" href="/pusper">Perbelanjaan</a></li>
-                         
+                            <li><a class="dropdown-item" href="/faskes">Kesehatan</a></li>
+                            <li><a class="dropdown-item" href="/wisata">Wisata</a></li>
+                            <li><a class="dropdown-item" href="/hotel">Hotel</a></li>
+                            <li><a class="dropdown-item" href="/retoran">Restoran</a></li>
+                            <li><a class="dropdown-item" href="/pusper">Perbelanjaan</a></li>
+
                         </ul>
-                      </div>
-                      
+                    </div>
+
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav>
