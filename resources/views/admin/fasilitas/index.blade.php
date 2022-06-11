@@ -71,9 +71,6 @@
                                                         <td>
                                                             {{ $r->kategori }}
                                                         </td>
-
-
-
                                                         <td>
                                                             {{ $r->nama_fasilitas }}
                                                         </td>
@@ -91,8 +88,6 @@
                                                         <td>
                                                             <img src="{{ $r->foto }}" width="100px">
                                                         </td>
-
-
                                                         <td class="text-center align-middle">
                                                             <form action="/admin/fasilitas/{{ $r->fasilitas_id }}"
                                                                 method="post" class="d-inline">

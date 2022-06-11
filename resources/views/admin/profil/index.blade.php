@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="row mt-4">
-            <div class="col-lg-5">
+            <div class="col-lg-12 mb-4">
                 <div class="card">
                     <div class="card-header pb-0 p-3">
                         <h6 class="mb-0">Profil Website</h6>
@@ -70,7 +70,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex flex-column">
                                         <h6 class="mb-1 text-dark text-sm">Sejarah</h6>
-                                        <span class="text-xs"><?php
+                                        <span class="text-xs w-100"><?php
                                         echo $profilRow->sejarah;
                                         ?></span>
                                     </div>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 mb-lg-0 mb-4">
+            <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card ">
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
