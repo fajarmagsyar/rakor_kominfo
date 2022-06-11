@@ -55,27 +55,28 @@
                                                         <th class="align-middle text-center" scope="row">
                                                             {{ $key = $key + 1 }}
                                                         </th>
-                                                        <td >
+                                                        <td>
                                                             {{ $r->nama }}
                                                         </td>
-                                                        <td >
-                                                            {!! $r->isi !!}
+                                                        <td>
+                                                            {!! substr($r->isi, 0, 100) !!}
                                                         </td>
-
-
                                                         <td class="text-center align-middle">
                                                             <form action="/admin/artikel/{{ $r->artikel_id }}"
                                                                 method="post" class="d-inline">
                                                                 <a class="btn btn-sm btn-warning mb-2"
                                                                     href=" /admin/artikel/{{ $r->artikel_id }}/edit"><i
-                                                                    class="fa fa-pencil"-square" aria-hidden="true"></i></a>
+                                                                        class="fa fa-pencil" -square"
+                                                                        aria-hidden="true"></i> Detail</a>
                                                                 @csrf
                                                                 @method('delete')
-                                                                <input type="hidden" value="{{ $r->artikel }} "name="artikel_id">
-                                                                 <button type="submit"
+                                                                <input type="hidden" value="{{ $r->artikel }} "
+                                                                    name="artikel_id">
+                                                                <button type="submit"
                                                                     class="btn btn-sm  btn-danger mb-2 d-inline"
                                                                     onclick="return confirm('Data ini akan dihapus. Lanjutkan?')"><i
-                                                                    class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                                        class="fa fa-trash-o"
+                                                                        aria-hidden="true"></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>
