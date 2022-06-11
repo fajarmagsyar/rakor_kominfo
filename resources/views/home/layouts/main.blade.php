@@ -53,11 +53,22 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
-                    <li><a class="nav-link scrollto" href="/wisata">Wisata</a></li>
-                    <li><a class="nav-link scrollto" href="/hotel">Hotel</a></li>
-                    <li><a href="/restoran">Restoran</a></li>
                     <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
                     <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
+                    <div class="dropdown">
+                        <a class="nav-link scrollto" type="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Hostpot Kota
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown">
+                          <li><a class="dropdown-item" href="/faskes">Kesehatan</a></li>
+                          <li><a class="dropdown-item" href="/wisata">Wisata</a></li>
+                          <li><a class="dropdown-item" href="/hotel">Hotel</a></li>
+                          <li><a class="dropdown-item" href="/retoran">Restoran</a></li>
+                          <li><a class="dropdown-item" href="/pusper">Perbelanjaan</a></li>
+                         
+                        </ul>
+                      </div>
+                      
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav>
