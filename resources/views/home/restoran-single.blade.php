@@ -5,10 +5,10 @@
 
     <main id="main">
 
-    
+
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
-          
+
 
             <div class="container">
 
@@ -34,23 +34,25 @@
                                     $map = explode('|', $fasilitasRows[0]['long_lat']);
                                     
                                     ?>
-                                <iframe src="http://maps.google.com/?q={{$map[0]}},{{$map[1]}}" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <iframe
+                                        src="http://maps.google.com/maps?q={{ $map[0] }},{{ $map[1] }}&z=15&output=embed"
+                                        class="w-100 h-100"></iframe>
                                 </div>
                             </div><!-- End Info Item -->
 
-                           
+
 
                         </div>
 
                     </div>
 
                     <div class="col-lg-8">
-                        <img src="{{ $fasilitasRows[0]['foto'] }}" alt="" class="img-fluid" style="width:100%;" >
+                        <img src="{{ $fasilitasRows[0]['foto'] }}" alt="" class="img-fluid" style="width:100%;">
                     </div><!-- End Contact Form -->
 
-              
 
-            </div>
+
+                </div>
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->

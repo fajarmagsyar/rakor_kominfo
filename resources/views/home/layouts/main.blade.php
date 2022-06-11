@@ -21,6 +21,7 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -28,12 +29,19 @@
     <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="/assets/css/variables.css" rel="stylesheet">
     <link href="/assets/css/main.css" rel="stylesheet">
-    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+        integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+        integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
@@ -41,10 +49,8 @@
                 <img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
                 <h1>APEKSI<span>.</span></h1>
             </a>
-
             <nav id="navbar" class="navbar">
                 <ul>
-
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
                     <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
@@ -65,25 +71,17 @@
                       
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
-            </nav><!-- .navbar -->
-
+            </nav>
             <a class="scrollto" href="#"></a>
-
-
         </div>
-    </header><!-- End Header -->
-
+    </header>
 
     @yield('isi')
 
-
-    <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
-
         <div class="footer-content">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-md-6">
                         <div class="footer-info">
                             <h3>APEKSI</h3>
@@ -118,11 +116,8 @@
                         &copy; <strong><span>APEKSI</span></strong> Kota Kupang 2022
                     </div>
                     <div class="credits">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-                        Make by DISKOMINFO Dev Team</a>
+                        Made with (ヘ･_･)ヘ┳━┳ <b>→</b> (╯°□°）╯︵ ┻━┻ by <img src="/assets/img/diskominfo.png"
+                            style="width: 80px;" alt="">
                     </div>
                 </div>
 
@@ -155,7 +150,7 @@
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
 
- 
+
 </body>
 
 </html>
