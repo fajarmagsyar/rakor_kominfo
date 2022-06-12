@@ -157,10 +157,8 @@ class GaleriController extends Controller
 
     public function destroy(Request $request)
     {
-        //
-        //
+
         $gambar = Galeri::where('galeri_id',$request->input('galeri_id'))->first();
-        ddd($gambar);
         File::delete(public_path($gambar['foto']));
         Galeri::destroy($request->input('galeri_id'));
         return redirect('/admin/galeri')->with('success', 'Data berhasil dihapus!');
