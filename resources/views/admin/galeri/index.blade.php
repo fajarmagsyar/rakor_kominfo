@@ -40,7 +40,7 @@
                                         <td> <img src="{{ $galeris->foto }}" width="100px"></td>
                                         </td>
                                         <td class="text-center align-middle">
-                                            <form action="/admin/fasilitas/{{ $galeris->galeri_id }}"
+                                            <form action="/admin/galeri/{{ $galeris->galeri_id }}"
                                                 method="post" class="d-inline">
                                                 <a class="btn btn-sm btn-primary mb-2"
                                                     href=" /admin/galeri/{{ $galeris->galeri_id }}/edit"><i

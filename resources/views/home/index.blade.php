@@ -214,13 +214,10 @@
                                 <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
                                     <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
                                     <div class="portfolio-info">
-                                      <h4>App 1</h4>
-                                      <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                      <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                      <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                     </div>
                                   </div>
                                 @empty
-
                                 @endforelse
 
                             </div>
