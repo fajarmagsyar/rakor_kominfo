@@ -39,7 +39,9 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Isi</th>
-                                            <th>Link</th>
+                                            <th>
+                                            
+                                            </th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>

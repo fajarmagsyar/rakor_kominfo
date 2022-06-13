@@ -132,7 +132,7 @@
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
                                                                         <div class="fw-bold"><a
-                                                                                href="maps.google.com"><i
+                                                                                href="http://maps.google.com/maps?q={{ $r->lokasi }}"><i
                                                                                     class="ni ni-square-pin"></i> Lihat
                                                                                 Map</a>
                                                                         </div>

@@ -17,7 +17,6 @@
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-blog-posts" class="recent-blog-posts">
-
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -44,7 +43,6 @@
                     </div>
 
                 </div>
-
             </div>
             @endforeach
         </div>
