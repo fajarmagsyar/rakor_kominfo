@@ -53,6 +53,11 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
+                    <li><a class="nav-link scrollto" href="/wisata">Wisata</a></li>
+                    <li><a class="nav-link scrollto" href="/hotel">Hotel</a></li>
+                    <li><a href="/restoran">Restoran</a></li>
+                    <li><a href="#Galeri">Galeri</a></li>
+                    
                     <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
                     <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
                     <div class="dropdown">
