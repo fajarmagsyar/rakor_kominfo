@@ -1,84 +1,88 @@
 @extends('home.layouts.main')
 @section('isi')
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials" style="margin-top: 100px;">
+        <div class="container" data-aos="fade-up">
 
+            <div class="testimonials-slider swiper">
+                <div class="swiper-wrapper">
 
-<!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="testimonials" style="margin-top: 100px;">
-      <div class="container" data-aos="fade-up">
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/tirosa.jpg" class="testimonial-img" alt="">
+                            <h3>Bundaran Tirosa</h3>
+                            <h4>Jl. Bund. PU No.1, Tuak Daun Merah, Kec. Oebobo, Kota Kupang, Nusa Tenggara Tim. 85228</h4>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                Melambangkan tiga suku bangsa asli di Nusa Tenggara Timur yaitu Timor, Rote dan Sabu. Patung
+                                ini berdiri megah di tengah bundaran PU di kota Kupang.
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
 
-        <div class="testimonials-slider swiper">
-          <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/ina-boi.jpg" class="testimonial-img" alt="">
+                            <h3>Taman Ina Bo'i</h3>
+                            <h4>Jl. RA Kartini, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                Dalam patung tersebut terdapat 3 komponen yaitu Patung Sasando berukuran besar (6 meter),
+                                patung sasando kecil (2 meter) dan patung perempuan tinggi 3 meter yang sedang duduk bermain
+                                sasando kecil.
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/tirosa.jpg" class="testimonial-img" alt="">
-                <h3>Bundaran Tirosa</h3>
-                <h4>Jl. Bund. PU No.1, Tuak Daun Merah, Kec. Oebobo, Kota Kupang, Nusa Tenggara Tim. 85228</h4>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Melambangkan tiga suku bangsa asli di Nusa Tenggara Timur yaitu Timor, Rote dan Sabu. Patung ini berdiri megah di tengah bundaran PU di kota Kupang.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/uisneno.jpg" class="testimonial-img" alt="">
+                            <h3>Taman Patung Kasih / Tugu Merpati</h3>
+                            <h4>Jalan Adi Sucipto, Kelapa Lima, Penfui, Kec. Maulafa, Kota Kupang, Nusa Tenggara Tim.</h4>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                Taman Patung Kasih dengan penambahan Tulisan Uisneno Nokan Kit yang berarti Tuhan Memberkati
+                                Kita dan ada pula patung berbentuk orang di sekelilingnya berjumlah 6 biji, yang maknanya
+                                terdapat enam suku besar di NTT yakni Sabu, Rote, Alor, Sumba, Flores dan Timor.
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/ina-boi.jpg" class="testimonial-img" alt="">
-                <h3>Taman Ina Bo'i</h3>
-                <h4>Jl. RA Kartini, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Dalam patung tersebut terdapat 3 komponen yaitu Patung Sasando berukuran besar (6 meter), patung sasando kecil (2 meter) dan patung perempuan tinggi 3 meter yang sedang duduk bermain sasando kecil.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/taman-tagepe.jpg" class="testimonial-img" alt="">
+                            <h3>Taman Tagepe</h3>
+                            <h4>Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                Desain fotogenik salah satu ikon ditaman tagepe yakni bentuk persegi yang pasang berjejer
+                                dan kelihatan seperti berputar 360 derajat.
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/uisneno.jpg" class="testimonial-img" alt="">
-                <h3>Taman Patung Kasih / Tugu Merpati</h3>
-                <h4>Jalan Adi Sucipto, Kelapa Lima, Penfui, Kec. Maulafa, Kota Kupang, Nusa Tenggara Tim.</h4>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Taman Patung Kasih dengan penambahan Tulisan Uisneno Nokan Kit yang berarti Tuhan Memberkati Kita dan ada pula patung berbentuk orang di sekelilingnya berjumlah 6 biji, yang maknanya terdapat enam suku besar di NTT yakni Sabu, Rote, Alor, Sumba, Flores dan Timor.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="assets/img/alun.jpg" class="testimonial-img" alt="">
+                            <h3>Alun-Alun Kota</h3>
+                            <h4>Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                Lokasi alun alun Kota Kupang, kini menjadi salah satu tempat hiburan warga Kota Kupang.
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/taman-tagepe.jpg" class="testimonial-img" alt="">
-                <h3>Taman Tagepe</h3>
-                <h4>Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Desain fotogenik salah satu ikon ditaman tagepe yakni bentuk persegi yang pasang berjejer dan kelihatan seperti berputar 360 derajat.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/alun.jpg" class="testimonial-img" alt="">
-                <h3>Alun-Alun Kota</h3>
-                <h4>Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Lokasi alun alun Kota Kupang, kini menjadi salah satu tempat hiburan warga Kota Kupang.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
-
-      </div>
     </section><!-- End Testimonials Section -->
 
     <section id="hero-static" class="hero-static d-flex align-items-center">
@@ -276,35 +280,38 @@
 
                     </div><!-- End Service Item -->
 
-                    <section id="" class="portfolio" data-aos="fade-up">
+                    <section id="galeri" class="portfolio" data-aos="fade-up">
                         <div class="container">
-                          <div class="section-header">
-                            <h2>Galeri Apeksi 2017</h2>
-                          </div>
+                            <div class="section-header">
+                                <h2>Galeri Apeksi 2022</h2>
+                            </div>
                         </div>
                         <div class="container-fluid" data-aos="fade-up" data-aos-delay="200">
-                          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
-                            <ul class="portfolio-flters">
-                              <li data-filter="*" class="filter-active">All</li>
-                              <li data-filter=".filter-praker">Praker</li>
-                              <li data-filter=".filter-raker">Raker</li>
-                            </ul>
-                            <div class="row g-0 portfolio-container">
+                            <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+                                data-portfolio-sort="original-order">
+                                <ul class="portfolio-flters">
+                                    <li data-filter="*" class="filter-active">All</li>
+                                    <li data-filter=".filter-praker">Praker</li>
+                                    <li data-filter=".filter-raker">Raker</li>
+                                </ul>
+                                <div class="row g-0 portfolio-container">
 
-                                @forelse ( $GaleriRows as $galeri )
-                                <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
-                                    <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
-                                    <div class="portfolio-info">
-                                      <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                    </div>
-                                  </div>
-                                @empty
-                                @endforelse
+                                    @forelse ($GaleriRows as $galeri)
+                                        <div
+                                            class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
+                                            <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
+                                            <div class="portfolio-info">
+                                                <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
+                                                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                            </div>
+                                        </div>
+                                    @empty
+                                    @endforelse
 
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </section>
+                    </section>
                 </div>
             </div>
         </section><!-- End Services Section -->

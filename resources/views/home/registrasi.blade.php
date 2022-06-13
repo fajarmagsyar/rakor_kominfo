@@ -16,8 +16,8 @@
                 <div class="col-xl-8 col-md-8" style="padding-top: 130px;" data-aos="zoom-in" data-aos-delay="200">
                     <div class="service-item">
                         <!-- <div class="img">
-                                                                                                                                                                                                                                                                                                                    <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
-                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                                            <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
+                                                                                                                                                                                                                                                                                                                                                                        </div> -->
                         <div class="details position-relative">
                             <div class="icon">
                                 <i class="bi bi-qr-code"></i>
@@ -73,10 +73,12 @@
                                             <div class="mb-3">
                                                 <label for="userName" class="form-label">Kota Asal
                                                     <span class="text-danger">*</span></label>
-                                                <input type="text" name="asal" parsley-trigger="change"
-                                                    placeholder="Kota asal anda" required
-                                                    class="form-control @error('asal') is-invalid @enderror" id="asal"
-                                                    value="{{ old('asal') }}" />
+                                                <select name="asal" class="form-select">
+                                                    <option value="" selected disabled>- Pilih kota asal -</option>
+                                                    @foreach ($kota as $r)
+                                                        <option value="{{ $r }}">{{ $r }}</option>
+                                                    @endforeach
+                                                </select>
                                                 @error('asal')
                                                     <div id="asal" class="invalid-feedback">
                                                         {{ $message }}

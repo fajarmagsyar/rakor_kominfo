@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kegiatan;
 use App\Models\User;
 use App\Models\Roles;
 use Illuminate\Support\Facades\Validator;
@@ -116,7 +117,7 @@ class PesertaController extends Controller
 
         return redirect('/admin/peserta')->with('success', 'Data berhasil diubah!');
     }
-    
+
 
     public function destroy($id)
     {
@@ -155,6 +156,7 @@ class PesertaController extends Controller
         return view('home.registrasi', [
             'pageTitle' => 'Registrasi',
             'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
+            'kota' => ['KOTA KUPANG', 'KOTA MOJOKERTO', 'KOTA KEDIRI', 'KOTA BATU', 'KOTA SURABAYA', 'KOTA MALANG', 'KOTA MADIUN', 'KOTA BLITAR', 'KOTA PROBOLINGGO', 'KOTA PASURUAN', 'KOTA DENPASAR', 'KOTA MATARAM', 'KOTA BIMA'],
         ]);
     }
     public function registrasiResult($id)
@@ -162,6 +164,7 @@ class PesertaController extends Controller
         return view('home.registrasi-result', [
             'pageTitle' => 'Registrasi',
             'pesertaRow' => User::find($id),
+            'kegiatanRows' => Kegiatan::orderBy('tanggal', 'asc')->get(),
         ]);
     }
 }
