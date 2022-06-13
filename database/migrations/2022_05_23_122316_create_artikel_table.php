@@ -19,6 +19,7 @@ class CreateArtikelTable extends Migration
             $table->uuid('artikel_id')->primary();
             $table->uuid('user_id')->nullable();
             $table->longText('isi')->nullable();
+            $table->longText('link')->nullable();
             $table->timestamps();
         });
         DB::statement('ALTER TABLE artikel ALTER COLUMN artikel_id SET DEFAULT uuid_generate_v4();');

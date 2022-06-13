@@ -1,51 +1,53 @@
 @extends('home.layouts.main')
 @section('isi')
-    <main id="main">
 
-        <style>
-            #overflowTest {
-                background: #ffffff;
-                padding: 15px;
-                width: 100%;
-                height: 200px;
-                overflow: scroll;
-            }
-        </style>
+<main id="main">
 
-        <section id="recent-blog-posts" class="recent-blog-posts">
+    <style>
+    #overflowTest {
+        background: #ffffff;
+        /* color: white; */
+        padding: 15px;
+        width: 100%;
+        height: 200px;
+        overflow: scroll;
+        /* border: 1px solid #ccc; */
+    }
+    </style>
 
-            <div class="container" data-aos="fade-up">
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+        <div class="container" data-aos="fade-up">
 
-                <div class="section-header">
+            <div class="section-header">
 
 
-                </div>
+            </div>
 
-                <div class="row">
+            @foreach ($artikelRows as $key => $r)
+            <div class="row">
 
-                    @foreach ($artikelRows as $key => $r)
-                        <div class="col-5 card mx-auto shadow" data-aos="fade-up" data-aos-delay="200">
-                            <div class="post-box">
+                <div class="col-lg-12 card shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="post-box">
 
-                                <div class="meta">
-                                    <i class="bi bi-calendar"></i>
-                                    <span class="post-date">{{ $r->created_at }}</span>
-                                    <i class="bi bi-person-fill"></i>
-                                    <span class="post-author">{{ $r->nama }}</span>
-                                </div>
-                                <div id="overflowTest" style="height: 800px">
-                                    <p class="fst-italic"><?php
-                                    echo $r->isi;
-                                    ?></p>
-                                </div>
-                            </div>
+                        <div class="meta">
+                            <span class="post-date">{{ $r->created_at }}</span>
+                            <span class="post-author"> / {{ $r->nama }}</span>
                         </div>
-                    @endforeach
+                        <div id="overflowTest">
+                            <p class="fst-italic"><?php 
+                                        echo $r->isi;
+                                    ?></p>
+                            <a href="{{ $r->link }}" target="_blank"> Baca Selengkapnya</a>
+                        </div>
+                    </div>
 
                 </div>
             </div>
+            @endforeach
+        </div>
 
-        </section><!-- End Recent Blog Posts Section -->
+    </section><!-- End Recent Blog Posts Section -->
 
-    </main><!-- End #main -->
+</main><!-- End #main -->
 @endsection

@@ -71,6 +71,7 @@ class DatabaseSeeder extends Seeder
         $artikel = Artikel::create([
             'user_id' => $user1['user_id'],
             'isi' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse maiores asperiores libero exercitationem, ipsam ea, sed quaerat molestiae iste numquam pariatur sit nemo quae doloribus ab. Earum deserunt atque similique?',
+            'link' => 'https://apeksi.id/hut22/',
         ])->getAttributes();
 
         $profil = Profil::create([
