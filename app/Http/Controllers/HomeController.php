@@ -121,6 +121,40 @@ class HomeController extends Controller
         ]);
     }
 
+
+    //Fasilitas
+    public function faskes()
+    {
+        return view('home.faskes', [
+            'pageTitle' => 'Nama Fasilitas Kesehatan',
+            'fasilitasRows' => Fasilitas::where('kategori', 'Fasilitas Kesehatan')->get(),
+        ]);
+    }
+
+    //pusat perbelanjaan
+    public function pusper()
+    {
+        return view('home.pusper', [
+            'pageTitle' => 'Nama Pusat Perbelanjaan',
+            'fasilitasRows' => Fasilitas::where('kategori', 'Pusat Perbelanjaan')->get(),
+        ]);
+    }
+
+    public function FaskesSingel($id)
+    {
+        return view('home.faskes-singel', [
+            'pageTitle' => 'Nama Fasillitas Kesehatan',
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
+        ]);
+    }
+
+    public function PusperSingle($id)
+    {
+        return view('home.pusper-singel', [
+            'pageTitle' => 'Nama Pusat Perbelanjaan',
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
+        ]);
+    }
     public function restoranSingle($id)
     {
         return view('home.restoran-single', [

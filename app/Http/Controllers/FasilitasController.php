@@ -6,6 +6,7 @@ use App\Models\Fasilitas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use File;
+
 class FasilitasController extends Controller
 {
     /**
@@ -34,7 +35,7 @@ class FasilitasController extends Controller
         //
         return view('admin.fasilitas.create', [
             'page' => 'Fasilitas | APEKSI',
-            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata'],
+            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata','Fasilitas Kesehatan','Pusat Perbelanjaan'],
             'pageTitle' => 'Tambah Fasilitas',
 
         ]);
@@ -48,7 +49,7 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
-           $rules = [
+        $rules = [
 
             'kategori' => 'required',
 
@@ -66,8 +67,8 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $request->input('long_lat'),
-            'long_lat' => $request->input('long_lat','|','lati_tude'),
-             'foto' => $request->file('foto'),
+            'long_lat' => $request->input('long_lat', '|', 'lati_tude'),
+            'foto' => $request->file('foto'),
         ];
 
         $messages = [
@@ -84,12 +85,12 @@ class FasilitasController extends Controller
         }
 
         // Upload Foto
-         $temp_foto= $request->file('foto')->getPathName();
-         $file_foto= $request->input('foto') . "-Foto-Fasilitas-" . time();
-         $folder_foto= "unggah/fasilitas/" . $file_foto. ".jpg";
-         move_uploaded_file($temp_foto, $folder_foto);
-         $name_foto= '/unggah/fasilitas/' . $file_foto. '.jpg';
-         $long=$request->input('long_lat') . "|". $request->input('lati_tude');
+        $temp_foto = $request->file('foto')->getPathName();
+        $file_foto = $request->input('foto') . "-Foto-Fasilitas-" . time();
+        $folder_foto = "unggah/fasilitas/" . $file_foto . ".jpg";
+        move_uploaded_file($temp_foto, $folder_foto);
+        $name_foto = '/unggah/fasilitas/' . $file_foto . '.jpg';
+        $long = $request->input('long_lat') . "|" . $request->input('lati_tude');
         $data = [
             'kategori' => $request->input('kategori'),
             'nama_fasilitas' => $request->input('fasilitas'),
@@ -102,7 +103,6 @@ class FasilitasController extends Controller
         Fasilitas::create($data);
 
         return redirect('/admin/fasilitas/')->with('success', 'Data Berhasil Ditambahkan!');
-
     }
 
     /**
@@ -127,8 +127,8 @@ class FasilitasController extends Controller
         //
         //
         return view('admin.fasilitas.edit', [
-            'page' => 'Edit Fasilitas | Gereja Moria',
-            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata'],
+            'page' => 'Edit Fasilitas | APEKSI',
+            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata','Fasilitas Kesehatan','Pusat Perbelanjaan'],
             'pageTitle' => 'Edit Fasilitas',
             'data' => Fasilitas::where('fasilitas_id', $id)->first(),
         ]);
@@ -143,10 +143,10 @@ class FasilitasController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $foto_fasilitas=$request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:2000':'';
+        $foto_fasilitas = $request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:2000' : '';
         $rules = [
 
-          'kategori' => 'required',
+            'kategori' => 'required',
             'nama_fasilitas' => 'required',
             'deskripsi' => 'required',
             'lokasi' => 'required',
@@ -161,8 +161,7 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $request->input('long_lat'),
-
-             'foto' => $request->file('foto'),
+            'foto' => $request->file('foto'),
         ];
 
         $messages = [
@@ -191,9 +190,9 @@ class FasilitasController extends Controller
             move_uploaded_file($temp_foto, $folder_foto);
             $path_foto = "/unggah/fasilitas/" . $newFile_foto;
         }
-        $long=$request->input('long_lat') . "|". $request->input('lati_tude');
+        $long = $request->input('long_lat') . "|" . $request->input('lati_tude');
         $data = [
-           'kategori' => $request->input('kategori'),
+            'kategori' => $request->input('kategori'),
             'nama_fasilitas' => $request->input('fasilitas'),
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
@@ -217,7 +216,7 @@ class FasilitasController extends Controller
     {
         //
         //
-       $fasilitas = Fasilitas::where('fasilitas_id', $request->input('fasilitas_id'))->first();
+        $fasilitas = Fasilitas::where('fasilitas_id', $request->input('fasilitas_id'))->first();
         File::delete(public_path($fasilitas['foto']));
         Fasilitas::destroy($request->input('fasilitas_id'));
         return redirect('/admin/fasilitas')->with('success', 'Data berhasil dihapus!');
