@@ -30,10 +30,7 @@
 
                         @foreach ($kegiatan as $r)
                             <!-- mulai modal  -->
-
-
-
-                            <br>
+                             <br>
                             <a href="/kegiatan-single/{{ $r->kegiatan_id }}">
                                 <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
                                     <div class="ms-2 me-auto">
