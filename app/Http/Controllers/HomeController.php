@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $galeris= Galeri::all();
+        $galeris = Galeri::all();
         return view('home.index', [
             'pageTitle' => 'Home',
             'GaleriRows' => $galeris,
@@ -179,5 +179,8 @@ class HomeController extends Controller
         ]);
     }
 
-
+    public function updateKegiatan(Request $req, $peserta, $kegiatan)
+    {
+        dd($kegiatan);
+    }
 }

@@ -72,7 +72,7 @@
                     <div class="card-header pb-0 pt-3 bg-transparent">
                     </div>
                     <div class="card-body p-3">
-                        <img src="/assets/img/logo-apeksi.png" class="w-100" alt="">
+                        <center><img src="/assets/img/logo-apeksi.png" class="w-50" alt=""></center>
                     </div>
                 </div>
             </div>

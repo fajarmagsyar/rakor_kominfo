@@ -16,12 +16,11 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        $galeris= Galeri::all();
+        $galeris = Galeri::all();
         return view('admin.galeri.index', [
             'pageTitle' => 'Galeri',
             'galeri' => $galeris,
         ]);
-
     }
 
     /**
@@ -42,13 +41,12 @@ class GaleriController extends Controller
 
     public function show($id)
     {
-
     }
 
 
     public function store(Request $request)
     {
-           $rules = [
+        $rules = [
 
             'kategori' => 'required',
             'foto' => 'file|mimes:png,jpg,jpeg|max:1000',
@@ -57,15 +55,14 @@ class GaleriController extends Controller
 
         $input = [
             'kategori' => $request->input('kategori'),
-             'foto' => $request->file('foto'),
+            'foto' => $request->file('foto'),
         ];
 
         $messages = [
             'required' => '*Kolom :attribute wajib diisi.',
             'file' => '*File :attribute wajib dipilih.',
-            'max' => '*Kolom :attribute maksimal :max.',
+            'max' => '*Kolom :attribute maksimal :max MB.',
             'mimes' => '*Format file :attribute tidak didukung.',
-            'unique' => '*Kolom :attribute sudah terdaftar.',
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -74,12 +71,13 @@ class GaleriController extends Controller
         }
 
         // Upload Foto
-         $temp_foto= $request->file('foto')->getPathName();
-         $file_foto= $request->input('foto') . "-Foto-galeri-" . time();
-         $folder_foto= "unggah/galeri/" . $file_foto. ".jpg";
-         move_uploaded_file($temp_foto, $folder_foto);
-         $name_foto= '/unggah/galeri/' . $file_foto. '.jpg';
-         $long=$request->input('long_lat') . "|". $request->input('lati_tude');
+        $temp_foto = $request->file('foto')->getPathName();
+        $ex = $request->file('foto')->extension();
+        $file_foto = $request->input('foto') . "-Foto-galeri-" . time();
+        $folder_foto = "unggah/galeri/" . $file_foto . "." . $ex;
+        move_uploaded_file($temp_foto, $folder_foto);
+        $name_foto = '/unggah/galeri/' . $file_foto . '.' . $ex;
+
         $data = [
             'kategori' => $request->input('kategori'),
             'foto' => $name_foto,
@@ -106,11 +104,11 @@ class GaleriController extends Controller
 
     public function update(Request $request, $id)
     {
-        $galeri=$request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:2000':'';
+        $galeri = $request->file('foto') ? 'file|mimes:png,jpg,jpeg|max:2000' : '';
         $rules = [
 
-        'kategori' => 'required',
-        'foto' => $galeri,
+            'kategori' => 'required',
+            'foto' => $galeri,
 
         ];
 
@@ -144,7 +142,7 @@ class GaleriController extends Controller
             move_uploaded_file($temp_foto, $folder_foto);
             $path_foto = "/unggah/galeri/" . $newFile_foto;
         }
-        $long=$request->input('long_lat') . "|". $request->input('lati_tude');
+        $long = $request->input('long_lat') . "|" . $request->input('lati_tude');
         $data = [
             'kategori' => $request->input('kategori'),
             'foto' => $path_foto,
@@ -158,11 +156,9 @@ class GaleriController extends Controller
     public function destroy(Request $request)
     {
 
-        $gambar = Galeri::where('galeri_id',$request->input('galeri_id'))->first();
+        $gambar = Galeri::where('galeri_id', $request->input('galeri_id'))->first();
         File::delete(public_path($gambar['foto']));
         Galeri::destroy($request->input('galeri_id'));
         return redirect('/admin/galeri')->with('success', 'Data berhasil dihapus!');
     }
-
-
 }

@@ -30,12 +30,13 @@
     <link href="/assets/css/variables.css" rel="stylesheet">
     <link href="/assets/css/main.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-        integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
-        integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <!-- Or for RTL support -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
@@ -53,27 +54,30 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
-                    <li><a class="nav-link scrollto" href="/wisata">Wisata</a></li>
-                    <li><a class="nav-link scrollto" href="/hotel">Hotel</a></li>
-                    <li><a href="/restoran">Restoran</a></li>
-                    <li><a href="#Galeri">Galeri</a></li>
-                    
+                    <li><a href="/#galeri">Galeri</a></li>
+
                     <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
-                    <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
                     <div class="dropdown">
                         <a class="nav-link scrollto" type="#" id="dropdown" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Hostpot Kota
+                            Spot Kota Kupang
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item" href="/faskes">Kesehatan</a></li>
-                            <li><a class="dropdown-item" href="/wisata">Wisata</a></li>
-                            <li><a class="dropdown-item" href="/hotel">Hotel</a></li>
-                            <li><a class="dropdown-item" href="/retoran">Restoran</a></li>
-                            <li><a class="dropdown-item" href="/pusper">Perbelanjaan</a></li>
+                            <li><a class="dropdown-item" href="/faskes">Kesehatan <i class="bi bi-heart-pulse"></i></a>
+                            </li>
+                            <li><a class="dropdown-item" href="/wisata">Wisata <i
+                                        class="bi bi-play-circle-fill"></i></a></li>
+                            <li><a class="dropdown-item" href="/hotel">Hotel <i class="bi bi-building"></i></a>
+                            </li>
+                            <li><a class="dropdown-item" href="/restoran">Restoran <i class="bi bi-cup-straw"></i></a>
+                            </li>
+                            <li><a class="dropdown-item" href="/pusper">Perbelanjaan <i class="bi bi-basket"></i></a>
+                            </li>
 
                         </ul>
                     </div>
+
+                    <li><a class="nav-link scrollto" href="/contact">Kontak</a></li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
@@ -158,5 +162,12 @@
 
 
 </body>
+<script>
+    $(document).ready(function() {
+        $('.form-select').select2({
+            theme: 'bootstrap-5'
+        });
+    });
+</script>
 
 </html>
