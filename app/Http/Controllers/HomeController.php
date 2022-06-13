@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Absen;
 use App\Models\Artikel;
 use App\Models\Profil;
 use App\Models\Fasilitas;
@@ -179,8 +180,20 @@ class HomeController extends Controller
         ]);
     }
 
-    public function updateKegiatan(Request $req, $peserta, $kegiatan)
+    public function updateKegiatan(Request $req, $peserta)
     {
-        dd($kegiatan);
+        $kegiatan = Kegiatan::get();
+        foreach ($kegiatan as $r) {
+            if ($req->input('kegiatan_id_' . $r->kegiatan_id) != null) {
+                $data = [
+                    'user_id' => $peserta,
+                    'kegiatan_id' => $r->kegiatan_id,
+                    'absensi' => 0,
+                    'status_peserta' => 'Peserta'
+                ];
+                Absen::create($data);
+            }
+        }
+        return redirect('/')->with('kegiatan_success', 'yes');
     }
 }

@@ -1,5 +1,10 @@
 @extends('home.layouts.main')
 @section('isi')
+    @if (session()->has('kegiatan_success'))
+        <script>
+            Swal.fire('Berhasil', 'Registrasi dan pemilihan kegiatan anda telah selesai!', 'success');
+        </script>
+    @endif
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials" style="margin-top: 100px;">
         <div class="container" data-aos="fade-up">
