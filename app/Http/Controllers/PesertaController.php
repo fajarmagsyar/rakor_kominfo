@@ -91,6 +91,7 @@ class PesertaController extends Controller
         ]);
     }
 
+
     public function update(Request $request, $id)
     {
         $role = Roles::where('role_name', 'User')->first();
@@ -115,6 +116,7 @@ class PesertaController extends Controller
 
         return redirect('/admin/peserta')->with('success', 'Data berhasil diubah!');
     }
+    
 
     public function destroy($id)
     {

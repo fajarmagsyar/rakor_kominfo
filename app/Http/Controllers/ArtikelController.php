@@ -50,6 +50,7 @@ class ArtikelController extends Controller
         $input = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
+            'link' => $request->input('link'),
              
         ];
 
@@ -68,6 +69,7 @@ class ArtikelController extends Controller
         $data = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
+            'link' => $request->input('link'),
            
         ];
         Artikel::create($data);
@@ -125,6 +127,7 @@ class ArtikelController extends Controller
         $input = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
+             'link' => $request->input('link'),
            
 
         ];
@@ -149,6 +152,7 @@ class ArtikelController extends Controller
         $data = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
+             'link' => $request->input('link'),
             
         ];
 

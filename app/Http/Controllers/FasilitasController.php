@@ -161,7 +161,6 @@ class FasilitasController extends Controller
             'deskripsi' => $request->input('deskripsi'),
             'lokasi' => $request->input('lokasi'),
             'long_lat' => $request->input('long_lat'),
-
             'foto' => $request->file('foto'),
         ];
 

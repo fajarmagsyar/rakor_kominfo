@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Profil;
 use App\Models\Fasilitas;
+use App\Models\Galeri;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,10 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $galeris= Galeri::all();
         return view('home.index', [
             'pageTitle' => 'Home',
+            'GaleriRows' => $galeris,
         ]);
     }
 
@@ -175,5 +178,6 @@ class HomeController extends Controller
             'pageTitle' => 'Contact',
         ]);
     }
+
 
 }

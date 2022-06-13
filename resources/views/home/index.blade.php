@@ -276,8 +276,36 @@
 
                     </div><!-- End Service Item -->
 
-                </div>
+                    <section id="" class="portfolio" data-aos="fade-up">
+                        <div class="container">
+                          <div class="section-header">
+                            <h2>Galeri Apeksi 2017</h2>
+                          </div>
+                        </div>
+                        <div class="container-fluid" data-aos="fade-up" data-aos-delay="200">
+                          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+                            <ul class="portfolio-flters">
+                              <li data-filter="*" class="filter-active">All</li>
+                              <li data-filter=".filter-praker">Praker</li>
+                              <li data-filter=".filter-raker">Raker</li>
+                            </ul>
+                            <div class="row g-0 portfolio-container">
 
+                                @forelse ( $GaleriRows as $galeri )
+                                <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
+                                    <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                      <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                    </div>
+                                  </div>
+                                @empty
+                                @endforelse
+
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                </div>
             </div>
         </section><!-- End Services Section -->
 
