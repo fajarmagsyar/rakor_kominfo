@@ -20,6 +20,7 @@ class AdminController extends Controller
             'totalFasilitas' => Fasilitas::count(),
         ]);
     }
+
     public function pesertaKegiatan($id)
     {
         $this->authorize('Admin');

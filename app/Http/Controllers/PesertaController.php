@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kegiatan;
 use App\Models\User;
 use App\Models\Roles;
 use Illuminate\Support\Facades\Validator;
@@ -36,30 +37,37 @@ class PesertaController extends Controller
 
 
         $rules = [
-            'nama'      =>  'required',
-            'jabatan'   =>  'required',
-            'email'     =>  'email | required | unique:users',
-            'asal'      =>  'required',
-            'hp'        =>  'required | numeric | min:12 | unique:users'
+            'nama'          =>  'required',
+            'jabatan'       =>  'required',
+            'email'         =>  'email | required | unique:users',
+            'asal'          =>  'required',
+            'datang'        =>  'required',
+            'pergi'         =>  'required',
+            'maskapai'      =>  'required',
+            'hp'            =>  'required | numeric | min:12 | unique:users'
         ];
         $input = [
-            'nama' => $request->input('nama'),
-            'jabatan' => $request->input('jabatan'),
-            'email' => $request->input('email'),
-            'asal'  => $request->input('asal'),
-            'hp' => $request->input('hp'),
-            'role_id' => $role->role_id,
+            'nama'           => $request->input('nama'),
+            'jabatan'        => $request->input('jabatan'),
+            'email'          => $request->input('email'),
+            'asal'           => $request->input('asal'),
+            'hp'             => $request->input('hp'),
+            'datang'         => $request->input('datang'),
+            'pergi'          => $request->input('pergi'),
+            'maskapai'       => $request->input('maskapai'),
+            'pic'            => ($request->input('pic')) ? '1' : '0',
+            'role_id'        => $role->role_id,
         ];
 
 
         $messages = [
 
-            'required' => '*Kolom :attribute wajib diisi.',
-            'file' => '*File :attribute wajib dipilih.',
-            'max' => '* Nomor :attribute maksimal :max digit.',
-            'mimes' => '*Format file :attribute tidak didukung.',
-            'email' => '*Email tidak valid',
-            'unique' => '*Sudah terdaftar'
+            'required'      => '*Kolom :attribute wajib diisi.',
+            'file'          => '*File :attribute wajib dipilih.',
+            'max'           => '* Nomor :attribute maksimal :max digit.',
+            'mimes'         => '*Format file :attribute tidak didukung.',
+            'email'         => '*Email tidak valid',
+            'unique'        => '*Sudah terdaftar'
         ];
         $validator = Validator::make($input, $rules, $messages);
         if ($validator->fails()) {
@@ -84,6 +92,7 @@ class PesertaController extends Controller
         ]);
     }
 
+
     public function update(Request $request, $id)
     {
         $role = Roles::where('role_name', 'User')->first();
@@ -96,6 +105,10 @@ class PesertaController extends Controller
             'email' => $request->input('email'),
             'asal'  => $request->input('asal'),
             'hp' => $request->input('hp'),
+            'datang' => $request->input('datang'),
+            'pergi' => $request->input('pergi'),
+            'maskapai' => $request->input('maskapai'),
+            'maskapai' => $request->input('maskapai'),
             'role_id' => $role->role_id,
         ];
 
@@ -104,6 +117,7 @@ class PesertaController extends Controller
 
         return redirect('/admin/peserta')->with('success', 'Data berhasil diubah!');
     }
+
 
     public function destroy($id)
     {
@@ -142,6 +156,7 @@ class PesertaController extends Controller
         return view('home.registrasi', [
             'pageTitle' => 'Registrasi',
             'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
+            'kota' => ['KOTA KUPANG', 'KOTA MOJOKERTO', 'KOTA KEDIRI', 'KOTA BATU', 'KOTA SURABAYA', 'KOTA MALANG', 'KOTA MADIUN', 'KOTA BLITAR', 'KOTA PROBOLINGGO', 'KOTA PASURUAN', 'KOTA DENPASAR', 'KOTA MATARAM', 'KOTA BIMA'],
         ]);
     }
     public function registrasiResult($id)
@@ -149,6 +164,7 @@ class PesertaController extends Controller
         return view('home.registrasi-result', [
             'pageTitle' => 'Registrasi',
             'pesertaRow' => User::find($id),
+            'kegiatanRows' => Kegiatan::orderBy('tanggal', 'asc')->get(),
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Profil;
 use App\Models\Fasilitas;
+use App\Models\Galeri;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,10 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $galeris = Galeri::all();
         return view('home.index', [
             'pageTitle' => 'Home',
+            'GaleriRows' => $galeris,
         ]);
     }
 
@@ -118,6 +121,40 @@ class HomeController extends Controller
         ]);
     }
 
+
+    //Fasilitas
+    public function faskes()
+    {
+        return view('home.faskes', [
+            'pageTitle' => 'Nama Fasilitas Kesehatan',
+            'fasilitasRows' => Fasilitas::where('kategori', 'Fasilitas Kesehatan')->get(),
+        ]);
+    }
+
+    //pusat perbelanjaan
+    public function pusper()
+    {
+        return view('home.pusper', [
+            'pageTitle' => 'Nama Pusat Perbelanjaan',
+            'fasilitasRows' => Fasilitas::where('kategori', 'Pusat Perbelanjaan')->get(),
+        ]);
+    }
+
+    public function FaskesSingel($id)
+    {
+        return view('home.faskes-singel', [
+            'pageTitle' => 'Nama Fasillitas Kesehatan',
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
+        ]);
+    }
+
+    public function PusperSingle($id)
+    {
+        return view('home.pusper-singel', [
+            'pageTitle' => 'Nama Pusat Perbelanjaan',
+            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
+        ]);
+    }
     public function restoranSingle($id)
     {
         return view('home.restoran-single', [
@@ -142,4 +179,8 @@ class HomeController extends Controller
         ]);
     }
 
+    public function updateKegiatan(Request $req, $peserta, $kegiatan)
+    {
+        dd($kegiatan);
+    }
 }

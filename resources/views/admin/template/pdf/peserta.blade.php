@@ -68,7 +68,8 @@
 <body style="font-family: Arial, Helvetica, sans-serif; color: white">
 
     <div class="container">
-        <img src="data:image/png;base64,{{ $card }}" alt="" style="position: absolute; z-index: -99999">
+        <img src="data:image/png;base64,{{ $card }}" alt=""
+            style="position: absolute; z-index: -99999; width: 100%">
         <center>
             <div class="qr-code">
                 <img src="data:image/png;base64, {!! $qr !!}" alt="" width="180px">
