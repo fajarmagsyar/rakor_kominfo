@@ -53,7 +53,7 @@ Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'restoranS
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/download-qr', [PesertaController::class, 'cetakPDFPesertaByNoHP']);
 Route::get('/registrasi', [PesertaController::class, 'registrasi']);
-Route::post('/updateKegiatanPeserta/{peserta}/{kegiatan}', [HomeController::class, 'updateKegiatan']);
+Route::post('/updateKegiatanPeserta/{peserta}', [HomeController::class, 'updateKegiatan']);
 Route::get('/registrasi-result/{id}', [PesertaController::class, 'registrasiResult']);
 
 Route::group(['prefix' => 'admin'], function () {

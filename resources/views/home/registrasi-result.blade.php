@@ -1,5 +1,8 @@
 @extends('home.layouts.main')
 @section('isi')
+    @php
+    use App\Models\Absen;
+    @endphp
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
@@ -35,10 +38,14 @@
                                 @csrf
                                 <ol class="list-group">
                                     @foreach ($kegiatanRows as $keg)
+                                        @php
+                                            $hitungKuota = $keg->kuota / 12 - Absen::getKuotaPeserta($keg->kegiatan_id, $pesertaRow->asal);
+                                        @endphp
                                         <li class="list-group-item d-flex justify-content-between align-items-start">
                                             <div class="ms-2 me-auto">
-                                                <input type="checkbox" class="float-start check" style="margin-top: 6px"
-                                                    name="kegiatan_id" value="{{ $keg->kegiatan_id }}">
+                                                <input type="checkbox" class="float-start check" style="margin-top: 6px;"
+                                                    {{ $hitungKuota < 1 ? 'disabled' : '' }}
+                                                    name="kegiatan_id_{{ $keg->kegiatan_id }}">
                                                 <b class="float-start">{{ $keg->nama_kegiatan }}</b>
                                                 <br>
                                                 <span class="float-start text-muted" style="font-size: 12px">
@@ -47,13 +54,16 @@
                                                     {{ $keg->jam_keluar }} WITA
                                                 </span>
                                             </div>
-                                            <span class="badge bg-primary rounded-pill">Kuota:
-                                                {{ $keg->kuota }}</span>
+                                            <span
+                                                class="badge {{ $hitungKuota < 1 ? 'bg-danger' : 'bg-primary' }} rounded-pill">Kuota:
+                                                {{ $hitungKuota }}</span>
                                         </li>
                                     @endforeach
                                 </ol>
                                 <div class="mt-4">
-                                    <button class="float-end mb-3 btn bg-primary text-white" type="submit">
+                                    <button class="float-end mb-3 btn bg-primary text-white"
+                                        onclick="return confirm('Apakah anda yakin kegiatan yang anda pilih sudah benar?')"
+                                        type="submit">
                                         <i class="bi bi-plus"></i>
                                         Registrasi Kegiatan</button>
                                 </div>
