@@ -35,6 +35,24 @@
                                     <input type="hidden" name="user" value="user">
                                     <div class="row">
 
+                                    <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="userName" class="form-label">Kota Asal
+                                                    <span class="text-danger">*</span></label>
+                                                <select name="asal" class="form-select">
+                                                    <option value="" selected disabled>- Pilih kota asal -</option>
+                                                    @foreach ($kota as $r)
+                                                        <option value="{{ $r }}">{{ $r }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('asal')
+                                                    <div id="asal" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
                                         <div class="col-12">
                                             <div class="mb-3">
                                                 <label for="userName" class="form-label">Nama Peserta
@@ -66,24 +84,6 @@
                                                 @enderror
                                                 <input type="checkbox" name="pic" value="1"> Centang jika anda PIC dari Kota
                                                 Tujuan anda.
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="mb-3">
-                                                <label for="userName" class="form-label">Kota Asal
-                                                    <span class="text-danger">*</span></label>
-                                                <select name="asal" class="form-select">
-                                                    <option value="" selected disabled>- Pilih kota asal -</option>
-                                                    @foreach ($kota as $r)
-                                                        <option value="{{ $r }}">{{ $r }}</option>
-                                                    @endforeach
-                                                </select>
-                                                @error('asal')
-                                                    <div id="asal" class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
                                             </div>
                                         </div>
 

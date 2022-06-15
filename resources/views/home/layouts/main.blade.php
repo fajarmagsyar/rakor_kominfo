@@ -48,6 +48,7 @@
 
             <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
                 <img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
+                <img src="/assets/img/logo-kota-kupang.png" class="img-fluid" alt="">
                 <h1>APEKSI<span>.</span></h1>
             </a>
             <nav id="navbar" class="navbar">

@@ -9,306 +9,356 @@
                     <h2 style="padding-top: 50px;">Dewan Pengurus</h2>
                     <hr>
                 </div>
-                <div class="row">
-                    <div class="col-3">
-                        <ol class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/1.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotkup">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Kupang</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Nusa Tenggara Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Jefirstson R. Riwu Kore
-                                                    <br>
-                                                    <a href="https://v2.kupangkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> kupangkota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/2.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotbim">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">KOTA BIMA</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Nusa Tenggara Barat</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Muhammad Lutfi
-                                                    <br>
-                                                    <a href="https://bimakota.go.id/"><i class="bi bi-box-arrow-up-right"></i> bimakota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/3.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmat">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Mataram</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Nusa Tenggara Barat</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Mohan Roliskana
-                                                    <br>
-                                                    <a href="https://mataramkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> mataramkota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/4.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotked">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Kediri</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Abdullah Abu Bakar
-                                                    <br>
-                                                    <a href="https://kedirikota.go.id/"><i class="bi bi-box-arrow-up-right"></i> kedirikota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/13.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotden">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Denpasar</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Bali</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> I Gusti Ngurah Jaya Negara
-                                                    <br>
-                                                    <a href="https://denpasarkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> denpasarkota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/5.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotbatu">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Batu</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Dewanti Rumpoko
-                                                    <br>
-                                                    <a href="https://batukota.go.id/"><i class="bi bi-box-arrow-up-right"></i> batukota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/6.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotsura">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Surabaya</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Eri Cahyadi
-                                                    <br>
-                                                    <a href="https://surabaya.go.id/"><i class="bi bi-box-arrow-up-right"></i> surabaya.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/7.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotbli">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Blitar</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Santoso
-                                                    <br>
-                                                    <a href="https://blitarkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> blitarkota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/8.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmoj">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Mojokerto</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Ika Puspitasari
-                                                    <br>
-                                                    <a href="https://mojokertokota.go.id/"><i class="bi bi-box-arrow-up-right"></i> mojokertokota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/9.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotpro">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Probolinggo</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Habib Hadi Zainal Abidin
-                                                    <br>
-                                                    <a href="https://probolinggokota.go.id/"><i class="bi bi-box-arrow-up-right"></i> probolinggokota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/10.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmal">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Malang</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Sutiaji
-                                                    <br>
-                                                    <a href="https://malangkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> malangkota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/11.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmed">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Mediun</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Maidi
-                                                    <br>
-                                                    <a href="https://madiunkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> madiunkota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
-                                    <div class="row">
-                                        <div class="col-sm-4 my-auto">
-                                            <img class="card-img-top" src="unggah/depen/12.png " alt="Card image cap">
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="ms-2 me-auto">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotpas">
-                                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Pasuruan</div>
-                                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur </div>
-                                                </a>
-                                                <div class="text-muted">
-                                                    <i class="bi bi-person-badge"></i> Saifullah Yusuf
-                                                    <br>
-                                                    <a href="https://pasuruankota.go.id/"><i class="bi bi-box-arrow-up-right"></i> pasuruankota.go.id</a>
-                                                    <br>
-                                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                        </ol>
-                    </div>
-                    <div class="col-9">
                         <img src="/unggah/depen/struk.png" style="max-width:100%">
                         
                     </div>
                 </div>
-               
+              
+                
 
             </section><!-- End About Section -->
     </main><!-- End #main -->
+
+   <!-- ======= Team Section ======= -->
+   <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Pengurus KOMWIL IV</h2>
+          <hr>
+        </div>
+
+        <div class="row gy-5">
+
+        <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/1.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotkup">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Kupang</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Nusa Tenggara Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Jefirstson R. Riwu Kore
+                                    <br>
+                                    <a href="https://v2.kupangkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> kupangkota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                  <div class="row">
+                      <div class="col-sm-4 my-auto">
+                          <img class="card-img-top" src="unggah/depen/2.png " alt="Card image cap">
+                      </div>
+                      <div class="col-sm-8">
+                          <div class="ms-2 me-auto">
+                              <a href="#" data-bs-toggle="modal" data-bs-target="#kotbim">
+                                  <div class="fw-bold" style="color: #0ea2bd;">Kota Bima</div>
+                                  <div class="text-muted mb-2" style="font-size: 14px">Nusa Tenggara Barat</div>
+                              </a>
+                              <div class="text-muted">
+                                  <i class="bi bi-person-badge"></i> Muhammad Lutfi
+                                  <br>
+                                  <a href="https://bimakota.go.id/"><i class="bi bi-box-arrow-up-right"></i> bimakota.go.id</a>
+                                  <br>
+                                  {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+            </div><!-- End -->
+
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+              <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                <div class="row">
+                    <div class="col-sm-4 my-auto">
+                        <img class="card-img-top" src="unggah/depen/3.png " alt="Card image cap">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="ms-2 me-auto">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#kotmat">
+                                <div class="fw-bold" style="color: #0ea2bd;">Kota Mataram</div>
+                                <div class="text-muted mb-2" style="font-size: 14px">Nusa Tenggara Barat</div>
+                            </a>
+                            <div class="text-muted">
+                                <i class="bi bi-person-badge"></i> Mohan Roliskana
+                                <br>
+                                <a href="https://mataramkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> mataramkota.go.id</a>
+                                <br>
+                                {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/4.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotked">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Kediri</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Abdullah Abu Bakar
+                                    <br>
+                                    <a href="https://kedirikota.go.id/"><i class="bi bi-box-arrow-up-right"></i> kedirikota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/13.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotden">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Denpasar</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Bali</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> I Gusti Ngurah Jaya Negara
+                                    <br>
+                                    <a href="https://denpasarkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> denpasarkota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/5.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotbatu">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Batu</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Dewanti Rumpoko
+                                    <br>
+                                    <a href="https://batukota.go.id/"><i class="bi bi-box-arrow-up-right"></i> batukota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/6.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotsura">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Surabaya</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Eri Cahyadi
+                                    <br>
+                                    <a href="https://surabaya.go.id/"><i class="bi bi-box-arrow-up-right"></i> surabaya.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/7.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotbli">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Blitar</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Santoso
+                                    <br>
+                                    <a href="https://blitarkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> blitarkota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/8.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmoj">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Mojokerto</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Ika Puspitasari
+                                    <br>
+                                    <a href="https://mojokertokota.go.id/"><i class="bi bi-box-arrow-up-right"></i> mojokertokota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/9.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotpro">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Probolinggo</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Habib Hadi Zainal Abidin
+                                    <br>
+                                    <a href="https://probolinggokota.go.id/"><i class="bi bi-box-arrow-up-right"></i> probolinggokota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/10.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmal">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Malang</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Sutiaji
+                                    <br>
+                                    <a href="https://malangkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> malangkota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/11.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotmed">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Mediun</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur</div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Maidi
+                                    <br>
+                                    <a href="https://madiunkota.go.id/"><i class="bi bi-box-arrow-up-right"></i> madiunkota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+                <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+                  <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
+                    <div class="row">
+                        <div class="col-sm-4 my-auto">
+                            <img class="card-img-top" src="unggah/depen/12.png " alt="Card image cap">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="ms-2 me-auto">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#kotpas">
+                                    <div class="fw-bold" style="color: #0ea2bd;">Kota Pasuruan</div>
+                                    <div class="text-muted mb-2" style="font-size: 14px">Jawa Timur </div>
+                                </a>
+                                <div class="text-muted">
+                                    <i class="bi bi-person-badge"></i> Saifullah Yusuf
+                                    <br>
+                                    <a href="https://pasuruankota.go.id/"><i class="bi bi-box-arrow-up-right"></i> pasuruankota.go.id</a>
+                                    <br>
+                                    {{-- <a href="" class="float-end"><i class="bi bi-geo"></i> Map</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                </div><!-- End -->
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section --> 
 
     <!-- Modal -->
 <div class="modal fade" id="kotkup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -558,7 +608,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Kota Malang</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Kota Madiun</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
