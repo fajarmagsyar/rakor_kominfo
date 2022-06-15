@@ -210,7 +210,7 @@
 
                 <div class="row gy-5">
 
-                    <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                         <div class="service-item">
                             <div class="img">
                                 <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
@@ -228,7 +228,7 @@
                         </div>
                     </div><!-- End Service Item -->
 
-                    <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                         <div class="service-item">
                             <div class="img">
                                 <img src="/assets/img/wisata.jpg" class="img-fluid" alt="">
@@ -246,7 +246,7 @@
                         </div>
                     </div><!-- End Service Item -->
 
-                    <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
                         <div class="service-item">
                             <div class="img">
                                 <img src="/assets/img/hotel.jpg" class="img-fluid" alt="">
@@ -264,9 +264,7 @@
                         </div>
                     </div><!-- End Service Item -->
 
-
-
-                    <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
                         <div class="service-item">
                             <div class="img">
                                 <img src="/assets/img/restoran.jpg" class="img-fluid" alt="">
@@ -279,6 +277,44 @@
                                     <h3>Restoran</h3>
                                 </a>
                                 <p>Penyajian makanan bersih dan segar dengan harga yang relatif murah.</p>
+
+                            </div>
+                        </div>
+
+                    </div><!-- End Service Item -->
+
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="service-item">
+                            <div class="img">
+                                <img src="/assets/img/kesehatan.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="details position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-hospital"></i>
+                                </div>
+                                <a href="/faskes" class="stretched-link">
+                                    <h3>Kesehatan</h3>
+                                </a>
+                                <p>Sarana pelayanan kesehatan milik pemerintah maupun yang dikelola oleh swasta.</p>
+
+                            </div>
+                        </div>
+
+                    </div><!-- End Service Item -->
+
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="service-item">
+                            <div class="img">
+                                <img src="/assets/img/belanja.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="details position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-cart"></i>
+                                </div>
+                                <a href="/pusper" class="stretched-link">
+                                    <h3>Perbelanjaan</h3>
+                                </a>
+                                <p>Pusat perbelanjaan bukan hanya sebagai tempat belanja tetapi juga sarana entertainment.</p>
 
                             </div>
                         </div>

@@ -1476,7 +1476,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(var(--color-primary-dark-rgb), 0.8);
+  background: rgba(var(--color-secondary-rgb), 0.8);
   opacity: 0.8;
 }
 .testimonials .section-header {
@@ -1490,8 +1490,8 @@ section {
   color: var(--color-white);
 }
 .testimonials .testimonial-item .testimonial-img {
-  width: 200px;
-  border-radius: 50%;
+  width: 300px;
+  /* border-radius: 50%; */
   border: 6px solid rgba(var(--color-white-rgb), 0.15);
   margin: 0 auto; 
 }
