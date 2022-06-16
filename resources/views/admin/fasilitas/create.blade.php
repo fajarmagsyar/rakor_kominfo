@@ -55,7 +55,7 @@
                                     <label for="userName" class="form-label">Deskripsi
                                         <span class="text-danger">*</span></label>
                                     <textarea placeholder="Masukan Deskripsi" name="deskripsi" value="{{ old('deskripsi') }}"
-                                        class="form-control @error('deskripsi') is-invalid @enderror" id="">{{ old('deskripsi') }}</textarea>
+                                        class="summernote @error('deskripsi') is-invalid @enderror" id="">{{ old('deskripsi') }}</textarea>
                                     @error('deskripsi')
                                         <div id="deskripsi" class="invalid-feedback">
                                             {{ $message }}
