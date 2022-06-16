@@ -18,81 +18,141 @@
 
                             <div class="row">
 
-                                <div class="mb-3">
-                                    <label for="userName" class="form-label">Nama Peserta
-                                        <span class="text-danger">*</span></label>
-                                    <input type="text" name="nama" parsley-trigger="change" placeholder="Masukkan Peserta"
-                                        class="form-control @error('nama') is-invalid @enderror" id="nama"
-                                        value="{{ old('nama') }}" />
-                                    @error('nama')
-                                        <div id="nama" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Nama Peserta
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" name="nama" parsley-trigger="change"
+                                            placeholder="Nama Lengkap" required
+                                            class="form-control @error('nama') is-invalid @enderror" id="nama"
+                                            value="{{ old('nama') }}" />
+                                        @error('nama')
+                                            <div id="nama" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="userName" class="form-label">Jabatan
-                                        <span class="text-danger">*</span></label>
-                                    <input type="text" name="jabatan" parsley-trigger="change"
-                                        placeholder="Masukkan Jabatan"
-                                        class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
-                                        value="{{ old('jabatan') }}" />
-                                    @error('jabatan')
-                                        <div id="jabatan" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Jabatan
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" name="jabatan" parsley-trigger="change"
+                                            placeholder="Jabatan anda saat ini" required
+                                            class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
+                                            value="{{ old('jabatan') }}" />
+                                        @error('jabatan')
+                                            <div id="jabatan" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <input type="checkbox" name="pic" value="1"> Centang jika anda PIC dari
+                                        Kota
+                                        Tujuan anda.
+                                    </div>
                                 </div>
 
-
-                                <div class="mb-3">
-                                    <label for="userName" class="form-label">Email
-                                        <span class="text-danger">*</span></label>
-                                    <input type="email" name="email" parsley-trigger="change" placeholder="Masukkan Email"
-                                        class="form-control @error('email') is-invalid @enderror" id="email"
-                                        value="{{ old('email') }}" />
-                                    @error('email')
-                                        <div id="email" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Kota Asal
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" name="asal" parsley-trigger="change"
+                                            placeholder="Kota asal anda" required
+                                            class="form-control @error('asal') is-invalid @enderror" id="asal"
+                                            value="{{ old('asal') }}" />
+                                        @error('asal')
+                                            <div id="asal" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                 </div>
 
-
-                                <div class="mb-3">
-                                    <label for="userName" class="form-label">Asal
-                                        <span class="text-danger">*</span></label>
-                                    <input type="text" name="asal" parsley-trigger="change"
-                                        placeholder="Masukkan asal peserta"
-                                        class="form-control @error('asal') is-invalid @enderror" id="asal"
-                                        value="{{ old('asal') }}" />
-                                    @error('asal')
-                                        <div id="asal" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                <div class="col-lg-6 col-sm-12 mx-auto">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Waktu Kedatangan
+                                            <span class="text-danger">*</span></label>
+                                        <input type="datetime-local" name="datang" parsley-trigger="change" required
+                                            class="form-control selector @error('datang') is-invalid @enderror"
+                                            id="datang" value="{{ old('datang') }}" />
+                                        @error('datang')
+                                            <div id="datang" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="userName" class="form-label">No.handphone
-                                        <span class="text-danger">*</span></label>
-                                    <input type="number" name="hp" parsley-trigger="change"
-                                        placeholder="Masukkan no.handphone" maxlength="12"
-                                        class="form-control @error('hp') is-invalid @enderror" id="hp"
-                                        value="{{ old('hp') }}" />
-                                    @error('hp')
-                                        <div id="hp" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                <div class="col-lg-6 col-sm-12 mx-auto">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Waktu Kepulangan
+                                            <span class="text-danger">*</span></label>
+                                        <input type="datetime-local" name="pergi" parsley-trigger="change" minlength="12"
+                                            maxlength="12" required
+                                            class="form-control selector @error('pergi') is-invalid @enderror"
+                                            id="pergi" value="{{ old('pergi') }}" />
+                                        @error('pergi')
+                                            <div id="pergi" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mx-auto">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Maskapai Penerbangan
+                                            <span class="text-danger">*</span></label>
+                                        <input type="text" name="maskapai" parsley-trigger="change" required
+                                            placeholder="Nama Maskapai/No. Penerbangan"
+                                            class="form-control @error('maskapai') is-invalid @enderror" id="maskapai"
+                                            value="{{ old('maskapai') }}" />
+                                        @error('maskapai')
+                                            <div id="maskapai" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <label for="" class="text-muted text-sm">Contoh: LION/JT-609</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-sm-12 mx-auto">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">Email
+                                            <span class="text-danger">*</span></label>
+                                        <input type="email" name="email" parsley-trigger="change" required
+                                            class="form-control @error('email') is-invalid @enderror" id="email"
+                                            value="{{ old('email') }}" />
+                                        @error('email')
+                                            <div id="email" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-12 mx-auto">
+                                    <div class="mb-3">
+                                        <label for="userName" class="form-label">No.handphone
+                                            <span class="text-danger">*</span></label>
+                                        <input type="number" name="hp" parsley-trigger="change" required
+                                            class="form-control @error('hp') is-invalid @enderror" id="hp"
+                                            value="{{ old('hp') }}" />
+                                        @error('hp')
+                                            <div id="hp" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                        <label for="test" class="text-muted text-sm">Contoh: 08xxxxxxxxxx12 </label>
+                                    </div>
                                 </div>
 
                                 <div class="text-end">
-                                    <button class="btn btn-primary waves-effect waves-light" type="submit"><i
-                                            class="mdi mdi-pencil-box"></i> Simpan</button>
-                                    <button type="reset" class="btn btn-secondary waves-effect"><i
-                                            class="mdi mdi-repeat"></i> Reset</button>
+                                    <button class="btn waves-effect waves-light text-white"
+                                        style="background-color: #0ea2bd"
+                                        onClick="return confirm('Yakin data yang anda masukkan sudah benar?')"
+                                        type="submit"><i class="bi bi-plus"></i> Registrasi</button>
                                 </div>
                             </div>
                         </form>
@@ -103,15 +163,10 @@
 
     </div>
     <script>
-        $(document).ready(function() {
-            $(".parsley-examples").parsley()
-        }), $(function() {
-            $("#demo-form").parsley().on("field:validated", function() {
-                var e = 0 === $(".parsley-error").length;
-                $(".alert-info").toggleClass("d-none", !e), $(".alert-warning").toggleClass("d-none", e)
-            }).on("form:submit", function() {
-                return !1
-            })
+        $(".selector").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d h:i",
+            time_24hr: true
         });
     </script>
 @endsection

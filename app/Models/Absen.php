@@ -31,4 +31,19 @@ class Absen extends Model
     {
         return Absen::join('users', 'users.user_id', '=', 'absen.user_id')->where('absen.kegiatan_id', $kegiatan_id)->get(['users.nama', 'users.jabatan', 'users.asal', 'absen.status_peserta']);
     }
+    static public function getKuota($kegiatan_id)
+    {
+        return Absen::join('users', 'users.user_id', '=', 'absen.user_id')
+            ->join('kegiatan', 'kegiatan.kegiatan_id', '=', 'absen.kegiatan_id')
+            ->where('absen.kegiatan_id', $kegiatan_id)
+            ->count();
+    }
+    static public function getKuotaPeserta($kegiatan_id, $asal)
+    {
+        return Absen::join('users', 'users.user_id', '=', 'absen.user_id')
+            ->join('kegiatan', 'kegiatan.kegiatan_id', '=', 'absen.kegiatan_id')
+            ->where('absen.kegiatan_id', $kegiatan_id)
+            ->where('users.asal', $asal)
+            ->count();
+    }
 }
