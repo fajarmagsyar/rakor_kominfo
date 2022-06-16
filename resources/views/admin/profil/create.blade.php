@@ -19,7 +19,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Visi</label>
-                                        <textarea name="visi" required>
+                                        <textarea class="summernote" name="visi" required>
                                             <?php
                                             echo $profilRow->visi;
                                             ?>
@@ -29,7 +29,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Misi</label>
-                                        <textarea name="misi" required>
+                                        <textarea class="summernote" name="misi" required>
                                             <?php
                                             echo $profilRow->misi;
                                             ?>
@@ -49,7 +49,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Sejarah</label>
-                                        <textarea name="sejarah" value="{{ $profilRow->sejarah }}" required>
+                                        <textarea class="summernote" name="sejarah" value="{{ $profilRow->sejarah }}" required>
                                             <?php
                                             echo $profilRow->sejarah;
                                             ?>
