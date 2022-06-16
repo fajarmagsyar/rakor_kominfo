@@ -39,7 +39,7 @@
                                     <label for="userName" class="form-label">Jabatan
                                         <span class="text-danger">*</span></label>
                                     <input type="text" value="{{$peserta->jabatan}}" name="jabatan" parsley-trigger="change" required
-                                    placeholder="Masukkan Jabatan"
+                                    placeholder="Masukan Jabatan"
                                         class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
                                         value="{{ old('jabatan') }}" />
                                     @error('jabatan')

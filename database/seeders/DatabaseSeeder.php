@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'user1',
             'email' => 'user@mail.com',
             'asal' => 'kota ambon',
-            'hp' => '085277123234',
+            'hp' => '085277123231',
             'password' => Hash::make('Admin1234'),
             'role_id' => $role2['role_id'],
         ])->getAttributes();
