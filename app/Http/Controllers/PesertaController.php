@@ -44,7 +44,7 @@ class PesertaController extends Controller
             'datang'        =>  'required',
             'pergi'         =>  'required',
             'maskapai'      =>  'required',
-            'hp'            =>  'required | numeric | min:12 | unique:users'
+            'hp'            =>  'required|numeric|min:12|unique:users'
         ];
         $input = [
             'nama'           => $request->input('nama'),
@@ -64,7 +64,7 @@ class PesertaController extends Controller
 
             'required'      => '*Kolom :attribute wajib diisi.',
             'file'          => '*File :attribute wajib dipilih.',
-            'max'           => '* Nomor :attribute maksimal :max digit.',
+            'min'           => '* Nomor :attribute minimal :min digit.',
             'mimes'         => '*Format file :attribute tidak didukung.',
             'email'         => '*Email tidak valid',
             'unique'        => '*Sudah terdaftar'

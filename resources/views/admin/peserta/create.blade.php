@@ -23,8 +23,9 @@
                                     <div class="mb-3">
                                         <label for="userName" class="form-label">Nama Peserta
                                             <span class="text-danger">*</span></label>
-                                        <input type="text" name="nama" parsley-trigger="change" placeholder="Nama Lengkap"
-                                            required class="form-control @error('nama') is-invalid @enderror" id="nama"
+                                        <input type="text" name="nama" parsley-trigger="change"
+                                            placeholder="Nama Lengkap" required
+                                            class="form-control @error('nama') is-invalid @enderror" id="nama"
                                             value="{{ old('nama') }}" />
                                         @error('nama')
                                             <div id="nama" class="invalid-feedback">
@@ -39,7 +40,7 @@
                                         <label for="userName" class="form-label">Jabatan
                                             <span class="text-danger">*</span></label>
                                         <input type="text" name="jabatan" parsley-trigger="change"
-                                            placeholder="Jabatang anda saat ini" required
+                                            placeholder="Jabatan anda saat ini" required
                                             class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
                                             value="{{ old('jabatan') }}" />
                                         @error('jabatan')
@@ -47,7 +48,8 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                        <input type="checkbox" name="pic" value="1"> Centang jika anda PIC dari Kota
+                                        <input type="checkbox" name="pic" value="1"> Centang jika anda PIC dari
+                                        Kota
                                         Tujuan anda.
                                     </div>
                                 </div>
@@ -56,8 +58,9 @@
                                     <div class="mb-3">
                                         <label for="userName" class="form-label">Kota Asal
                                             <span class="text-danger">*</span></label>
-                                        <input type="text" name="asal" parsley-trigger="change" placeholder="Kota asal anda"
-                                            required class="form-control @error('asal') is-invalid @enderror" id="asal"
+                                        <input type="text" name="asal" parsley-trigger="change"
+                                            placeholder="Kota asal anda" required
+                                            class="form-control @error('asal') is-invalid @enderror" id="asal"
                                             value="{{ old('asal') }}" />
                                         @error('asal')
                                             <div id="asal" class="invalid-feedback">
@@ -72,8 +75,8 @@
                                         <label for="userName" class="form-label">Waktu Kedatangan
                                             <span class="text-danger">*</span></label>
                                         <input type="datetime-local" name="datang" parsley-trigger="change" required
-                                            class="form-control selector @error('datang') is-invalid @enderror" id="datang"
-                                            value="{{ old('datang') }}" />
+                                            class="form-control selector @error('datang') is-invalid @enderror"
+                                            id="datang" value="{{ old('datang') }}" />
                                         @error('datang')
                                             <div id="datang" class="invalid-feedback">
                                                 {{ $message }}
@@ -88,8 +91,8 @@
                                             <span class="text-danger">*</span></label>
                                         <input type="datetime-local" name="pergi" parsley-trigger="change" minlength="12"
                                             maxlength="12" required
-                                            class="form-control selector @error('pergi') is-invalid @enderror" id="pergi"
-                                            value="{{ old('pergi') }}" />
+                                            class="form-control selector @error('pergi') is-invalid @enderror"
+                                            id="pergi" value="{{ old('pergi') }}" />
                                         @error('pergi')
                                             <div id="pergi" class="invalid-feedback">
                                                 {{ $message }}
@@ -133,14 +136,15 @@
                                     <div class="mb-3">
                                         <label for="userName" class="form-label">No.handphone
                                             <span class="text-danger">*</span></label>
-                                        <input type="number" name="hp" parsley-trigger="change" minlength="12"
-                                            maxlength="12" required class="form-control @error('hp') is-invalid @enderror"
-                                            id="hp" value="{{ old('hp') }}" />
+                                        <input type="number" name="hp" parsley-trigger="change" required
+                                            class="form-control @error('hp') is-invalid @enderror" id="hp"
+                                            value="{{ old('hp') }}" />
                                         @error('hp')
                                             <div id="hp" class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                        <label for="test" class="text-muted text-sm">Contoh: 08xxxxxxxxxx12 </label>
                                     </div>
                                 </div>
 
