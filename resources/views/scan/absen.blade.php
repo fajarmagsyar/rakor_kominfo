@@ -93,22 +93,25 @@ use App\Models\Absen;
                                         <div id="accord_{{ $keg['kegiatan_id'] }}" class="accordion-collapse collapse"
                                             aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                <table class="table" style="border-radius: 15px">
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Nama</th>
-                                                        <th>Asal</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                    @foreach (Absen::getAbsenByKegiatan($keg['kegiatan_id']) as $key => $r)
+                                                <div class="table-responsive">
+
+                                                    <table class="table" style="border-radius: 15px">
                                                         <tr>
-                                                            <td>{{ $key = $key + 1 }}</td>
-                                                            <td>{{ $r->nama }}</td>
-                                                            <td>{{ $r->asal }}</td>
-                                                            <td>{{ $r->status_peserta }}</td>
+                                                            <th>#</th>
+                                                            <th>Nama</th>
+                                                            <th>Asal</th>
+                                                            <th>Status</th>
                                                         </tr>
-                                                    @endforeach
-                                                </table>
+                                                        @foreach (Absen::getAbsenByKegiatan($keg['kegiatan_id']) as $key => $r)
+                                                            <tr>
+                                                                <td>{{ $key = $key + 1 }}</td>
+                                                                <td>{{ $r->nama }}</td>
+                                                                <td>{{ $r->asal }}</td>
+                                                                <td>{{ $r->status_peserta }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -16,8 +16,8 @@
                 <div class="col-xl-8 col-md-8" style="padding-top: 130px;" data-aos="zoom-in" data-aos-delay="200">
                     <div class="service-item">
                         <!-- <div class="img">
-                                                                                                                                                                                                                                                                                                                                                                            <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
-                                                                                                                                                                                                                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> -->
                         <div class="details position-relative">
                             <div class="icon">
                                 <i class="bi bi-qr-code"></i>
@@ -28,14 +28,14 @@
                             </p>
                             <br>
                             <div style="text-align: left;">
-                                <form action="/admin/peserta" class="parsley-examples" id="form-valid-parsley" method="post"
-                                    enctype="multipart/form-data">
+                                <form action="/admin/peserta" class="parsley-examples" id="form-valid-parsley"
+                                    method="post" enctype="multipart/form-data">
                                     @method('post')
                                     @csrf
                                     <input type="hidden" name="user" value="user">
                                     <div class="row">
 
-                                    <div class="col-12">
+                                        <div class="col-12">
                                             <div class="mb-3">
                                                 <label for="userName" class="form-label">Kota Asal
                                                     <span class="text-danger">*</span></label>
@@ -75,14 +75,15 @@
                                                     <span class="text-danger">*</span></label>
                                                 <input type="text" name="jabatan" parsley-trigger="change"
                                                     placeholder="Jabatan anda saat ini" required
-                                                    class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
-                                                    value="{{ old('jabatan') }}" />
+                                                    class="form-control @error('jabatan') is-invalid @enderror"
+                                                    id="jabatan" value="{{ old('jabatan') }}" />
                                                 @error('jabatan')
                                                     <div id="jabatan" class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                                <input type="checkbox" name="pic" value="1"> Centang jika anda PIC dari Kota
+                                                <input type="checkbox" name="pic" value="1"> Centang jika anda PIC
+                                                dari Kota
                                                 Tujuan anda.
                                             </div>
                                         </div>
@@ -91,7 +92,8 @@
                                             <div class="mb-3">
                                                 <label for="userName" class="form-label">Waktu Kedatangan
                                                     <span class="text-danger">*</span></label>
-                                                <input type="datetime-local" name="datang" parsley-trigger="change" required
+                                                <input type="datetime-local" name="datang" parsley-trigger="change"
+                                                    required
                                                     class="form-control selector @error('datang') is-invalid @enderror"
                                                     id="datang" value="{{ old('datang') }}" />
                                                 @error('datang')
@@ -131,7 +133,8 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                                <label for="" class="text-muted text-sm">Contoh: LION/JT-609</label>
+                                                <label for="" class="text-muted text-sm">Contoh:
+                                                    LION/JT-609</label>
                                             </div>
                                         </div>
 
@@ -140,8 +143,8 @@
                                                 <label for="userName" class="form-label">Email
                                                     <span class="text-danger">*</span></label>
                                                 <input type="email" name="email" parsley-trigger="change" required
-                                                    class="form-control @error('email') is-invalid @enderror" id="email"
-                                                    value="{{ old('email') }}" />
+                                                    class="form-control @error('email') is-invalid @enderror"
+                                                    id="email" value="{{ old('email') }}" />
                                                 @error('email')
                                                     <div id="email" class="invalid-feedback">
                                                         {{ $message }}
@@ -153,8 +156,7 @@
                                             <div class="mb-3">
                                                 <label for="userName" class="form-label">No.handphone
                                                     <span class="text-danger">*</span></label>
-                                                <input type="number" name="hp" parsley-trigger="change" minlength="12"
-                                                    maxlength="12" required
+                                                <input type="number" name="hp" parsley-trigger="change" required
                                                     class="form-control @error('hp') is-invalid @enderror" id="hp"
                                                     value="{{ old('hp') }}" />
                                                 @error('hp')
@@ -162,6 +164,24 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
+                                                <label for="test" class="text-muted text-sm">Contoh: 08xxxxxxxxxx12
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-sm-12 ">
+                                            <div class="mb-3">
+                                                <label for="userName" class="form-label">Token
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="text" name="token" parsley-trigger="change" required
+                                                    class="form-control @error('token') is-invalid @enderror"
+                                                    id="token" value="{{ old('token') }}" />
+                                                @error('token')
+                                                    <div id="token" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+
                                             </div>
                                         </div>
 
