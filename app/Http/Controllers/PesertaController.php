@@ -44,7 +44,8 @@ class PesertaController extends Controller
             'datang'        =>  'required',
             'pergi'         =>  'required',
             'maskapai'      =>  'required',
-            'hp'            =>  'required|numeric|min:12|unique:users'
+            'hp'            =>  'required|numeric|min:12|unique:users',
+            // 'token'            =>  'required'
         ];
         $input = [
             'nama'           => $request->input('nama'),
@@ -73,7 +74,9 @@ class PesertaController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
+        if ($request->input('token') != 'rakerkomwil-iv-2022') {
+            return redirect()->back()->with('error', 'Token tidak Valid')->withInput();
+        }
         $userBaru = User::create($input)->getAttributes();
 
         if ($request->input('user')) {

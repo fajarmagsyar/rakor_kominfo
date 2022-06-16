@@ -49,8 +49,7 @@
                                             </div>
                                         @enderror
                                         <input type="checkbox" name="pic" value="1"> Centang jika anda PIC dari
-                                        Kota
-                                        Tujuan anda.
+                                        Kota Tujuan anda.
                                     </div>
                                 </div>
 
