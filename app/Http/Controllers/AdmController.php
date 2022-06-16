@@ -16,7 +16,6 @@ class AdmController extends Controller
      */
     public function index()
     {
-        // dd(User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get());
         return view('admin.adm.index', [
             'pageTitle' => 'Admin',
             'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'Admin')->get(),

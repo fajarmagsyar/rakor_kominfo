@@ -74,7 +74,7 @@
                                                 <label for="userName" class="form-label">Jabatan
                                                     <span class="text-danger">*</span></label>
                                                 <input type="text" name="jabatan" parsley-trigger="change"
-                                                    placeholder="Jabatang anda saat ini" required
+                                                    placeholder="Jabatan anda saat ini" required
                                                     class="form-control @error('jabatan') is-invalid @enderror" id="jabatan"
                                                     value="{{ old('jabatan') }}" />
                                                 @error('jabatan')
