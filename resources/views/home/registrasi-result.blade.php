@@ -38,26 +38,28 @@
                                 @csrf
                                 <ol class="list-group">
                                     @foreach ($kegiatanRows as $keg)
-                                        @php
-                                            $hitungKuota = $keg->kuota / 12 - Absen::getKuotaPeserta($keg->kegiatan_id, $pesertaRow->asal);
-                                        @endphp
-                                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                                            <div class="ms-2 me-auto">
-                                                <input type="checkbox" class="float-start check" style="margin-top: 6px;"
-                                                    {{ $hitungKuota < 1 ? 'disabled' : '' }}
-                                                    name="kegiatan_id_{{ $keg->kegiatan_id }}">
-                                                <b class="float-start">{{ $keg->nama_kegiatan }}</b>
-                                                <br>
-                                                <span class="float-start text-muted" style="font-size: 12px">
-                                                    <i class="bi bi-calendar"></i> {{ $keg->tanggal }}
-                                                    <i class="bi bi-clock"></i> {{ $keg->jam_masuk }} -
-                                                    {{ $keg->jam_keluar }} WITA
-                                                </span>
-                                            </div>
-                                            <span
-                                                class="badge {{ $hitungKuota < 1 ? 'bg-danger' : 'bg-primary' }} rounded-pill">Kuota:
-                                                {{ $hitungKuota }}</span>
-                                        </li>
+                                        @if ($keg->kuota != 0)
+                                            @php
+                                                $hitungKuota = $keg->kuota / 12 - Absen::getKuotaPeserta($keg->kegiatan_id, $pesertaRow->asal);
+                                            @endphp
+                                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                <div class="ms-2 me-auto">
+                                                    <input type="checkbox" class="float-start check"
+                                                        style="margin-top: 6px;" {{ $hitungKuota < 1 ? 'disabled' : '' }}
+                                                        name="kegiatan_id_{{ $keg->kegiatan_id }}">
+                                                    <b class="float-start">{{ $keg->nama_kegiatan }}</b>
+                                                    <br>
+                                                    <span class="float-start text-muted" style="font-size: 12px">
+                                                        <i class="bi bi-calendar"></i> {{ $keg->tanggal }}
+                                                        <i class="bi bi-clock"></i> {{ $keg->jam_masuk }} -
+                                                        {{ $keg->jam_keluar }} WITA
+                                                    </span>
+                                                </div>
+                                                <span
+                                                    class="badge {{ $hitungKuota < 1 ? 'bg-danger' : 'bg-primary' }} rounded-pill">Kuota:
+                                                    {{ $hitungKuota }}</span>
+                                            </li>
+                                        @endif
                                     @endforeach
                                 </ol>
                                 <div class="mt-4">
