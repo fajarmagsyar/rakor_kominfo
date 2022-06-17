@@ -1,5 +1,19 @@
 @extends('home.layouts.main')
 @section('isi')
+    <!-- Modal -->
+    <div class="modal fade" id="tata_cara" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.imgur.com/ypD0a4r.jpg" class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
@@ -16,15 +30,17 @@
                 <div class="col-xl-8 col-md-8" style="padding-top: 130px;" data-aos="zoom-in" data-aos-delay="200">
                     <div class="service-item">
                         <!-- <div class="img">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
                         <div class="details position-relative">
                             <div class="icon">
                                 <i class="bi bi-qr-code"></i>
                             </div>
                             <h3>Registrasi</h3>
                             <p class="text-muted font-14 fst-italic">
-                                Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera.
+                                Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera. <a
+                                    href="#" data-bs-toggle="modal" data-bs-target="#tata_cara"><i>(Tata cara
+                                        registrasi)</i></a>
                             </p>
                             <br>
                             <div style="text-align: left;">
