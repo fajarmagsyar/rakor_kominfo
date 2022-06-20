@@ -54,8 +54,8 @@
                                                         @method('DELETE')
                                                         @csrf
                                                         <a href="/admin/peserta/{{ $k->user_id }}/edit"
-                                                            class="btn btn-primary btn-sm w-50"><i
-                                                                class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                            class="btn btn-primary btn-sm w-50"><i class="fa fa-pencil"
+                                                                aria-hidden="true"></i></a>
                                                         <button onclick="return confirm('Yakin?')" type="submit"
                                                             class="btn btn-danger btn-sm w-50"><i class="fa fa-trash-o"
                                                                 aria-hidden="true"></i></button>

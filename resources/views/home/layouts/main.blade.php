@@ -97,11 +97,13 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="footer-info">
                             <h3>APEKSI</h3>
+                            <p><i class="bi bi-geo-alt-fill"></i>
+                                Walikota Kupang</p>
                             <p>
                                 Jl. S. K. Lerik No.1, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.
                                 85228<br><br>
-                                <strong>Phone:</strong> +62 82313212322<br>
-                                <strong>Email:</strong> info@example.com<br>
+                                <strong>HP:</strong> <code>Data belum ada</code><br>
+                                <strong>Email:</strong> <code>Data belum ada</code><br>
                             </p>
                         </div>
                     </div>
@@ -134,11 +136,10 @@
                 </div>
 
                 <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Pemerintah-Kota-Kupang-105221008197416/" class="facebook"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/pemkotkupang/" class="instagram"><i
+                            class="bi bi-instagram"></i></a>
                 </div>
 
             </div>

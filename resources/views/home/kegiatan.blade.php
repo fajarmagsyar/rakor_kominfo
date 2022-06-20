@@ -25,12 +25,12 @@
 
             <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="col-4">
+                <div class="col-lg-4 col-sm-12">
                     <ol class="list-group list-group-numbered">
 
                         @foreach ($kegiatan as $r)
                             <!-- mulai modal  -->
-                             <br>
+                            <br>
                             <a href="/kegiatan-single/{{ $r->kegiatan_id }}">
                                 <li class="list-group-item d-flex justify-content-between align-items-start mb-2">
                                     <div class="ms-2 me-auto">

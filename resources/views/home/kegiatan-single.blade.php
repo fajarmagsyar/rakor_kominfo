@@ -39,9 +39,17 @@
                         @php
                             $longlat = explode('|', $kegiatanRows[0]['long_lat']);
                         @endphp
-                        <iframe
+                        {{-- <iframe
                             src="http://maps.google.com/maps?q={{ $longlat[0] }},{{ $longlat[1] }}&z=15&output=embed"
-                            class="w-100 h-100"></iframe>
+                            class="w-100 h-100"></iframe> --}}
+                        <div class="mapouter">
+                            <div class="gmap_canvas"><iframe class="w-100" style="height: 450px" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q={{ $longlat[0] }}%20,%20{{ $longlat[1] }}%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                    href="https://2piratebay.org"></a><br>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>

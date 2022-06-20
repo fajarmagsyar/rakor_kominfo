@@ -341,14 +341,13 @@
                                 <div class="row g-0 portfolio-container">
 
                                     @forelse ($GaleriRows as $galeri)
-                                        <div
-                                            class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
-                                            <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
-                                            <div class="portfolio-info">
-                                                <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
-                                                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                        <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
+                                            class="glightbox preview-link">
+                                            <div
+                                                class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
+                                                <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
                                             </div>
-                                        </div>
+                                        </a>
                                     @empty
                                     @endforelse
 
