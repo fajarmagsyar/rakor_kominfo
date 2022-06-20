@@ -21,7 +21,7 @@
                                             <a href="/pusper-single/{{ $fasilitasRow->fasilitas_id }}"><i
                                                     class="bi bi-arrow-up"></i></a>
                                         </div>
-                                        <h4>{{ $fasilitasRow->nama_fasilitas }}i</h4>
+                                        <h4>{{ $fasilitasRow->nama_fasilitas }}</h4>
                                         <p style="font: size 12px;"><i class="bi bi-geo-alt-fill"
                                                 style="color:#B22222 ;"></i> {{ $fasilitasRow->lokasi }}</p>
 
