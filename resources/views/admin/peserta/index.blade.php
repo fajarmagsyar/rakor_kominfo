@@ -24,8 +24,8 @@
                     </div>
                     <div class="p-5">
                         <div class="table-responsive">
-                            <table class="table align-items-center ">
-                                <tbody>
+                            <table class="table align-items-center">
+                                <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
@@ -35,6 +35,8 @@
                                         <th>Asal</th>
                                         <th></th>
                                     </tr>
+                                </thead>
+                                <tbody>
                                     @if (count($pesertaRows) > 0)
                                         @foreach ($pesertaRows as $key => $k)
                                             <tr>
