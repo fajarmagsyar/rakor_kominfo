@@ -75,7 +75,7 @@
                                                             {{ $r->nama_fasilitas }}
                                                         </td>
                                                         <td>
-                                                            {!! $r->deskripsi !!}
+                                                            {!! substr($r->deskripsi, 0, 50) !!}...
 
                                                         </td>
                                                         <td>
