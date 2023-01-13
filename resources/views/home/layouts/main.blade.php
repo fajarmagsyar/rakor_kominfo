@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>APEKSI Kota Kupang 2022 | {{ $pageTitle }}</title>
+    <title>RAKOR KOMINFO 2023 | {{ $pageTitle }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/assets/img/logo-apeksi.png" rel="icon">
+    <link href="/assets/img/logo-kota-kupang.png" rel="icon">
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -47,12 +47,11 @@
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
-            <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-                <img src="/assets/img/logo-apeksi.png" class="img-fluid" alt="">
-                <img src="/assets/img/logo-kota-kupang.png" class="img-fluid" alt="">
-                <h1>APEKSI<span>.</span></h1>
-            </a>
             <nav id="navbar" class="navbar">
+                <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+                    <img src="/assets/img/logo-kota-kupang.png" class="img-fluid" alt="">
+                    <h1>RAKOR <span>Kominfo.</span></h1>
+                </a>
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
@@ -96,7 +95,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer-info">
-                            <h3>APEKSI</h3>
+                            <h3>RAKOR Kominfo</h3>
                             <p><i class="bi bi-geo-alt-fill"></i>
                                 Walikota Kupang</p>
                             <p>
@@ -127,7 +126,7 @@
 
                 <div class="d-flex flex-column align-items-center align-items-lg-start">
                     <div class="copyright">
-                        &copy; <strong><span>APEKSI</span></strong> Kota Kupang 2022
+                        &copy; <strong><span>RAKOR Kominfo </span>&copy; 2023</strong>
                     </div>
                     <div class="credits">
                         Made with (ヘ･_･)ヘ┳━┳ <b>→</b> (╯°□°）╯︵ ┻━┻ by <img src="/assets/img/diskominfo.png"

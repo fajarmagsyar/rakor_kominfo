@@ -1,12 +1,75 @@
 @extends('home.layouts.main')
 @section('isi')
+    <style>
+        .timeline-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .timeline-steps .timeline-step {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 1rem
+        }
+
+        @media (min-width:768px) {
+            .timeline-steps .timeline-step:not(:last-child):after {
+                content: "";
+                display: block;
+                border-top: .25rem dotted #3b82f6;
+                width: 3.46rem;
+                position: absolute;
+                left: 7.5rem;
+                top: .3125rem
+            }
+
+            .timeline-steps .timeline-step:not(:first-child):before {
+                content: "";
+                display: block;
+                border-top: .25rem dotted #3b82f6;
+                width: 3.8125rem;
+                position: absolute;
+                right: 7.5rem;
+                top: .3125rem
+            }
+        }
+
+        .timeline-steps .timeline-content {
+            width: 10rem;
+            text-align: center
+        }
+
+        .timeline-steps .timeline-content .inner-circle {
+            border-radius: 1.5rem;
+            height: 1rem;
+            width: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3b82f6
+        }
+
+        .timeline-steps .timeline-content .inner-circle:before {
+            content: "";
+            background-color: #3b82f6;
+            display: inline-block;
+            height: 3rem;
+            width: 3rem;
+            min-width: 3rem;
+            border-radius: 6.25rem;
+            opacity: .5
+        }
+    </style>
     @if (session()->has('kegiatan_success'))
         <script>
             Swal.fire('Berhasil', 'Registrasi dan pemilihan kegiatan anda telah selesai!', 'success');
         </script>
     @endif
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials" style="margin-top: 100px;">
+    {{-- <section id="testimonials" class="testimonials" style="margin-top: 100px;">
         <div class="container" data-aos="fade-up">
 
             <div class="testimonials-slider swiper">
@@ -88,13 +151,15 @@
             </div>
 
         </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End Testimonials Section --> --}}
 
     <section id="hero-static" class="hero-static d-flex align-items-center">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
             data-aos="zoom-out">
-            <h2>Selamat Datang di <span>APEKSI</span></h2>
-            <p>RAPAT KERJA KOMISARIAT WILAYAH IV ASOSIASI PEMERINTAH KOTA SELURUH INDONESIA (APEKSI) DI KOTA KUPANG.</p>
+            <img src="/assets/img/logo-diskominfo.png" style="max-width: 250px">
+            <br>
+            <h2>Selamat Datang di <span>RAKOR KOMINFO NTT</span></h2>
+            <p>RAPAT KERJA KOMISARIAT DINAS KOMUNIKASI DAN INFORMATIKA SELURUH NUSA TENGGARA TIMUR DI KOTA KUPANG.</p>
 
             <div class="d-flex">
                 <a href="/registrasi" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
@@ -134,7 +199,7 @@
     <main id="main">
 
         <!-- ======= Featured Services Section ======= -->
-        <section id="featured-services" class="featured-services">
+        {{-- <section id="featured-services" class="featured-services">
             <div class="container">
 
                 <div class="row gy-4">
@@ -174,7 +239,7 @@
                 </div>
 
             </div>
-        </section><!-- End Featured Services Section -->
+        </section><!-- End Featured Services Section --> --}}
 
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients">
@@ -182,24 +247,126 @@
 
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="/assets/img/logo-apeksi.png" class="img-fluid"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-g20.png" class="img-fluid" alt="">
+                        <div class="swiper-slide"><img src="/assets/img/logo-g20.png" class="img-fluid" alt="Logo G20">
                         </div>
                         <div class="swiper-slide"><img src="/assets/img/logo-kota-kupang.png" class="img-fluid"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-lanjudkan.png" class="img-fluid"
-                                alt="">
+                                alt="Logo Kota Kupang">
                         </div>
                         <div class="swiper-slide"><img src="/assets/img/logo-diskominfo.png" class="img-fluid"
-                                alt=""></div>
+                                alt="Logo DISKOMINFO Kota Kupang"></div>
                     </div>
                 </div>
 
             </div>
         </section><!-- End Clients Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services" style="background-color: white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8" data-aos="fade-up" data-aos-delay="600">
+                        <iframe width="100%" height="476" style="border-radius: 20px" class="shadow-lg"
+                            src="https://www.youtube.com/embed/i-c3VR-t0lI" title="Pengembangan SODAMOLEK V2.0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4 my-auto" data-aos="fade-right">
+
+                        <h3 style="border-left: 60px solid #0d92ff; padding-left: 10px;"><b>SODAMOLEK <span
+                                    class="text-danger text-xs">V.20</span></b>
+                        </h3>
+                        <p>Video pengenalan singkat mengenai pengembangan SODAMOLEK V.20 untuk perluasan fitur dan
+                            fungsionalitas.</p>
+                    </div>
+
+
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-sm-12 my-auto mt-3">
+
+                        <div class="section-header" data-aos="fade-up">
+                            <h2>Timeline Nilai Total Indeks SPBE</h2>
+                            <p>
+                                Submit hasil penilaian mandiri penyelenggaraan sistem pemerintahan berbasis elektronik
+                                (SPBE) dari tahun 2019 - 2022 dari Kementrian Pendayagunaan Aparatur Negara dan Reformasi
+                                Birokrasi
+                                Republik Indonesia.
+                            </p>
+                        </div>
+                        <div class="col">
+                            <div class="timeline-steps aos-init aos-animate">
+                                <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="timeline-content" data-toggle="popover" data-trigger="hover"
+                                        data-placement="top" title=""
+                                        data-content="And here's some amazing content. It's very engaging. Right?"
+                                        data-original-title="2003">
+                                        <div class="inner-circle"></div>
+                                        <p class="h6 mt-3 mb-1">2019</p>
+                                        <p class="h3 text-muted mb-0 mb-lg-0">1.47</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="timeline-content" data-toggle="popover" data-trigger="hover"
+                                        data-placement="top" title=""
+                                        data-content="And here's some amazing content. It's very engaging. Right?"
+                                        data-original-title="2004">
+                                        <div class="inner-circle"></div>
+                                        <p class="h6 mt-3 mb-1">2020</p>
+                                        <p class="h3 text-muted mb-0 mb-lg-0">n/a</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="timeline-content" data-toggle="popover" data-trigger="hover"
+                                        data-placement="top" title=""
+                                        data-content="And here's some amazing content. It's very engaging. Right?"
+                                        data-original-title="2004">
+                                        <div class="inner-circle"></div>
+                                        <p class="h6 mt-3 mb-1">2021</p>
+                                        <p class="h3 text-muted mb-0 mb-lg-0">n/a</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-step" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="timeline-content" data-toggle="popover" data-trigger="hover"
+                                        data-placement="top" title=""
+                                        data-content="And here's some amazing content. It's very engaging. Right?"
+                                        data-original-title="2005">
+                                        <div class="inner-circle"></div>
+                                        <p class="h6 mt-3 mb-1">2022</p>
+                                        <p class="h1 text-primary mb-0 mb-lg-0"><b>2.784</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Services Section -->
+
+        <section data-aos="fade-up">
+            <div class="container-fluid" style="background-color: black">
+
+                <div class="row mt-4">
+                    <div class="col-sm-12 my-auto mt-3">
+
+                        <div class="section-header mt-4" data-aos="fade-up" data-aos-delay="500">
+                            <br>
+                            <h2 class="text-white mt-3"><b>Command Center</b></h2>
+                            <p>
+                                Pusat informasi yang mengintegrasikan berbagai layanan elektronik di Kota Kupang kedalam
+                                sebuah sistem terpadu.
+                            </p>
+                        </div>
+                        <div class="row" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="col-sm-12 text-center">
+                                <img src="/assets/img/command-center.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
@@ -324,41 +491,41 @@
 
                     </div><!-- End Service Item -->
 
-                    <section id="galeri" class="portfolio" data-aos="fade-up">
-                        <div class="container">
-                            <div class="section-header">
-                                <h2>Galeri Apeksi 2022</h2>
-                            </div>
-                        </div>
-                        <div class="container-fluid" data-aos="fade-up" data-aos-delay="200">
-                            <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
-                                data-portfolio-sort="original-order">
-                                <ul class="portfolio-flters">
-                                    <li data-filter="*" class="filter-active">All</li>
-                                    <li data-filter=".filter-praker">Pra Raker</li>
-                                    <li data-filter=".filter-raker">Raker</li>
-                                </ul>
-                                <div class="row g-0 portfolio-container">
 
-                                    @forelse ($GaleriRows as $galeri)
-                                        <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
-                                            class="glightbox preview-link">
-                                            <div
-                                                class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
-                                                <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
-                                            </div>
-                                        </a>
-                                    @empty
-                                    @endforelse
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </div>
         </section><!-- End Services Section -->
 
+        <section id="galeri" class="portfolio" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Galeri Apeksi 2022</h2>
+                </div>
+            </div>
+            <div class="container" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+                    data-portfolio-sort="original-order">
+                    <ul class="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-praker">Pra Raker</li>
+                        <li data-filter=".filter-raker">Raker</li>
+                    </ul>
+                    <div class="row g-0 portfolio-container">
 
+                        @forelse ($GaleriRows as $galeri)
+                            <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
+                                class="glightbox preview-link">
+                                <div
+                                    class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-{{ strtolower($galeri->kategori) }}">
+                                    <img src="{{ $galeri->foto }}" class="img-fluid" alt="">
+                                </div>
+                            </a>
+                        @empty
+                        @endforelse
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main><!-- End #main -->
 @endsection
