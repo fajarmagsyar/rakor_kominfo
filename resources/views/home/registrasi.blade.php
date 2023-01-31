@@ -1,5 +1,14 @@
 @extends('home.layouts.main')
 @section('isi')
+    @push('style')
+        <style>
+            body {
+                background-image: url('/assets/img/kantorgub.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+    @endpush
     <!-- Modal -->
     <div class="modal fade" id="tata_cara" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
