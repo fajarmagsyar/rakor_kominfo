@@ -444,7 +444,6 @@
             background: orange;
             transition: all 0.3s ease-in-out;
         }
-
     </style>
     @if (session()->has('kegiatan_success'))
         <script>
@@ -538,7 +537,7 @@
         </div>
     </section><!-- End Testimonials Section --> --}}
 
-    <div class="container-fluid" style="border-radius: 100px !important">
+    {{-- <div class="container-fluid" style="border-radius: 100px !important">
         <div class="swiper" style="margin-top: 100px">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -571,7 +570,7 @@
             <!-- If we need pagination -->
             <div class="swiper-pagination-bull"></div>
         </div>
-    </div>
+    </div> --}}
 
 
 
