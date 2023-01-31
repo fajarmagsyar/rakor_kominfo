@@ -90,14 +90,12 @@ class DatabaseSeeder extends Seeder
 
         $fasilitas1 = Fasilitas::create([
             'kategori' => 'Hotel',
-            'nama_fasilitas' => 'Hotel Citra',
+            'nama_fasilitas' => 'Hotel Aston',
             'deskripsi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex consectetur libero laudantium nostrum ratione, facilis laboriosam vero accusantium officiis ea sequi labore eligendi aut veniam placeat saepe corrupti aliquid tempore.',
             'foto' => 'hotel.jpg',
             'lokasi' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex consectetur libero laudantium nostrum ratione, facilis laboriosam vero accusantium officiis ea sequi labore eligendi aut veniam placeat saepe corrupti aliquid tempore.',
             'long_lat' => '-2.2393939393 | 1.939393939',
 
         ])->getAttributes();
-
-
     }
 }

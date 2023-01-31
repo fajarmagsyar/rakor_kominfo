@@ -5,7 +5,7 @@
             <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-toggle="toast">
                 <div class="toast-header">
                     <img src="/admin/assets/img/apeksi.png" alt="brand-logo" height="12" class="me-1" />
-                    <strong class="me-auto">APEKSI</strong>
+                    <strong class="me-auto">RAKOR KOMINFO</strong>
                     <small>Sukses</small>
                     <button type="button" class="btn-close ms-2" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>

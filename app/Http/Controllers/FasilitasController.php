@@ -19,7 +19,7 @@ class FasilitasController extends Controller
         //
         //
         return view('admin.fasilitas.index', [
-            'page' => 'Data Fasilitas | APEKSI',
+            'page' => 'Data Fasilitas | RAKOR KOMINFO',
             'pageTitle' => 'Data Fasilitas',
             'fasilitasRows' => Fasilitas::orderBy('created_at', 'DESC')->paginate(10),
         ]);
@@ -34,8 +34,8 @@ class FasilitasController extends Controller
     {
         //
         return view('admin.fasilitas.create', [
-            'page' => 'Fasilitas | APEKSI',
-            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata','Fasilitas Kesehatan','Pusat Perbelanjaan'],
+            'page' => 'Fasilitas | RAKOR KOMINFO',
+            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata', 'Fasilitas Kesehatan', 'Pusat Perbelanjaan'],
             'pageTitle' => 'Tambah Fasilitas',
 
         ]);
@@ -127,8 +127,8 @@ class FasilitasController extends Controller
         //
         //
         return view('admin.fasilitas.edit', [
-            'page' => 'Edit Fasilitas | APEKSI',
-            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata','Fasilitas Kesehatan','Pusat Perbelanjaan'],
+            'page' => 'Edit Fasilitas | RAKOR KOMINFO',
+            'rowsKategori' => ['Hotel', 'Restaurant', 'Wisata', 'Fasilitas Kesehatan', 'Pusat Perbelanjaan'],
             'pageTitle' => 'Edit Fasilitas',
             'data' => Fasilitas::where('fasilitas_id', $id)->first(),
         ]);

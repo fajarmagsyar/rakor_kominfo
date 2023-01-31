@@ -24,17 +24,14 @@ class PesertaController extends Controller
     {
         //
         return view('admin.peserta.create', [
-            'page' => 'Kegiatan | APEKSI',
+            'page' => 'Kegiatan | RAKOR KOMINFO',
             'pageTitle' => 'Tambah Peserta',
 
         ]);
     }
     public function store(Request $request)
     {
-
-
         $role = Roles::where('role_name', 'User')->first();
-
 
         $rules = [
             'nama'          =>  'required',
@@ -45,8 +42,9 @@ class PesertaController extends Controller
             'pergi'         =>  'required',
             'maskapai'      =>  'required',
             'hp'            =>  'required|numeric|min:12|unique:users',
-            // 'token'            =>  'required'
+            'foto'          =>  'file | required',
         ];
+
         $input = [
             'nama'           => $request->input('nama'),
             'jabatan'        => $request->input('jabatan'),
@@ -58,11 +56,10 @@ class PesertaController extends Controller
             'maskapai'       => $request->input('maskapai'),
             'pic'            => ($request->input('pic')) ? '1' : '0',
             'role_id'        => $role->role_id,
+            'foto'          =>  $request->file('foto'),
         ];
 
-
         $messages = [
-
             'required'      => '*Kolom :attribute wajib diisi.',
             'file'          => '*File :attribute wajib dipilih.',
             'min'           => '* Nomor :attribute minimal :min digit.',
@@ -74,18 +71,19 @@ class PesertaController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        if ($request->input('token') != 'rakerkomwil-iv-2022') {
-            return redirect()->back()->with('error', 'Token tidak Valid')->withInput();
-        }
-        $userBaru = User::create($input)->getAttributes();
 
+        $doc_name = 'peserta/' . 'foto-' . date('Y-m-d_H-i-s') . rand(0, 100000) . '.' . $request->file('foto')->getClientOriginalExtension();
+
+        $input['foto'] = $doc_name;
+
+        $userBaru = User::create($input)->getAttributes();
+        $request->file('foto')->move(public_path('peserta'), $doc_name);
         if ($request->input('user')) {
             return redirect('/registrasi-result/' . $userBaru['user_id'])->with('success', 'Data berhasil ditambahkan!');
         }
 
         return redirect('/admin/peserta')->with('success', 'Data berhasil ditambahkan!');
     }
-
 
     public function edit($id)
     {
@@ -94,7 +92,6 @@ class PesertaController extends Controller
             'peserta' => User::find($id),
         ]);
     }
-
 
     public function update(Request $request, $id)
     {
@@ -134,6 +131,7 @@ class PesertaController extends Controller
         $gambar = base64_encode(file_get_contents('admin/id_card.png'));
         $lemail = base64_encode(file_get_contents('admin/mail.png'));
         $ltelp = base64_encode(file_get_contents('admin/telp.png'));
+        $foto = base64_encode(file_get_contents($rowspeserta->foto));
         $pdf = PDF::loadview('admin.template.pdf.peserta', ['p' => $rowspeserta, 'qr' => $qr, 'card' => $gambar, 'lemail' => $lemail, 'ltelp' => $ltelp]);
         return $pdf->stream('peserta-' . '-' . time() .     '.pdf', array('Attachment' => 0));
     }
@@ -159,7 +157,30 @@ class PesertaController extends Controller
         return view('home.registrasi', [
             'pageTitle' => 'Registrasi',
             'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
-            'kota' => ['KOTA KUPANG', 'KOTA MOJOKERTO', 'KOTA KEDIRI', 'KOTA BATU', 'KOTA SURABAYA', 'KOTA MALANG', 'KOTA MADIUN', 'KOTA BLITAR', 'KOTA PROBOLINGGO', 'KOTA PASURUAN', 'KOTA DENPASAR', 'KOTA MATARAM', 'KOTA BIMA'],
+            'kota' => [
+                'KOTA KUPANG',
+                'KABUPATEN ALOR',
+                'KABUPATEN BELU',
+                'KABUPATEN ENDE',
+                'KABUPATEN FLORES TIMUR',
+                'KABUPATEN KUPANG',
+                'KABUPATEN LEMBATA',
+                'KABUPATEN MALAKA',
+                'KABUPATEN MANGGARAI',
+                'KABUPATEN MANGGARAI BARAT',
+                'KABUPATEN MANGGARAI TIMUR',
+                'KABUPATEN NAGEKEO',
+                'KABUPATEN NGADA',
+                'KABUPATEN ROTE NDAO',
+                'KABUPATEN SABU RAIJUA',
+                'KABUPATEN SIKKA',
+                'KABUPATEN SUMBA BARAT',
+                'KABUPATEN SUMBA BARAT DAYA',
+                'KABUPATEN SUMBA TENGAH',
+                'KABUPATEN SUMBA TIMUR',
+                'KABUPATEN TIMOR TENGAH SELATAN',
+                'KABUPATEN TIMOR TENGAH UTARA',
+            ],
         ]);
     }
 
@@ -168,7 +189,6 @@ class PesertaController extends Controller
         return view('home.registrasi-result', [
             'pageTitle' => 'Registrasi',
             'pesertaRow' => User::find($id),
-            'kegiatanRows' => Kegiatan::orderBy('tanggal', 'asc')->get(),
         ]);
     }
 }

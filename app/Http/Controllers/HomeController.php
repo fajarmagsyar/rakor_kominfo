@@ -21,6 +21,15 @@ class HomeController extends Controller
         ]);
     }
 
+
+    public function slider()
+    {
+        return view('home.banner', [
+            'pageTitle' => 'Home',
+        ]);
+    }
+
+
     public function dewanPengurus()
     {
         return view('home.dewan-pengurus', [

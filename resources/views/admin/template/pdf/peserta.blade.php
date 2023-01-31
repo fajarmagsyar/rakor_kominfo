@@ -39,55 +39,96 @@
             box-shadow: 5px 10px;
         }
 
-        .qr-code {
-            margin-top: 90px;
-        }
 
         .title {
-            color: rgb(70, 92, 172);
+            color: rgb(255, 255, 255);
             opacity: 1;
             margin-top: 18px;
             font-weight: bolder;
         }
 
         .subtitle {
-            color: rgb(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 1);
             opacity: 1;
             margin-top: 0px;
             font-size: 11px
         }
 
         .table {
-            color: black;
+            color: rgb(255, 255, 255);
             opacity: 0.8;
             font-size: 10px
+        }
+
+        .profile {
+            margin-top: 70px
+        }
+
+        .detail {
+            position: absolute;
+            margin-left: 130px;
+            margin-top: 28px
+        }
+
+        .qr-code {
+            margin-top: 5px;
+            margin-left: 30px;
+            position: absolute;
+        }
+
+        .frame {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .frame>img {
+            max-width: 100%;
+            border-radius: 100px;
+            max-height: 100%;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            box-shadow: 10px 10px 10px #000;
         }
     </style>
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif; color: white">
+<body style="font-family: Calibri, Helvetica, sans-serif; color: white">
 
     <div class="container">
         <img src="data:image/png;base64,{{ $card }}" alt=""
             style="position: absolute; z-index: -99999; width: 100%">
         <center>
-            <div class="qr-code">
-                <img src="data:image/png;base64, {!! $qr !!}" alt="" width="180px">
+            <div class="profile">
+                <div class="frame">
+                    <img src="{{ public_path('/' . $p->foto) }}">
+                </div>
             </div>
-            <div class="title">{{ strtoupper($p->nama) }}</div>
-            <div class="subtitle">{{ $p->jabatan }}</div>
-            <div class="subtitle">{{ $p->asal }}</div>
-            <div class="table">
-                <br><br>
-                <img src="data:image/png;base64,{{ $lemail }}" width="11px">
-                <br>
-                {{ $p->email }}
-                <br><br>
-                <img src="data:image/png;base64,{{ $ltelp }}" width="11px">
-                <br>
-                {{ $p->hp }}
-            </div>
+            <div class="title" style="font-size: 19px">{{ strtoupper($p->asal) }}</div>
         </center>
+        <div class="wrapper-bottom">
+
+            <div class="qr-code">
+                <img src="data:image/png;base64, {!! $qr !!}" alt="" width="80px">
+            </div>
+            <div class="detail" style="color: white !important">
+
+                <div class="subtitle" style="font-weight:400; margin-bottom:10px; font-size: 20px">{{ $p->nama }}
+                </div>
+                <div class="subtitle">{{ $p->jabatan }}</div>
+                <div class="table">
+                    {{ $p->email }}
+                    {{ $p->hp }}
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

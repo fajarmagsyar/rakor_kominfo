@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/slide', [HomeController::class, 'slider']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'signIn']);

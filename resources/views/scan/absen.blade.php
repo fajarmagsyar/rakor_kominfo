@@ -1,6 +1,6 @@
 @php
-use App\Models\Absen;
-
+    use App\Models\Absen;
+    
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ use App\Models\Absen;
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>APEKSI Kota Kupang 2022 | {{ $pageTitle }}</title>
+    <title>RAKOR KOMINFO Kota Kupang 2022 | {{ $pageTitle }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -84,8 +84,8 @@ use App\Models\Absen;
                                         <h2 class="accordion-header" id="headingThree">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse"
-                                                data-bs-target="#accord_{{ $keg['kegiatan_id'] }}"
-                                                aria-expanded="false" aria-controls="collapseThree">
+                                                data-bs-target="#accord_{{ $keg['kegiatan_id'] }}" aria-expanded="false"
+                                                aria-controls="collapseThree">
                                                 <i class="bi bi-person-fill"></i> &nbsp; {{ $keg['kuota'] }}
                                                 Kuota
                                             </button>

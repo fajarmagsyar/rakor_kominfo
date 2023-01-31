@@ -19,10 +19,10 @@ class ArtikelController extends Controller
         //
         //
         return view('admin.artikel.index', [
-            'page' => 'Data Artikel | APEKSI',
+            'page' => 'Data Artikel | RAKOR KOMINFO',
             'pageTitle' => 'Data Artikel',
             'artikelRows' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id')
-            ->paginate(10),
+                ->paginate(10),
         ]);
     }
 
@@ -51,7 +51,7 @@ class ArtikelController extends Controller
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
             'link' => $request->input('link'),
-             
+
         ];
 
         $messages = [
@@ -61,7 +61,7 @@ class ArtikelController extends Controller
             'numeric' => '*Kolom :attribute harus berupa karakter angka.',
             // 'unique' => '*Kolom :attribute sudah terdaftar.',
         ];
-        
+
         $validator = Validator::make($input,  $messages);
         if ($validator->fails()) {
             return redirect("/admin/artikel/create")->withErrors($validator)->withInput();
@@ -70,7 +70,7 @@ class ArtikelController extends Controller
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
             'link' => $request->input('link'),
-           
+
         ];
         Artikel::create($data);
 
@@ -101,7 +101,7 @@ class ArtikelController extends Controller
         return view('admin.artikel.edit', [
             'page' => 'Edit Artikel | Apeksi',
             'pageTitle' => 'Edit Artikel',
-            'data' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id' )->where('artikel_id',$id)->first(),
+            'data' => Artikel::join('users', 'users.user_id', '=', 'artikel.user_id')->where('artikel_id', $id)->first(),
             'rowsArtikel' => User::latest()->get()
         ]);
         return redirect('/admin/artikel')->with('success', 'Artikel berhasil diubah');
@@ -127,8 +127,8 @@ class ArtikelController extends Controller
         $input = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
-             'link' => $request->input('link'),
-           
+            'link' => $request->input('link'),
+
 
         ];
 
@@ -152,8 +152,8 @@ class ArtikelController extends Controller
         $data = [
             'user_id' => $request->input('user_id'),
             'isi' => $request->input('isi'),
-             'link' => $request->input('link'),
-            
+            'link' => $request->input('link'),
+
         ];
 
         Artikel::find($id)->update($data);

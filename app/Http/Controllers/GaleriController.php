@@ -31,7 +31,7 @@ class GaleriController extends Controller
     public function create()
     {
         return view('admin.galeri.create', [
-            'page' => 'Fasilitas | APEKSI',
+            'page' => 'Fasilitas | RAKOR KOMINFO',
             'rowsKategori' => ['Praker', 'Raker'],
             'pageTitle' => 'Tambah Apeksi',
 

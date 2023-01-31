@@ -14,12 +14,10 @@
             </div>
         </div>
     </div>
-    <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <!-- <h2>Our Services</h2> -->
 
             </div>
 
@@ -29,9 +27,6 @@
 
                 <div class="col-xl-8 col-md-8" style="padding-top: 130px;" data-aos="zoom-in" data-aos-delay="200">
                     <div class="service-item">
-                        <!-- <div class="img">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <img src="/assets/img/kegiatan.jpg" class="img-fluid" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
                         <div class="details position-relative">
                             <div class="icon">
                                 <i class="bi bi-qr-code"></i>
@@ -44,8 +39,7 @@
                             </p>
                             <br>
                             <div style="text-align: left;">
-                                <form action="/admin/peserta" class="parsley-examples" id="form-valid-parsley"
-                                    method="post" enctype="multipart/form-data">
+                                <form action="/admin/peserta" method="post" enctype="multipart/form-data">
                                     @method('post')
                                     @csrf
                                     <input type="hidden" name="user" value="user">
@@ -138,19 +132,20 @@
 
                                         <div class="col-12 mx-auto">
                                             <div class="mb-3">
-                                                <label for="userName" class="form-label">Maskapai Penerbangan
+                                                <label for="userName" class="form-label">Jenis Transportasi
                                                     <span class="text-danger">*</span></label>
-                                                <input type="text" name="maskapai" parsley-trigger="change" required
-                                                    placeholder="Nama Maskapai/No. Penerbangan"
-                                                    class="form-control @error('maskapai') is-invalid @enderror"
-                                                    id="maskapai" value="{{ old('maskapai') }}" />
+
+                                                <select name="maskapai" class="form-select">
+                                                    <option value="" selected disabled>- Pilih Jenis -</option>
+                                                    <option value="Transportasi Udara">Transportasi Udara</option>
+                                                    <option value="Transportasi Laut">Transportasi Laut</option>
+                                                    <option value="Transportasi Darat">Transportasi Darat</option>
+                                                </select>
                                                 @error('maskapai')
                                                     <div id="maskapai" class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                                <label for="" class="text-muted text-sm">Contoh:
-                                                    LION/JT-609</label>
                                             </div>
                                         </div>
 
@@ -185,19 +180,18 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6 col-sm-12 ">
+                                        <div class="col-lg-12 col-sm-12 mx-auto">
                                             <div class="mb-3">
-                                                <label for="userName" class="form-label">Token
+                                                <label for="userName" class="form-label">Foto Anda
                                                     <span class="text-danger">*</span></label>
-                                                <input type="text" name="token" parsley-trigger="change" required
-                                                    class="form-control @error('token') is-invalid @enderror"
-                                                    id="token" value="{{ old('token') }}" />
-                                                @error('token')
-                                                    <div id="token" class="invalid-feedback">
+                                                <input type="file" name="foto" required
+                                                    class="form-control @error('foto') is-invalid @enderror"
+                                                    id="foto" value="{{ old('foto') }}" />
+                                                @error('foto')
+                                                    <div id="foto" class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-
                                             </div>
                                         </div>
 

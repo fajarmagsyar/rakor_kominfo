@@ -1,7 +1,7 @@
 @extends('home.layouts.main')
 @section('isi')
     @php
-    use App\Models\Absen;
+        use App\Models\Absen;
     @endphp
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -25,52 +25,13 @@
                             <a href="">
                                 <h3>Registrasi Berhasil</h3>
                             </a>
-                            <h5>Data anda berhasil dikirim, silahkan pilih kegiatan yang ingin anda ikuti:</h5>
+                            <h5>Data anda berhasil dikirim, silahkan klik tombol dibawah untuk mengunduh ID Card anda</h5>
                             <br>
                             <div class="text-center">
                                 <a class="btn btn-primary" style="background-color: #0ea2bd"
                                     href="/admin/cetak-peserta/pdf/{{ $pesertaRow->user_id }}"><i
                                         class="bi bi-person-badge-fill"></i> Download ID Card Anda</a>
                             </div>
-                            <br>
-                            <form action="/updateKegiatanPeserta/{{ $pesertaRow->user_id }}" method="post"
-                                id="formUpdate">
-                                @csrf
-                                <ol class="list-group">
-                                    @foreach ($kegiatanRows as $keg)
-                                        @if ($keg->kuota != 0)
-                                            @php
-                                                $hitungKuota = $keg->kuota / 12 - Absen::getKuotaPeserta($keg->kegiatan_id, $pesertaRow->asal);
-                                            @endphp
-                                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                                <div class="ms-2 me-auto">
-                                                    <input type="checkbox" class="float-start check"
-                                                        style="margin-top: 6px;" {{ $hitungKuota < 1 ? 'disabled' : '' }}
-                                                        name="kegiatan_id_{{ $keg->kegiatan_id }}">
-                                                    <b class="float-start">{{ $keg->nama_kegiatan }}</b>
-                                                    <br>
-                                                    <span class="float-start text-muted" style="font-size: 12px">
-                                                        <i class="bi bi-calendar"></i> {{ $keg->tanggal }}
-                                                        <i class="bi bi-clock"></i> {{ $keg->jam_masuk }} -
-                                                        {{ $keg->jam_keluar }} WITA
-                                                    </span>
-                                                </div>
-                                                <span
-                                                    class="badge {{ $hitungKuota < 1 ? 'bg-danger' : 'bg-primary' }} rounded-pill">Kuota:
-                                                    {{ $hitungKuota }}</span>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ol>
-                                <div class="mt-4">
-                                    <button class="float-end mb-3 btn bg-primary text-white"
-                                        onclick="return confirm('Apakah anda yakin kegiatan yang anda pilih sudah benar?')"
-                                        type="submit">
-                                        <i class="bi bi-plus"></i>
-                                        Registrasi Kegiatan</button>
-                                </div>
-                                <br>
-                            </form>
                         </div>
                     </div>
                 </div><!-- End Service Item -->

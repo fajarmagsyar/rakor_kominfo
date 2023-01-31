@@ -63,11 +63,396 @@
             opacity: .5
         }
     </style>
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        *:focus {
+            outline: 0;
+            border: 0;
+        }
+
+        *:focus-visible {
+            outline: 0;
+            border: 0;
+        }
+
+        html,
+        body {
+            padding: 0;
+            font-family: "OpenSans";
+            color: #333333;
+        }
+
+        .content-accordion {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .burger {
+            margin-bottom: 10px;
+        }
+
+        .nav-list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 554px;
+            font-size: 24px;
+            color: white;
+            background: black;
+            padding: 10px 10px;
+            z-index: 2;
+            opacity: 98%;
+        }
+
+        .nav-list {
+            transform: translateY(-100%);
+            transition: transform 0.3s linear;
+        }
+
+        .nav-list__item:first-child {
+            margin-bottom: 40px;
+        }
+
+        .nav-list__item {
+            margin-bottom: 20px;
+        }
+
+        .nav-list__active {
+            transform: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .swiper {
+            margin-bottom: 30px;
+        }
+
+        .top-content {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            position: absolute;
+            background: white;
+            padding: 10px;
+            z-index: 10;
+            top: 10px;
+            right: 20px;
+            box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.77);
+            border-radius: 15px;
+        }
+
+        .swiper-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 8px;
+            background: transparent;
+            border: 2px solid orange;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-button__prev {
+            margin-right: 15px;
+        }
+
+        .logotype {
+            display: block;
+            margin-right: 15px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .logotype:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .swiper__image {
+            background-image: url("https://images.wallpaperscraft.com/image/single/refueling_night_dark_151920_1920x1080.jpg");
+            background-size: cover;
+        }
+
+        .swiper__image:nth-child(2) {
+            background-image: url("https://news-cdn.softpedia.com/images/news2/here-are-all-windows-11-wallpapers-533253-2.jpg");
+        }
+
+        .swiper__image:last-child {
+            background-image: url("https://marmotamaps.com/de/fx/wallpaper/download/faszinationen/Marmotamaps_Wallpaper_Berchtesgaden_Desktop_1920x1080.jpg");
+        }
+
+        .swiper__content {
+            padding: 100px 70px;
+        }
+
+        .swiper__title {
+            position: relative;
+            max-width: 60%;
+            font-size: 80px;
+            font-weight: 400;
+            color: white;
+            padding: 20px;
+            margin: 0 0 15px;
+        }
+
+        .swiper__title::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 80%;
+            z-index: -1;
+            border-radius: 20px;
+            box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.77);
+        }
+
+        .swiper-button {
+            display: block;
+            position: relative;
+            max-width: 15%;
+            height: 100%;
+            text-align: center;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+            box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.77);
+        }
+
+        .swiper-button__link {
+            position: relative;
+            z-index: 10;
+            color: white;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .swiper-button:hover .swiper-button__link {
+            position: relative;
+            z-index: 10;
+            color: black;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .swiper-pagination-bull {
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            width: 100%;
+            z-index: 10;
+            margin-bottom: 10px;
+        }
+
+        .bull {
+            display: block;
+            position: relative;
+            background: white;
+            z-index: 12;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            opacity: 70%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bull:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .bull:hover {
+            opacity: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bull:focus {
+            outline: none;
+        }
+
+        .bull-active::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid #fff;
+            border-radius: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bull-active {
+            background: orange;
+            opacity: 100%;
+        }
+
+        /* EFFECTS */
+        /* ----Стрелки слайдера---- */
+        .swiper-btn:hover {
+            background: orange;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-btn:hover svg path {
+            stroke: #a64b00;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-btn:active {
+            background: #ff7400;
+            border-color: #ff7400;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-btn:active svg path {
+            stroke: #fff;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-btn:focus:not(:active) {
+            background: #000;
+            border-color: #000;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+        }
+
+        .swiper-btn:focus:not(:active) svg path {
+            stroke: #fff;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .swiper-btn:disabled {
+            border-color: grey;
+            background: grey;
+            opacity: 30%;
+            cursor: not-allowed;
+        }
+
+        .swiper-btn:disabled svg path {
+            stroke: black;
+        }
+
+        /* ----Кнопка заказать расчёт---- */
+        .swiper-button:hover::after {
+            transform: translateY(0);
+        }
+
+        .swiper-button::after {
+            background: linear-gradient(90deg, #ff8400 0, #ffb464);
+            position: absolute;
+            content: "";
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateY(-100%);
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .swiper-button::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 80%;
+        }
+
+        .swiper-button:hover .swiper-button__link {
+            position: relative;
+            z-index: 10;
+            color: black;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Буллиты */
+        .bull:hover {
+            opacity: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bull:focus {
+            outline: none;
+        }
+
+        /* Аккордеон */
+
+        .accordion {
+            border-bottom: 1px solid orange;
+        }
+
+        .accordion__header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 10px;
+            align-items: center;
+            border-top: 1px solid orange;
+        }
+
+        .accordion__title {
+            font-size: 16px;
+            color: orange;
+            margin: 0;
+        }
+
+        .accordion__icons {
+            border-radius: 100%;
+            border: 2px solid orange;
+            padding: 6px 7px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .accordion__icons:hover svg path {
+            stroke: black;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .accordion__header:hover .accordion__icons {
+            background: orange;
+            transition: all 0.3s ease-in-out;
+        }
+
+    </style>
     @if (session()->has('kegiatan_success'))
         <script>
             Swal.fire('Berhasil', 'Registrasi dan pemilihan kegiatan anda telah selesai!', 'success');
         </script>
     @endif
+
+
     <!-- ======= Testimonials Section ======= -->
     {{-- <section id="testimonials" class="testimonials" style="margin-top: 100px;">
         <div class="container" data-aos="fade-up">
@@ -153,13 +538,53 @@
         </div>
     </section><!-- End Testimonials Section --> --}}
 
+    <div class="container-fluid" style="border-radius: 100px !important">
+        <div class="swiper" style="margin-top: 100px">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide swiper__image">
+                    <div class="swiper__content" data-swiper-parallax="-800" data-swiper-parallax-duration="600">
+                        <h2 class="swiper__title">Bundaran Patung TIROSA</h2>
+                        <a href="#" class="swiper-button">
+                            <span class="swiper-button__link">Заказать расчёт</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper__image">
+                    <div class="swiper__content" data-swiper-parallax="-800" data-swiper-parallax-duration="600">
+                        <h2 class="swiper__title">Расчёт постройки вашего дома</h2>
+                        <a href="#" class="swiper-button">
+                            <span class="swiper-button__link">Заказать расчёт</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper__image">
+                    <div class="swiper__content" data-swiper-parallax="-800" data-swiper-parallax-duration="600">
+                        <h2 class="swiper__title">Расчитать стоимость всех работ</h2>
+                        <a href="#" class="swiper-button">
+                            <span class="swiper-button__link">Заказать расчёт</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination-bull"></div>
+        </div>
+    </div>
+
+
+
+
+
     <section id="hero-static" class="hero-static d-flex align-items-center">
+
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
             data-aos="zoom-out">
             <img src="/assets/img/logo-diskominfo.png" style="max-width: 250px">
             <br>
-            <h2>Selamat Datang di <span>RAKOR KOMINFO NTT</span></h2>
-            <p>RAPAT KERJA KOMISARIAT DINAS KOMUNIKASI DAN INFORMATIKA SELURUH NUSA TENGGARA TIMUR DI KOTA KUPANG.</p>
+            <h2>Selamat Datang di <span>RAKOR KOMINFO PROV. NTT</span></h2>
+            <p>RAPAT KOORDINASI BIDANG KOMUNIKASI DAN INFORMATIKA TINGKAT PROVINSI NUSA TENGGARA TIMUR</p>
 
             <div class="d-flex">
                 <a href="/registrasi" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
@@ -247,7 +672,11 @@
 
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="/assets/img/logo-g20.png" class="img-fluid" alt="Logo G20">
+                        <div class="swiper-slide"><img src="/assets/img/logo-kominfo.png" class="img-fluid"
+                                alt="Logo KOMINFO">
+                        </div>
+                        <div class="swiper-slide"><img src="/assets/img/logo-provntt.png" class="img-fluid"
+                                alt="Logo Provinsi NTT">
                         </div>
                         <div class="swiper-slide"><img src="/assets/img/logo-kota-kupang.png" class="img-fluid"
                                 alt="Logo Kota Kupang">
@@ -278,6 +707,7 @@
                         </h3>
                         <p>Video pengenalan singkat mengenai pengembangan SODAMOLEK V.20 untuk perluasan fitur dan
                             fungsionalitas.</p>
+                        <a href="https://sodamolekv2.kupangkota.go.id" target="_blank">> Kunjungi SODAMOLEK</a>
                     </div>
 
 
@@ -345,7 +775,8 @@
         </section><!-- End Services Section -->
 
         <section data-aos="fade-up">
-            <div class="container-fluid" style="background-color: black">
+            <div class="container-fluid"
+                style="background: rgb(2,0,36); background: linear-gradient(152deg, rgba(2,0,36,1) 0%, rgba(6,72,85,1) 100%)">
 
                 <div class="row mt-4">
                     <div class="col-sm-12 my-auto mt-3">
@@ -360,7 +791,42 @@
                         </div>
                         <div class="row" data-aos="fade-up" data-aos-delay="1000">
                             <div class="col-sm-12 text-center">
-                                <img src="/assets/img/command-center.png" alt="">
+                                <img src="/assets/img/command-center.png" alt="" style="max-width: 400px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section data-aos="fade-up">
+            <div class="container-fluid"
+                style="background: rgb(71,42,150); background: linear-gradient(152deg, rgba(71,42,150,1) 0%, rgba(22,4,73,1) 100%);">
+
+                <div class="row mt-4">
+                    <div class="col-sm-12 my-auto mt-3">
+
+                        <div class="section-header mt-4" data-aos="fade-up" data-aos-delay="500">
+                            <div class="row" data-aos="fade-up" data-aos-delay="1000">
+                                <div class="col-lg-6 text-center">
+                                    <img src="/assets/img/sihebat.png" alt="Showcase Sihebat" style="max-width: 400px">
+                                </div>
+                                <div class="col-lg-6 text-start text-white my-auto text-white p-3">
+                                    <div class="mb-3">
+                                        <img src="/assets/img/sihebat-logo.png" alt="Showcase Sihebat"
+                                            style="max-width: 300px">
+                                    </div>
+                                    <span class="text-white">Sistem yang dibuat sebagai pengganti voucher BBM yang dapat
+                                        dipasang di perangkat
+                                        masing-masing ASN di Kota Kupang.</span>
+                                    <br>
+                                    <br>
+                                    <span class="text-white">Dengan SIHEBAT Anggaran BBM yang dikeluarkan oleh Pemerintah
+                                        Kota
+                                        Kupang dapat
+                                        ditekan sebesar kurang lebih 2.000.000.000 ditahun 2022.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -373,7 +839,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Our Services</h2>
+                    <h2>Seputar #KotaKupang</h2>
 
                 </div>
 
@@ -391,8 +857,9 @@
                                 <a href="/kegiatan" class="stretched-link">
                                     <h3>Kegiatan</h3>
                                 </a>
-                                <p>List kegiatan RAKER KOMWIL IV Asosiasi Pemerintah Kota Seluruh Indonesia (APEKSI) Tahun
-                                    2022.</p>
+                                <p>List kegiatan RAKOR Bidang Komunikasi dan Informatika Provinsi Nusa Tenggara Timur
+                                    Tahun
+                                    2023.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
@@ -499,20 +966,19 @@
         <section id="galeri" class="portfolio" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
-                    <h2>Galeri Apeksi 2022</h2>
+                    <h2>Galeri Rakor KOMINFO</h2>
                 </div>
             </div>
             <div class="container" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
                     data-portfolio-sort="original-order">
-                    <ul class="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-praker">Pra Raker</li>
-                        <li data-filter=".filter-raker">Raker</li>
-                    </ul>
                     <div class="row g-0 portfolio-container">
 
-                        @forelse ($GaleriRows as $galeri)
+                        <center>
+                            <h3>Belum ada foto</h3>
+                        </center>
+
+                        {{-- @forelse ($GaleriRows as $galeri)
                             <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
                                 class="glightbox preview-link">
                                 <div
@@ -521,7 +987,7 @@
                                 </div>
                             </a>
                         @empty
-                        @endforelse
+                        @endforelse --}}
 
                     </div>
                 </div>

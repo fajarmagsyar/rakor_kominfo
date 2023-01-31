@@ -35,7 +35,7 @@
                             <div class="card card-plain">
                                 <div class="card-header pb-0 text-start">
                                     <center>
-                                        <img src="/admin/assets/img/apeksi.png" width="100px" class="mb-4"
+                                        <img src="/assets/img/logo-diskominfo.png" width="300px" class="mb-4"
                                             alt="">
                                     </center>
                                     <h4 class="font-weight-bolder">Sign In</h4>
@@ -45,8 +45,8 @@
                                     <form role="form" method="post" action="/auth">
                                         @csrf
                                         <div class="mb-3">
-                                            <input type="email" class="form-control form-control-lg" placeholder="Email"
-                                                aria-label="Email" name="email" />
+                                            <input type="email" class="form-control form-control-lg"
+                                                placeholder="Email" aria-label="Email" name="email" />
                                         </div>
                                         <div class="mb-3">
                                             <input type="password" class="form-control form-control-lg"
@@ -57,7 +57,8 @@
                                             <label class="form-check-label" for="rememberMe">Ingat saya</label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">
+                                            <button type="submit"
+                                                class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">
                                                 Sign In
                                             </button>
                                         </div>
@@ -67,7 +68,7 @@
                         </div>
 
                         <p class="mb-2 position-relative opacity-7">
-                            Copyright &copy; APEKSI {{ date('Y') }} | Made by <span style="color:blue"
+                            Copyright &copy; RAKOR {{ date('Y') }} | Made by <span style="color:blue"
                                 class="opacity-5">DISKOMINFO
                                 Dev Team</span>
                         </p>
@@ -82,7 +83,7 @@
                                 <span class="mask bg-gradient-dark opacity-6"></span>
                                 <p class="text-white position-relative mt-auto text-end">
                                     <span class="text-end text-white" style="font-size: 23px">
-                                        <b>APEKSI 2022</b>
+                                        <b>RAKOR 2022</b>
                                     </span>
                                     <img src="/admin/assets/img/kp.png" width="80px" alt="">
                                 </p>

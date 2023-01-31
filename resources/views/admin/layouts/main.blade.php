@@ -69,8 +69,8 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
                 target="_blank">
-                <img src="/admin/assets/img/apeksi.png" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold">APEKSI Dashboard</span>
+
+                <span class="ms-1 font-weight-bold">RAKOR KOMINFO // 23</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0">
@@ -91,7 +91,7 @@
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Profil APEKSI</span>
+                        <span class="nav-link-text ms-1">Profil RAKOR KOMINFO</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -122,7 +122,7 @@
                         <span class="nav-link-text ms-1">Absen</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ $pageTitle == 'Artikel' ? 'active' : '' }}" href="/admin/artikel">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -130,7 +130,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Artikel</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link {{ $pageTitle == 'Fasilitas' ? 'active' : '' }}" href="/admin/fasilitas">
                         <div

@@ -5,7 +5,7 @@
             <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-toggle="toast">
                 <div class="toast-header">
                     <img src="/admin/assets/img/apeksi.png" alt="brand-logo" height="12" class="me-1" />
-                    <strong class="me-auto">APEKSI</strong>
+                    <strong class="me-auto">RAKOR KOMINFO</strong>
                     <small>Sukses</small>
                     <button type="button" class="btn-close ms-2" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
@@ -63,8 +63,8 @@
                                                                 <li
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
-                                                                        <div class="fw-bold"><i
-                                                                                class="ni ni-badge"></i> Nama
+                                                                        <div class="fw-bold"><i class="ni ni-badge"></i>
+                                                                            Nama
                                                                             Kegiatan
                                                                         </div>
                                                                         <span
@@ -74,8 +74,8 @@
                                                                 <li
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
-                                                                        <div class="fw-bold"><i
-                                                                                class="ni ni-pin-3"></i> Lokasi
+                                                                        <div class="fw-bold"><i class="ni ni-pin-3"></i>
+                                                                            Lokasi
                                                                         </div>
                                                                         <span
                                                                             class="text-sm text-muted">{{ $r->lokasi }}</span>
@@ -145,8 +145,7 @@
                                                                 <li
                                                                     class="list-group-item d-flex justify-content-between align-items-start">
                                                                     <div class="ms-2 me-auto">
-                                                                        <div class="fw-bold"><i
-                                                                                class="ni ni-single-02"></i>
+                                                                        <div class="fw-bold"><i class="ni ni-single-02"></i>
                                                                             Kuota
                                                                             {{ $r->kuota }} Orang</div>
                                                                     </div>

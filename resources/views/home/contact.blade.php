@@ -7,9 +7,6 @@
             <div class="container">
 
                 <div class="section-header">
-                    <!-- <h2>Contact Us</h2>
-                                                        <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad
-                                                            dolores adipisci aliquam.</p> -->
                 </div>
 
             </div>
@@ -28,9 +25,8 @@
                                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                                 <div>
                                     <h4>Location:</h4>
-                                    <p>Jl. S. K. Lerik No.1, Klp. Lima, Kec. Klp. Lima,
-                                        Kota Kupang, Nusa Tenggara Tim.
-                                        85228</p>
+                                    <p>Jl. Veteran No. 02, Klp. Lima, Kecamatan Kelapa Lima, Kota Kupang, Nusa Tenggara
+                                        Timur. 85228</p>
                                 </div>
                             </div><!-- End Info Item -->
 
@@ -38,17 +34,17 @@
                                 <i class="bi bi-envelope flex-shrink-0"></i>
                                 <div>
                                     <h4>Email:</h4>
-                                    <p><code>Data belum ada</code></p>
+                                    <p>kominfo@kupangkota.go.id</p>
                                 </div>
                             </div><!-- End Info Item -->
-
+                            {{-- 
                             <div class="info-item d-flex">
                                 <i class="bi bi-phone flex-shrink-0"></i>
                                 <div>
                                     <h4>HP:</h4>
-                                    <p><code>Data belum ada</code></p>
+                                    <p><code>Isi nomor PIC</code></p>
                                 </div>
-                            </div><!-- End Info Item -->
+                            </div><!-- End Info Item --> --}}
 
                         </div>
 

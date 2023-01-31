@@ -57,7 +57,7 @@
                     <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
                     <li><a href="/#galeri">Galeri</a></li>
 
-                    <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li>
+                    {{-- <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li> --}}
                     <div class="dropdown">
                         <a class="nav-link scrollto" type="#" id="dropdown" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -97,18 +97,16 @@
                         <div class="footer-info">
                             <h3>RAKOR Kominfo</h3>
                             <p><i class="bi bi-geo-alt-fill"></i>
-                                Walikota Kupang</p>
+                                Kantor Walikota Kupang</p>
                             <p>
                                 Jl. S. K. Lerik No.1, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.
-                                85228<br><br>
-                                <strong>HP:</strong> <code>Data belum ada</code><br>
-                                <strong>Email:</strong> <code>Data belum ada</code><br>
+                                85228<br> <a href="mailto:kominfo@kupangkota.go.id"
+                                    class="text-white">kominfo@kupangkota.go.id</a><br>
                             </p>
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6 footer-newsletter">
-                        <h4>Maps</h4>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.327057338288!2d123.61736141444075!3d-10.154047892745647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683a80e62f69b%3A0x2f6997c3984f527!2sKantor%20Walikota%20Kupang!5e0!3m2!1sid!2sid!4v1654256740830!5m2!1sid!2sid"
                             width="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -164,6 +162,83 @@
 
 
 </body>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        const swiper = new Swiper(".swiper", {
+            // Optional parameters
+            direction: "horizontal",
+            speed: 800,
+            parallax: true,
+
+            // If we need pagination
+            pagination: {
+                el: ".swiper-pagination-bull",
+                type: "bullets",
+                bulletClass: "bull",
+                bulletActiveClass: "bull-active",
+                clickable: true
+            },
+
+            navigation: {
+                nextEl: ".swiper-button__next",
+                prevEl: ".swiper-button__prev"
+            }
+        });
+
+
+        /* Аккордеон */
+
+        $(function() {
+            $(".accordion").accordion({
+                collapsible: true,
+                animate: 300,
+                icons: false,
+            });
+        });
+
+        /* Аккордеон 2 */
+        $(function() {
+            $(".accordion__second").accordion({
+                collapsible: true,
+                animate: 300,
+                icons: false,
+            });
+        });
+
+        /* Аккордеон 3 */
+        $(function() {
+            $(".accordion__third").accordion({
+                collapsible: true,
+                animate: 300,
+                icons: false,
+            });
+        });
+
+        $(function() {
+            $("#content-accordion").tabs({
+                hide: {
+                    effect: "slide",
+                    direction: "up",
+                    duration: 800
+                }
+            });
+        });
+
+
+        /* Бургер меню */
+
+        document.querySelector('#burger').addEventListener('click', function() {
+            document.querySelector('#nav-list').classList.add('nav-list__active');
+
+            document.querySelector('.burger-closed').addEventListener('click', function() {
+                document.querySelector('#nav-list').classList.remove('nav-list__active');
+            });
+        });
+
+
+    });
+</script>
 <script>
     $(document).ready(function() {
         $('.form-select').select2({
