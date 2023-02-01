@@ -1,35 +1,9 @@
 @extends('home.layouts.main')
 @section('isi')
-    @push('style')
-        <style>
-            body {
-                background-image: url('/assets/img/kantorgub.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-        </style>
-    @endpush
-    <!-- Modal -->
-    <div class="modal fade" id="tata_cara" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.imgur.com/ypD0a4r.jpg" class="w-100">
-                </div>
-            </div>
-        </div>
-    </div>
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
-
             <div class="section-header">
-
             </div>
-
             <div class="row gy-5">
                 <div class="col-xl-2 col-md-2" style="padding-top: 130px;" data-aos="zoom-in">
                 </div>
@@ -43,7 +17,7 @@
                             <h3>Registrasi</h3>
                             <p class="text-muted font-14 fst-italic">
                                 Pastikan data yang telah anda input benar dan sesuai dengan format yang tertera. <a
-                                    href="#" data-bs-toggle="modal" data-bs-target="#tata_cara"><i>(Tata cara
+                                    href="/panduan-registrasi.jpg" target="_blank"><i>(Tata cara
                                         registrasi)</i></a>
                             </p>
                             <br>
@@ -101,9 +75,25 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                                <input type="checkbox" name="pic" value="1"> Centang jika anda PIC
-                                                dari Kota
-                                                Tujuan anda.
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <div class="mb-3">
+                                                <label for="userName" class="form-label">Kategori Peserta
+                                                    <span class="text-danger">*</span></label>
+                                                <select name="kategori" class="form-select">
+                                                    <option value="" selected disabled>- Pilih Kategori -</option>
+                                                    @foreach ($kategori as $d)
+                                                        <option value="{{ $d }}">{{ $d }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('kategori')
+                                                    <div id="kategori" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -198,6 +188,19 @@
                                                     id="foto" value="{{ old('foto') }}" />
                                                 @error('foto')
                                                     <div id="foto" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-sm-12 mx-auto">
+                                            <div class="mb-3 mt-2">
+                                                <label for="userName" class="form-label">Harapan Anda</label>
+                                                <textarea type="number" name="harapan" parsley-trigger="change"
+                                                    class="form-control @error('harapan') is-invalid @enderror" id="harapan">{{ old('harapan') }}</textarea>
+                                                @error('harapan')
+                                                    <div id="harapan" class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
                                                 @enderror

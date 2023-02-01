@@ -62,6 +62,104 @@
             border-radius: 6.25rem;
             opacity: .5
         }
+
+        /* SLIDER */
+
+        .test {
+            position: relative;
+            z-index: 10;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .content {
+            pointer-events: none;
+            color: #fff;
+        }
+
+        .content>* {
+            pointer-events: auto;
+        }
+
+        .title {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 3em;
+        }
+
+        .text {
+            max-width: 80%;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .slider-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden
+        }
+
+        .slider.swiper-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            animation-name: resize;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        .test-block {
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: none;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .slide {
+            overflow: hidden;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: lightgray;
+        }
+
+        .slide-1 {
+            background-image: url("/assets/img/swiper/slider-1.jpg");
+        }
+
+        .slide-2 {
+            background-image: url("/assets/img/swiper/slider-2.jpg");
+        }
+
+        .slide-3 {
+            background-image: url("/assets/img/swiper/slider-3.jpg");
+        }
+
+        .swiper-pagination-bullets .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+        }
+
+        @keyframes resize {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
     </style>
 
 
@@ -72,144 +170,37 @@
     @endif
 
 
-    <!-- ======= Testimonials Section ======= -->
-    {{-- <section id="testimonials" class="testimonials" style="margin-top: 100px;">
-        <div class="container" data-aos="fade-up">
+    <div class="top-wrapper">
 
-            <div class="testimonials-slider swiper">
+
+        <div class="slider-wrapper">
+            <div class="js-hero-swiper swiper-container slider">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/tirosa.jpg" class="testimonial-img" alt="">
-                            <h3>Bundaran Tirosa</h3>
-                            <h4>Jl. Bund. PU No.1, Tuak Daun Merah, Kec. Oebobo, Kota Kupang, Nusa Tenggara Tim. 85228</h4>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Melambangkan tiga suku bangsa asli di Nusa Tenggara Timur yaitu Timor, Rote dan Sabu. Patung
-                                ini berdiri megah di tengah bundaran PU di kota Kupang.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/ina-boi.jpg" class="testimonial-img" alt="">
-                            <h3>Taman Ina Bo'i</h3>
-                            <h4>Jl. RA Kartini, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Dalam patung tersebut terdapat 3 komponen yaitu Patung Sasando berukuran besar (6 meter),
-                                patung sasando kecil (2 meter) dan patung perempuan tinggi 3 meter yang sedang duduk bermain
-                                sasando kecil.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/uisneno.jpg" class="testimonial-img" alt="">
-                            <h3>Taman Patung Kasih / Tugu Merpati</h3>
-                            <h4>Jalan Adi Sucipto, Kelapa Lima, Penfui, Kec. Maulafa, Kota Kupang, Nusa Tenggara Tim.</h4>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Taman Patung Kasih dengan penambahan Tulisan Uisneno Nokan Kit yang berarti Tuhan Memberkati
-                                Kita dan ada pula patung berbentuk orang di sekelilingnya berjumlah 6 biji, yang maknanya
-                                terdapat enam suku besar di NTT yakni Sabu, Rote, Alor, Sumba, Flores dan Timor.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/taman-tagepe.jpg" class="testimonial-img" alt="">
-                            <h3>Taman Tagepe</h3>
-                            <h4>Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Desain fotogenik salah satu ikon ditaman tagepe yakni bentuk persegi yang pasang berjejer
-                                dan kelihatan seperti berputar 360 derajat.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/alun.jpg" class="testimonial-img" alt="">
-                            <h3>Alun-Alun Kota</h3>
-                            <h4>Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.</h4>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Lokasi alun alun Kota Kupang, kini menjadi salah satu tempat hiburan warga Kota Kupang.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
+                    <div class="swiper-slide slide slide-1"></div>
+                    <div class="swiper-slide slide slide-2"></div>
+                    <div class="swiper-slide slide slide-3"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-
         </div>
-    </section><!-- End Testimonials Section --> --}}
-
-    {{-- <div class="container-fluid" style="border-radius: 100px !important">
-        <div class="swiper" style="margin-top: 100px">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide swiper__image">
-                    <div class="swiper__content" data-swiper-parallax="-800" data-swiper-parallax-duration="600">
-                        <h2 class="swiper__title">Bundaran Patung TIROSA</h2>
-                        <a href="#" class="swiper-button">
-                            <span class="swiper-button__link">Заказать расчёт</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper__image">
-                    <div class="swiper__content" data-swiper-parallax="-800" data-swiper-parallax-duration="600">
-                        <h2 class="swiper__title">Расчёт постройки вашего дома</h2>
-                        <a href="#" class="swiper-button">
-                            <span class="swiper-button__link">Заказать расчёт</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide swiper__image">
-                    <div class="swiper__content" data-swiper-parallax="-800" data-swiper-parallax-duration="600">
-                        <h2 class="swiper__title">Расчитать стоимость всех работ</h2>
-                        <a href="#" class="swiper-button">
-                            <span class="swiper-button__link">Заказать расчёт</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination-bull"></div>
-        </div>
-    </div> --}}
-
-
-
+    </div>
 
 
     <section id="hero-static" class="hero-static d-flex align-items-center">
 
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
             data-aos="zoom-out">
-            <img src="/assets/img/logo-diskominfo.png" style="max-width: 250px">
+            <img src="/assets/img/logo-diskominfo.png" style="max-width: 250px;">
             <br>
-            <h2>Selamat Datang di <span>RAKOR KOMINFO PROV. NTT</span></h2>
-            <p>RAPAT KOORDINASI BIDANG KOMUNIKASI DAN INFORMATIKA TINGKAT PROVINSI NUSA TENGGARA TIMUR</p>
+            <h2 class="text-white"><span class="text-white">Selamat Datang di</span> <b>RAKOR KOMINFO PROV. NTT</b></h2>
+            <p class="text-white">RAPAT KOORDINASI BIDANG KOMUNIKASI DAN INFORMATIKA TINGKAT PROVINSI NUSA TENGGARA TIMUR
+            </p>
 
             <div class="d-flex">
                 <a href="/registrasi" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
             </div>
             <div class="row mt-4">
-                <center style="opacity: 0.6" class="mb-3">atau unduh ID Card anda?</center>
+                <center style="opacity: 0.6; color: white" class="mb-3">atau unduh ID Card anda?</center>
                 <div class="col-12">
                     <form action="/download-qr" method="post">
                         @csrf
@@ -287,7 +278,8 @@
 
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients">
-            <div class="container" data-aos="zoom-out">
+            <div class="container" data-aos="zoom-out"
+                style="background-color: white !important; padding: 40px; border-radius: 30px; margin-top: 30px !important">
 
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
@@ -302,6 +294,11 @@
                         </div>
                         <div class="swiper-slide"><img src="/assets/img/logo-diskominfo.png" class="img-fluid"
                                 alt="Logo DISKOMINFO Kota Kupang"></div>
+
+                        <div class="swiper-slide"><img src="/assets/img/logo-biznet.png" class="img-fluid"
+                                alt="Logo Biznet"></div>
+                        <div class="swiper-slide"><img src="/assets/img/logo-molecule.png" class="img-fluid"
+                                alt="Logo Molecule"></div>
                     </div>
                 </div>
 

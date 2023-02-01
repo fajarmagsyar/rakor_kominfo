@@ -54,6 +54,7 @@ Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'restoranS
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/download-qr', [PesertaController::class, 'cetakPDFPesertaByNoHP']);
 Route::get('/registrasi', [PesertaController::class, 'registrasi']);
+Route::get('/registrasi-panitia', [PesertaController::class, 'registrasiPanitia']);
 Route::post('/updateKegiatanPeserta/{peserta}', [HomeController::class, 'updateKegiatan']);
 Route::get('/registrasi-result/{id}', [PesertaController::class, 'registrasiResult']);
 
@@ -68,6 +69,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/peserta', PesertaController::class);
     Route::resource('/adm', AdmController::class);
     Route::resource('/galeri', GaleriController::class);
+
+    Route::post('/peserta-panitia', [PesertaController::class, 'store']);
 
     Route::get('/peserta-kegiatan/{id}', [AdminController::class, 'pesertaKegiatan']);
     Route::get('/peserta-kegiatan/create/{id}', [AdminController::class, 'tambahPeserta']);

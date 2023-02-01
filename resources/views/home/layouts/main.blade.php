@@ -56,7 +56,7 @@
                 </a>
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/kegiatan">Kegiatan</a></li>
+                    <li><a class="nav-link scrollto" href="/kegiatan">Jadwal</a></li>
                     <li><a href="/#galeri">Galeri</a></li>
 
                     {{-- <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li> --}}
@@ -170,6 +170,16 @@
         $('.form-select').select2({
             theme: 'bootstrap-5'
         });
+    });
+
+    const swiper = new Swiper('.js-hero-swiper', {
+        allowTouchMove: false,
+        loop: true,
+        effect: 'fade',
+        speed: 10000,
+        autoplay: {
+            delay: 10000
+        }
     });
 </script>
 

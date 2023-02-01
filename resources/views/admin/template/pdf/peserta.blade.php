@@ -71,7 +71,7 @@
         }
 
         .qr-code {
-            margin-top: 5px;
+            top: 339px;
             margin-left: 30px;
             position: absolute;
         }
@@ -81,21 +81,12 @@
             height: 200px;
             display: inline-block;
             position: relative;
-        }
-
-        .frame>img {
-            max-width: 100%;
+            background-image: url(data:image/png;base64,{{ $foto }});
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
             border-radius: 100px;
-            max-height: 100%;
-            width: 100%;
-            height: auto;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            box-shadow: 10px 10px 10px #000;
+
         }
     </style>
 </head>
@@ -108,10 +99,9 @@
         <center>
             <div class="profile">
                 <div class="frame">
-                    <img src="{{ public_path('/' . $p->foto) }}">
                 </div>
             </div>
-            <div class="title" style="font-size: 19px">{{ strtoupper($p->asal) }}</div>
+            <div class="title" style="font-size: 17px">{{ strtoupper($p->asal) }}</div>
         </center>
         <div class="wrapper-bottom">
 
@@ -120,11 +110,13 @@
             </div>
             <div class="detail" style="color: white !important">
 
-                <div class="subtitle" style="font-weight:400; margin-bottom:10px; font-size: 20px">{{ $p->nama }}
+                <div class="subtitle" style="font-weight:400; margin-bottom:10px; font-size: 17px; padding-right: 10px">
+                    <b>{{ strtoupper($p->nama) }}</b>
                 </div>
                 <div class="subtitle">{{ $p->jabatan }}</div>
                 <div class="table">
                     {{ $p->email }}
+                    <br>
                     {{ $p->hp }}
                 </div>
             </div>

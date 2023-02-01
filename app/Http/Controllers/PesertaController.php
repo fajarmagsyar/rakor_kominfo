@@ -16,8 +16,8 @@ class PesertaController extends Controller
     {
         return view('admin.peserta.index', [
             'pageTitle' => 'Peserta',
-            'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
-
+            'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')
+                ->where('roles.role_name', 'User')->get(),
         ]);
     }
     public function create()
@@ -38,9 +38,7 @@ class PesertaController extends Controller
             'jabatan'       =>  'required',
             'email'         =>  'email | required | unique:users',
             'asal'          =>  'required',
-            'datang'        =>  'required',
-            'pergi'         =>  'required',
-            'maskapai'      =>  'required',
+            'kategori'      =>  'required',
             'hp'            =>  'required|numeric|min:12|unique:users',
             'foto'          =>  'file | required',
         ];
@@ -48,6 +46,8 @@ class PesertaController extends Controller
         $input = [
             'nama'           => $request->input('nama'),
             'jabatan'        => $request->input('jabatan'),
+            'harapan'        => $request->input('harapan'),
+            'kategori'        => $request->input('kategori'),
             'email'          => $request->input('email'),
             'asal'           => $request->input('asal'),
             'hp'             => $request->input('hp'),
@@ -126,13 +126,28 @@ class PesertaController extends Controller
     }
     public function cetakPDFPeserta($id)
     {
-        $qr = base64_encode(\QrCode::errorCorrection('L')->color(0, 0, 0)->style('round')->eye('circle')->generate(url()->to('/') . '/scan/apeksi22/absen/' . $id));
         $rowspeserta = User::where('user_id', $id)->first();
-        $gambar = base64_encode(file_get_contents('admin/id_card.png'));
+
+        if ($rowspeserta->kategori == "Kepala Dinas KOMINFO" || $rowspeserta->kategori == "DPRD" || $rowspeserta->kategori == "SEKDA") {
+            $gambar = base64_encode(file_get_contents('admin/dprd-sekda.png'));
+        } elseif ($rowspeserta->kategori == "Panitia") {
+            $gambar = base64_encode(file_get_contents('admin/panitia.png'));
+        } else {
+            $gambar = base64_encode(file_get_contents('admin/id_card.png'));
+        }
+
         $lemail = base64_encode(file_get_contents('admin/mail.png'));
         $ltelp = base64_encode(file_get_contents('admin/telp.png'));
         $foto = base64_encode(file_get_contents($rowspeserta->foto));
-        $pdf = PDF::loadview('admin.template.pdf.peserta', ['p' => $rowspeserta, 'qr' => $qr, 'card' => $gambar, 'lemail' => $lemail, 'ltelp' => $ltelp]);
+
+        if ($rowspeserta->kategori == "Panitia") {
+            $qr = base64_encode(\QrCode::generate('MECARD:' . $rowspeserta->nama . ';' . $rowspeserta->asal . ';TEL:' . $rowspeserta->hp . ';EMAIL:' . $rowspeserta->email . ';'));
+            $pdf = PDF::loadview('admin.template.pdf.panitia', ['p' => $rowspeserta, 'foto' => $foto, 'qr' => $qr, 'card' => $gambar, 'lemail' => $lemail, 'ltelp' => $ltelp]);
+            return $pdf->stream('panitia-' . '-' . time() .     '.pdf', array('Attachment' => 0));
+        }
+        $qr = base64_encode(\QrCode::errorCorrection('L')->color(0, 0, 0)->style('round')->eye('circle')->generate(url()->to('/') . '/scan/apeksi22/absen/' . $id));
+
+        $pdf = PDF::loadview('admin.template.pdf.peserta', ['p' => $rowspeserta, 'foto' => $foto, 'qr' => $qr, 'card' => $gambar, 'lemail' => $lemail, 'ltelp' => $ltelp]);
         return $pdf->stream('peserta-' . '-' . time() .     '.pdf', array('Attachment' => 0));
     }
     public function cetakPDFPesertaByNoHP(Request $req)
@@ -180,6 +195,27 @@ class PesertaController extends Controller
                 'KABUPATEN SUMBA TIMUR',
                 'KABUPATEN TIMOR TENGAH SELATAN',
                 'KABUPATEN TIMOR TENGAH UTARA',
+            ],
+            'kategori' => [
+                'DPRD',
+                'SEKDA',
+                'Kepala Dinas KOMINFO',
+                'Pendamping',
+            ],
+        ]);
+    }
+
+    public function registrasiPanitia()
+    {
+        return view('home.registrasi-panitia', [
+            'pageTitle' => 'Registrasi',
+            'pesertaRows' => User::join('roles', 'roles.role_id', '=', 'users.role_id')->where('roles.role_name', 'User')->get(),
+            'kota' => [
+                'DISKOMINFO Provinsi NTT',
+                'DISKOMINFO Kota Kupang',
+            ],
+            'kategori' => [
+                'Panitia'
             ],
         ]);
     }

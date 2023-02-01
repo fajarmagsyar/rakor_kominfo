@@ -29,10 +29,12 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Kategori</th>
                                         <th>Jabatan</th>
                                         <th>Email</th>
                                         <th>HP</th>
                                         <th>Asal</th>
+                                        <th>Harapan</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -42,10 +44,12 @@
                                             <tr>
                                                 <td>{{ $key = $key + 1 }}</td>
                                                 <td>{{ $k->nama }}</td>
+                                                <td>{{ $k->kategori }}</td>
                                                 <td>{{ $k->jabatan }}</td>
                                                 <td>{{ $k->email }}</td>
                                                 <td>{{ $k->hp }}</td>
                                                 <td>{{ $k->asal }}</td>
+                                                <td>{{ $k->harapan }}</td>
                                                 </td>
                                                 <td>
                                                     <a href="/admin/cetak-peserta/pdf/{{ $k->user_id }}"
