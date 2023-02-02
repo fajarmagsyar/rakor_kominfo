@@ -32,7 +32,7 @@ class GaleriController extends Controller
     {
         return view('admin.galeri.create', [
             'page' => 'Fasilitas | RAKOR KOMINFO',
-            'rowsKategori' => ['Praker', 'Raker'],
+            'rowsKategori' => ['PaduPadanTenun', 'RAKOR2022', 'RAKOR2023'],
             'pageTitle' => 'Tambah Apeksi',
 
         ]);

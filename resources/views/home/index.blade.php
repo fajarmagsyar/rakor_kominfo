@@ -280,7 +280,8 @@
         <section id="clients" class="clients">
             <div class="container" data-aos="zoom-out"
                 style="background-color: white !important; padding: 40px; border-radius: 30px; margin-top: 30px !important">
-
+                <center class="text-muted">Supported By</center>
+                <br>
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
                         <div class="swiper-slide"><img src="/assets/img/logo-kominfo.png" class="img-fluid"
@@ -297,8 +298,18 @@
 
                         <div class="swiper-slide"><img src="/assets/img/logo-biznet.png" class="img-fluid"
                                 alt="Logo Biznet"></div>
+
+                        <div class="swiper-slide"><img src="/assets/img/logo-grab.png" class="img-fluid" alt="Logo Grab">
+                        </div>
+
+                        <div class="swiper-slide"><img src="/assets/img/logo-tenun.png" class="img-fluid"
+                                alt="Logo Padu Padan Tenun"></div>
+
                         <div class="swiper-slide"><img src="/assets/img/logo-molecule.png" class="img-fluid"
                                 alt="Logo Molecule"></div>
+
+                        <div class="swiper-slide"><img src="/assets/img/kupang-intermedia.png" class="img-fluid"
+                                alt="Logo Kupang Intermedia"></div>
                     </div>
                 </div>
 
@@ -310,8 +321,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8" data-aos="fade-up" data-aos-delay="600">
+
                         <iframe width="100%" height="476" style="border-radius: 20px" class="shadow-lg"
-                            src="https://www.youtube.com/embed/i-c3VR-t0lI" title="Pengembangan SODAMOLEK V2.0"
+                            src="https://www.youtube.com/embed/MesuZhgz4JA" title="Pengembangan SODAMOLEK V2.0"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -440,8 +452,7 @@
                                     <br>
                                     <span class="text-white">Dengan SIHEBAT Anggaran BBM yang dikeluarkan oleh Pemerintah
                                         Kota
-                                        Kupang dapat
-                                        ditekan sebesar kurang lebih 2.000.000.000 ditahun 2022.</span>
+                                        Kupang ditahun 2022.</span>
                                 </div>
                             </div>
                         </div>
@@ -579,7 +590,7 @@
             </div>
         </section><!-- End Services Section -->
 
-        <section id="galeri" class="portfolio" data-aos="fade-up">
+        {{-- <section id="galeri" class="portfolio" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <h2>Galeri Rakor KOMINFO</h2>
@@ -590,11 +601,8 @@
                     data-portfolio-sort="original-order">
                     <div class="row g-0 portfolio-container">
 
-                        <center>
-                            <h3>Belum ada foto</h3>
-                        </center>
 
-                        {{-- @forelse ($GaleriRows as $galeri)
+                        @forelse ($GaleriRows as $galeri)
                             <a href="{{ $galeri->foto }}" data-gallery="portfolio-gallery"
                                 class="glightbox preview-link">
                                 <div
@@ -603,11 +611,61 @@
                                 </div>
                             </a>
                         @empty
-                        @endforelse --}}
+                            <center>
+                                <h3>Belum ada foto</h3>
+                            </center>
+                        @endforelse
 
                     </div>
                 </div>
             </div>
+        </section> --}}
+
+
+        <section id="galeri" class="portfolio" data-aos="fade-up">
+            <div class="container">
+                <a href="#" id="grab" data-aos="zoom-in">
+                    <img src="/assets/img/grab.jpg" class="shadow" style="border-radius: 10px" width="100%"
+                        alt="">
+                </a>
+                <br>
+                <br>
+                <a href="{{ $spotlight ? '/pusper-single/' . $spotlight->fasilitas_id : 'https://wa.me/6285158358552' }}"
+                    data-aos="zoom-in">
+                    <img src="/assets/img/tenun.jpg" class="shadow" style="border-radius: 10px" width="100%"
+                        alt="">
+                </a>
+            </div>
         </section>
     </main><!-- End #main -->
+
+    <script>
+        $(document).ready(function() {
+            $('#grab').on('click', function() {
+
+                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                // Windows Phone must come first because its UA also contains "Android"
+                if (/windows phone/i.test(userAgent)) {
+                    return window.location.href =
+                        'market://launch?id=com.grabtaxi.passenger';
+                }
+
+                if (/android/i.test(userAgent)) {
+
+                    window.location.href =
+                        'market://launch?id=com.grabtaxi.passenger';
+                }
+
+                // iOS detection from: http://stackoverflow.com/a/9039885/177710
+                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                    return window.location.href = 'https://apps.apple.com/id/app/grab-superapp/id647268330';
+                }
+
+                return window.location.href =
+                    'https://play.google.com/store/apps/details?id=com.grabtaxi.passenger';
+
+            })
+        });
+    </script>
 @endsection

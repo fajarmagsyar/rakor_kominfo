@@ -27,9 +27,6 @@
                         <p style="text-align: justify;">
                             <i class="bi bi-clock"></i> {!! $kegiatanRows[0]['jam_masuk'] !!} - {!! $kegiatanRows[0]['jam_keluar'] !!} WITA
                         </p>
-                        <p style="text-align: justify;">
-                            <i class="bi bi-people"></i> Kuota : {!! $kegiatanRows[0]['kuota'] !!}
-                        </p>
                     </div>
                     <div class="col-lg-7 order-5 order-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
                         {{-- <iframe

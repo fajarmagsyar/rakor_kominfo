@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/slide', [HomeController::class, 'slider']);
+Route::get('/galeri', [HomeController::class, 'galeri']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'signIn']);
@@ -40,17 +40,17 @@ Route::get('/lambang', [HomeController::class, 'lambang']);
 Route::get('/kegiatan', [HomeController::class, 'kegiatan']);
 Route::get('/kegiatan-single/{kegiatan_id}', [HomeController::class, 'kegiatanSingle']);
 Route::get('/wisata', [HomeController::class, 'wisata']);
-Route::get('/wisata-single/{fasilitas_id}', [HomeController::class, 'wisataSingle']);
+Route::get('/wisata-single/{fasilitas_id}', [HomeController::class, 'fasilitasSingle']);
 Route::get('/hotel', [HomeController::class, 'hotel']);
-Route::get('/hotel-single/{fasilitas_id}', [HomeController::class, 'hotelSingle']);
+Route::get('/hotel-single/{fasilitas_id}', [HomeController::class, 'fasilitasSingle']);
 Route::get('/restoran', [HomeController::class, 'restoran']);
 Route::get('/artikel', [HomeController::class, 'artikel']);
 Route::get('/faskes', [HomeController::class, 'faskes']);
 Route::get('/pusper', [HomeController::class, 'pusper']);
-Route::get('/faskes-single/{fasilitas_id}', [HomeController::class, 'FaskesSingel']);
-Route::get('/pusper-single/{fasilitas_id}', [HomeController::class, 'PusperSingle']);
-Route::get('/restoran-single', [HomeController::class, 'restoranSingle']);
-Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'restoranSingle']);
+Route::get('/faskes-single/{fasilitas_id}', [HomeController::class, 'fasilitasSingle']);
+Route::get('/pusper-single/{fasilitas_id}', [HomeController::class, 'fasilitasSingle']);
+Route::get('/restoran-single', [HomeController::class, 'fasilitasSingle']);
+Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'fasilitasSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/download-qr', [PesertaController::class, 'cetakPDFPesertaByNoHP']);
 Route::get('/registrasi', [PesertaController::class, 'registrasi']);

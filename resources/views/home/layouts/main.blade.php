@@ -21,7 +21,9 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -57,7 +59,7 @@
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Jadwal</a></li>
-                    <li><a href="/#galeri">Galeri</a></li>
+                    <li><a href="/galeri">Galeri</a></li>
 
                     {{-- <li><a class="nav-link scrollto" href="/artikel">Artikel</a></li> --}}
                     <div class="dropdown">
@@ -176,9 +178,9 @@
         allowTouchMove: false,
         loop: true,
         effect: 'fade',
-        speed: 10000,
+        speed: 4000,
         autoplay: {
-            delay: 10000
+            delay: 4000
         }
     });
 </script>

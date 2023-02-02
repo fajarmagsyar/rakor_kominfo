@@ -158,13 +158,7 @@ class PesertaController extends Controller
         if ($rowspeserta == null) {
             return redirect('/')->with('failed', 'No HP tidak ditemukan silahkan daftar terlebih dahulu');
         }
-
-        $qr = base64_encode(\QrCode::errorCorrection('L')->color(0, 0, 0)->style('round')->eye('circle')->generate(url()->to('/') . '/scan/apeksi22/absen/' . $rowspeserta->user_id));
-        $gambar = base64_encode(file_get_contents('admin/id_card.png'));
-        $lemail = base64_encode(file_get_contents('admin/mail.png'));
-        $ltelp = base64_encode(file_get_contents('admin/telp.png'));
-        $pdf = PDF::loadview('admin.template.pdf.peserta', ['p' => $rowspeserta, 'qr' => $qr, 'card' => $gambar, 'lemail' => $lemail, 'ltelp' => $ltelp]);
-        return $pdf->stream('peserta-' . '-' . time() .     '.pdf', array('Attachment' => 0));
+        return $this->cetakPDFPeserta($rowspeserta->user_id);
     }
     //Registrasi
     public function registrasi()

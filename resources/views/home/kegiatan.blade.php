@@ -27,7 +27,9 @@
 
                 <div class="col-lg-4 col-sm-12">
                     <ol class="list-group list-group-numbered">
-
+                        <a href="https://drive.google.com/drive/folders/1F8oLk0xWTLW1Qh8AhRwPmqxhbdyF9qJD?usp=share_link"
+                            class="btn text-white" style="background-color: rgb(96, 165, 255)"><i class="bi bi-folder"></i>
+                            Materi RAKOR 2023</a>
                         @foreach ($kegiatan as $r)
                             <!-- mulai modal  -->
                             <br>

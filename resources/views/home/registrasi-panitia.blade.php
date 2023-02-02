@@ -144,19 +144,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-12 col-sm-12 mx-auto">
-                                            <div class="mb-3 mt-2">
-                                                <label for="userName" class="form-label">Harapan Anda</label>
-                                                <textarea type="number" name="harapan" parsley-trigger="change"
-                                                    class="form-control @error('harapan') is-invalid @enderror" id="harapan">{{ old('harapan') }}</textarea>
-                                                @error('harapan')
-                                                    <div id="harapan" class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-
                                         <div class="text-end">
                                             <button class="btn waves-effect waves-light text-white"
                                                 style="background-color: #0ea2bd"

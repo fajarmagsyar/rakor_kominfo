@@ -14,18 +14,21 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $galeris = Galeri::all();
+        $spotlight = Fasilitas::where('nama_fasilitas', 'Padu Padan Tenun')->first();
+
         return view('home.index', [
             'pageTitle' => 'Home',
-            'GaleriRows' => $galeris,
+            'spotlight' => $spotlight,
         ]);
     }
 
 
-    public function slider()
+    public function galeri()
     {
-        return view('home.banner', [
-            'pageTitle' => 'Home',
+        $galeris = Galeri::all();
+        return view('home.galeri', [
+            'pageTitle' => 'Galeri',
+            'GaleriRows' => $galeris,
         ]);
     }
 
@@ -89,11 +92,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function wisataSingle($id)
+    public function fasilitasSingle($id)
     {
-        return view('home.wisata-single', [
-            'pageTitle' => 'Nama Wisata',
-            'fasilitasRows' => Fasilitas::where('fasilitas_id', $id)->get(),
+        $fasilitas = Fasilitas::where('fasilitas_id', $id)->get();
+        return view('home.pusper-singel', [
+            'pageTitle' => $fasilitas[0]->kategori,
+            'fasilitasRows' => $fasilitas,
         ]);
     }
 
