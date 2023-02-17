@@ -50,12 +50,12 @@
 
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-
+            <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+                <img src="/assets/img/logo-kota-kupang.png" class="img-fluid" alt="">
+                <h1>RAKOR <span>Kominfo</span> <span style="font-size: 13px; color: rgb(47, 47, 47)">2023</span></h1>
+            </a>
             <nav id="navbar" class="navbar">
-                <a href="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-                    <img src="/assets/img/logo-kota-kupang.png" class="img-fluid" alt="">
-                    <h1>RAKOR <span>Kominfo.</span></h1>
-                </a>
+
                 <ul>
                     <li><a class="nav-link scrollto" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/kegiatan">Jadwal</a></li>
@@ -74,11 +74,11 @@
                                         class="bi bi-play-circle-fill"></i></a></li>
                             <li><a class="dropdown-item" href="/hotel">Hotel <i class="bi bi-building"></i></a>
                             </li>
-                            <li><a class="dropdown-item" href="/restoran">Restoran <i class="bi bi-cup-straw"></i></a>
+                            <li><a class="dropdown-item" href="/restoran">Wisata Kuliner <i
+                                        class="bi bi-cup-straw"></i></a>
                             </li>
                             <li><a class="dropdown-item" href="/pusper">Perbelanjaan <i class="bi bi-basket"></i></a>
                             </li>
-
                         </ul>
                     </div>
 
@@ -105,7 +105,8 @@
                             <p>
                                 Jl. S. K. Lerik No.1, Klp. Lima, Kec. Klp. Lima, Kota Kupang, Nusa Tenggara Tim.
                                 85228<br> <a href="mailto:kominfo@kupangkota.go.id"
-                                    class="text-white">kominfo@kupangkota.go.id</a><br>
+                                    class="text-white">kominfo@kupangkota.go.id</a><br><br>
+                                <a href="tel:0380827777" class="text-white">Call Center BKS : 0380 827777</a><br>
                             </p>
                         </div>
                     </div>

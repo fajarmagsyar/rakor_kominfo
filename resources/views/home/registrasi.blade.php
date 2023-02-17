@@ -185,7 +185,7 @@
                                                     <span class="text-danger">*</span></label>
                                                 <input type="file" name="foto" required
                                                     class="form-control @error('foto') is-invalid @enderror"
-                                                    id="foto" value="{{ old('foto') }}" />
+                                                    id="foto" value="{{ old('foto') }}" accept=".jpg, .png" />
                                                 @error('foto')
                                                     <div id="foto" class="invalid-feedback">
                                                         {{ $message }}
@@ -196,9 +196,10 @@
 
                                         <div class="col-lg-12 col-sm-12 mx-auto">
                                             <div class="mb-3 mt-2">
-                                                <label for="userName" class="form-label">Harapan Anda</label>
+                                                <label for="userName" class="form-label">Harapan Anda <span
+                                                        class="text-danger">*</span></label>
                                                 <textarea type="number" name="harapan" parsley-trigger="change"
-                                                    class="form-control @error('harapan') is-invalid @enderror" id="harapan">{{ old('harapan') }}</textarea>
+                                                    class="form-control @error('harapan') is-invalid @enderror" id="harapan" required>{{ old('harapan') }}</textarea>
                                                 @error('harapan')
                                                     <div id="harapan" class="invalid-feedback">
                                                         {{ $message }}
@@ -209,7 +210,7 @@
 
                                         <div class="text-end">
                                             <button class="btn waves-effect waves-light text-white"
-                                                style="background-color: #0ea2bd"
+                                                style="background-color: #3478c5"
                                                 onClick="return confirm('Yakin data yang anda masukkan sudah benar?')"
                                                 type="submit"><i class="bi bi-plus"></i> Registrasi</button>
                                         </div>

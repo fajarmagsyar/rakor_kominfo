@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/galeri', [HomeController::class, 'galeri']);
+Route::get('/evaluasi', [HomeController::class, 'evaluasi']);
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'signIn']);
@@ -53,10 +54,17 @@ Route::get('/restoran-single', [HomeController::class, 'fasilitasSingle']);
 Route::get('/restoran-single/{fasilitas_id}', [HomeController::class, 'fasilitasSingle']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::post('/download-qr', [PesertaController::class, 'cetakPDFPesertaByNoHP']);
+
+//REGISTRASI
 Route::get('/registrasi', [PesertaController::class, 'registrasi']);
+Route::get('/registrasi/edit/{id}', [PesertaController::class, 'registrasiEdit']);
+Route::post('/registrasi/edit/{id}', [PesertaController::class, 'registrasiEditStore']);
 Route::get('/registrasi-panitia', [PesertaController::class, 'registrasiPanitia']);
-Route::post('/updateKegiatanPeserta/{peserta}', [HomeController::class, 'updateKegiatan']);
+Route::get('/registrasi-panitia/edit/{id}', [PesertaController::class, 'registrasiPanitiaEdit']);
+Route::post('/registrasi-panitia/edit/{id}', [PesertaController::class, 'registrasiEditStore']);
 Route::get('/registrasi-result/{id}', [PesertaController::class, 'registrasiResult']);
+
+Route::post('/updateKegiatanPeserta/{peserta}', [HomeController::class, 'updateKegiatan']);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index']);

@@ -190,15 +190,27 @@
 
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
             data-aos="zoom-out">
-            <img src="/assets/img/logo-diskominfo.png" style="max-width: 250px;">
+            <img src="/assets/img/logo-diskominfo.png" style="max-width: 250px; filter:drop-shadow(5px 5px 5px #22222242)">
             <br>
-            <h2 class="text-white"><span class="text-white">Selamat Datang di</span> <b>RAKOR KOMINFO PROV. NTT</b></h2>
-            <p class="text-white">RAPAT KOORDINASI BIDANG KOMUNIKASI DAN INFORMATIKA TINGKAT PROVINSI NUSA TENGGARA TIMUR
+            <span class="text-white" style="text-shadow: 2px 2px 2px rgba(63, 63, 63, 0.463);">#KeepGoingKeepGrowing</span>
+            <h2 class="text-white" style="text-shadow: 2px 2px 2px rgba(63, 63, 63, 0.463);"><span
+                    style="font-weight: 900; color: white">RAKOR KOMINFO PROV.NTT</span>
+            </h2>
+            <p class="text-white text-weight-100" style="text-shadow: 2px 2px 2px rgba(63, 63, 63, 0.463);">
+                Rapat Koordinasi Bidang Komunikasi dan Informatika Tingkat Provinsi Nusa Tenggara Timur
             </p>
 
             <div class="d-flex">
                 <a href="/registrasi" class="btn-get-started scrollto"><i class="bi bi-book"></i> Registrasi</a>
+
+                @if ($checkEv->nama == 'selesai')
+                    <span class="d-flex ml-4">
+                        <a href="/evaluasi" class="btn-get-started scrollto" style="background-color: rgb(58, 58, 58)"><i
+                                class="bi bi-card-checklist"></i> Evaluasi</a>
+                    </span>
+                @endif
             </div>
+
             <div class="row mt-4">
                 <center style="opacity: 0.6; color: white" class="mb-3">atau unduh ID Card anda?</center>
                 <div class="col-12">
@@ -284,35 +296,67 @@
                 <br>
                 <div class="clients-slider swiper">
                     <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="/assets/img/logo-kominfo.png" class="img-fluid"
-                                alt="Logo KOMINFO">
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-kominfo.png" class="img-fluid" alt="Logo KOMINFO">
                         </div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-provntt.png" class="img-fluid"
-                                alt="Logo Provinsi NTT">
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-provntt.png" class="img-fluid" alt="Logo Provinsi NTT">
                         </div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-kota-kupang.png" class="img-fluid"
-                                alt="Logo Kota Kupang">
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-kota-kupang.png" class="img-fluid" alt="Logo Kota Kupang">
                         </div>
-                        <div class="swiper-slide"><img src="/assets/img/logo-diskominfo.png" class="img-fluid"
-                                alt="Logo DISKOMINFO Kota Kupang"></div>
-
-                        <div class="swiper-slide"><img src="/assets/img/logo-biznet.png" class="img-fluid"
-                                alt="Logo Biznet"></div>
-
-                        <div class="swiper-slide"><img src="/assets/img/logo-grab.png" class="img-fluid" alt="Logo Grab">
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-diskominfo.png" class="img-fluid" alt="Logo Diskominfo Kota Kupang">
                         </div>
-
-                        <div class="swiper-slide"><img src="/assets/img/logo-tenun.png" class="img-fluid"
-                                alt="Logo Padu Padan Tenun"></div>
-
-                        <div class="swiper-slide"><img src="/assets/img/logo-molecule.png" class="img-fluid"
-                                alt="Logo Molecule"></div>
-
-                        <div class="swiper-slide"><img src="/assets/img/kupang-intermedia.png" class="img-fluid"
-                                alt="Logo Kupang Intermedia"></div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-stikom.png" class="img-fluid" alt="Logo STIKOM">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-biznet.png" class="img-fluid" alt="Logo Biznet">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-bank-ntt.png" class="img-fluid" alt="Logo Bank NTT">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-telkom.png" class="img-fluid" alt="Logo Telkom">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-tenun.png" class="img-fluid" alt="Logo Tenun">
+                        </div>
                     </div>
                 </div>
-
+                <br>
+                <div class="clients-slider2 swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-usaid.png" class="img-fluid" alt="Logo USAID">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-molecule.png" class="img-fluid" alt="Logo Molecule">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-grab.png" class="img-fluid" alt="Logo Grab">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-kupang-intermedia.png" class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-pastilaku.png" class="img-fluid" alt="Logo Pasti Laku">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-ags.png" class="img-fluid" alt="Logo Ags">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-pos-kupang.png" class="img-fluid" alt="Logo Pos Kupang">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-SK-FM.jpg" class="img-fluid" alt="Logo SKFM">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/assets/img/logo-RRI.jpg" class="img-fluid" alt="Logo RRI">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section><!-- End Clients Section -->
 
@@ -320,7 +364,7 @@
         <section id="services" class="services" style="background-color: white">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8" data-aos="fade-up" data-aos-delay="600">
+                    <div class="col-sm-8 mb-4" data-aos="fade-up" data-aos-delay="600">
 
                         <iframe width="100%" height="476" style="border-radius: 20px" class="shadow-lg"
                             src="https://www.youtube.com/embed/MesuZhgz4JA" title="Pengembangan SODAMOLEK V2.0"
@@ -372,7 +416,7 @@
                                         data-original-title="2004">
                                         <div class="inner-circle"></div>
                                         <p class="h6 mt-3 mb-1">2020</p>
-                                        <p class="h3 text-muted mb-0 mb-lg-0">n/a</p>
+                                        <p class="h3 text-muted mb-0 mb-lg-0">-</p>
                                     </div>
                                 </div>
                                 <div class="timeline-step" data-aos="fade-up" data-aos-delay="300">
@@ -382,7 +426,7 @@
                                         data-original-title="2004">
                                         <div class="inner-circle"></div>
                                         <p class="h6 mt-3 mb-1">2021</p>
-                                        <p class="h3 text-muted mb-0 mb-lg-0">n/a</p>
+                                        <p class="h3 text-muted mb-0 mb-lg-0">-</p>
                                     </div>
                                 </div>
                                 <div class="timeline-step" data-aos="fade-up" data-aos-delay="500">
@@ -392,7 +436,7 @@
                                         data-original-title="2005">
                                         <div class="inner-circle"></div>
                                         <p class="h6 mt-3 mb-1">2022</p>
-                                        <p class="h1 text-primary mb-0 mb-lg-0"><b>2.784</b></p>
+                                        <p class="h1 text-primary mb-0 mb-lg-0"><b>2.05</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -409,50 +453,54 @@
                 <div class="row mt-4">
                     <div class="col-sm-12 my-auto mt-3">
 
-                        <div class="section-header mt-4" data-aos="fade-up" data-aos-delay="500">
-                            <br>
-                            <h2 class="text-white mt-3"><b>Command Center</b></h2>
-                            <p>
-                                Pusat informasi yang mengintegrasikan berbagai layanan elektronik di Kota Kupang kedalam
-                                sebuah sistem terpadu.
-                            </p>
-                        </div>
+
                         <div class="row" data-aos="fade-up" data-aos-delay="1000">
-                            <div class="col-sm-12 text-center">
-                                <img src="/assets/img/command-center.png" alt="" style="max-width: 400px">
+                            <div class="col-lg-6 my-auto">
+                                <div class="section-header mt-4 text-end" data-aos="fade-up" data-aos-delay="500">
+                                    <br>
+                                    <h2 class="text-white mt-3"><b>Command Center</b></h2>
+                                    <span class="text-white">
+                                        Pusat informasi yang mengintegrasikan berbagai layanan elektronik di Kota Kupang
+                                        kedalam
+                                        sebuah sistem terpadu.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <img src="/assets/img/command-center.png" alt="" style="max-height: 600px">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
         <section data-aos="fade-up">
             <div class="container-fluid"
                 style="background: rgb(71,42,150); background: linear-gradient(152deg, rgba(71,42,150,1) 0%, rgba(22,4,73,1) 100%);">
 
                 <div class="row mt-4">
                     <div class="col-sm-12 my-auto mt-3">
-
                         <div class="section-header mt-4" data-aos="fade-up" data-aos-delay="500">
-                            <div class="row" data-aos="fade-up" data-aos-delay="1000">
-                                <div class="col-lg-6 text-center">
-                                    <img src="/assets/img/sihebat.png" alt="Showcase Sihebat" style="max-width: 400px">
-                                </div>
-                                <div class="col-lg-6 text-start text-white my-auto text-white p-3">
-                                    <div class="mb-3">
-                                        <img src="/assets/img/sihebat-logo.png" alt="Showcase Sihebat"
-                                            style="max-width: 300px">
+                            <div class="container">
+                                <div class="row" data-aos="fade-up" data-aos-delay="1000">
+                                    <div class="col-lg-8 mb-4 text-center">
+                                        <iframe width="100%" height="476" style="border-radius: 20px"
+                                            class="shadow-lg" src="https://www.youtube.com/embed/aZEUU8L89EY"
+                                            title="Pengembangan SODAMOLEK V2.0" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
                                     </div>
-                                    <span class="text-white">Sistem yang dibuat sebagai pengganti voucher BBM yang dapat
-                                        dipasang di perangkat
-                                        masing-masing ASN di Kota Kupang.</span>
-                                    <br>
-                                    <br>
-                                    <span class="text-white">Dengan SIHEBAT Anggaran BBM yang dikeluarkan oleh Pemerintah
-                                        Kota
-                                        Kupang ditahun 2022.</span>
+                                    <div class="col-lg-4 text-start text-white my-auto text-white p-3">
+
+                                        <p class="text-white">
+                                        <h2><b style="color: white">SIHEBAT</b></h2>
+                                        Sistem penghematan bahan bakar terpadu atau yang lebih dikenal Si-Hebat
+                                        merupakan
+                                        satu wujud transformasi digital untuk system control atau pengendalian
+                                        penggunaan
+                                        bahan bakar minyak bagi kendaraan dinas di pemerintah kota kupang.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -482,11 +530,10 @@
                                     <i class="bi bi-activity"></i>
                                 </div>
                                 <a href="/kegiatan" class="stretched-link">
-                                    <h3>Kegiatan</h3>
+                                    <h3>Jadwal Kegiatan</h3>
                                 </a>
-                                <p>List kegiatan RAKOR Bidang Komunikasi dan Informatika Provinsi Nusa Tenggara Timur
-                                    Tahun
-                                    2023.</p>
+                                <p>Jadwal Kegiatan RAKOR Bidang Komunikasi dan Informatika Provinsi Nusa Tenggara Timur
+                                    Tahun 2023.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
@@ -521,7 +568,7 @@
                                 <a href="/hotel" class="stretched-link">
                                     <h3>Hotel</h3>
                                 </a>
-                                <p>Kota Kupang memiliki 65 hotel yang terdiri atas hotel kelas melati sampai hotel
+                                <p>Kota Kupang memiliki hotel yang terdiri dari homestay hingga hotel
                                     berbintang 4.</p>
                             </div>
                         </div>
@@ -537,7 +584,7 @@
                                     <i class="bi bi-cup-straw"></i>
                                 </div>
                                 <a href="/restoran" class="stretched-link">
-                                    <h3>Restoran</h3>
+                                    <h3>Wisata Kuliner</h3>
                                 </a>
                                 <p>Penyajian makanan bersih dan segar dengan harga yang relatif murah.</p>
 
@@ -621,6 +668,37 @@
             </div>
         </section> --}}
 
+        <section id="galeri" class="portfolio" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Peserta RAKOR Terdaftar</h2>
+                </div>
+            </div>
+            <div class="container" data-aos="fade-up" data-aos-delay="200">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered rounded">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Nama</th>
+                                <th>Jabatan</th>
+                                <th>Asal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($peserta as $key => $r)
+                                <tr>
+                                    <td class="text-center">{{ $key = $key + 1 }}</td>
+                                    <td>{{ $r->nama }}</td>
+                                    <td>{{ $r->jabatan }}</td>
+                                    <td>{{ $r->asal }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
         <section id="galeri" class="portfolio" data-aos="fade-up">
             <div class="container">

@@ -8,6 +8,7 @@ use App\Models\Profil;
 use App\Models\Fasilitas;
 use App\Models\Galeri;
 use App\Models\Kegiatan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,10 +16,17 @@ class HomeController extends Controller
     public function index()
     {
         $spotlight = Fasilitas::where('nama_fasilitas', 'Padu Padan Tenun')->first();
+        $checkEv = Profil::first();
+        $peserta = User::whereNotNull('kategori')
+            ->where('kategori', '!=', 'Panitia')
+            ->orderBy('asal', 'ASC')
+            ->get();
 
         return view('home.index', [
             'pageTitle' => 'Home',
             'spotlight' => $spotlight,
+            'checkEv' => $checkEv,
+            'peserta' => $peserta,
         ]);
     }
 
@@ -29,6 +37,13 @@ class HomeController extends Controller
         return view('home.galeri', [
             'pageTitle' => 'Galeri',
             'GaleriRows' => $galeris,
+        ]);
+    }
+
+    public function evaluasi()
+    {
+        return view('home.evaluasi', [
+            'pageTitle' => 'Evaluasi',
         ]);
     }
 

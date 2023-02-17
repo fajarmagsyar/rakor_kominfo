@@ -1113,7 +1113,6 @@ section {
 .clients .swiper-slide img {
     opacity: 0.5;
     transition: 0.3s;
-    filter: grayscale(100);
 }
 .clients .swiper-slide img:hover {
     filter: none;

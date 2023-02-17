@@ -46,14 +46,13 @@ class PesertaController extends Controller
         $input = [
             'nama'           => $request->input('nama'),
             'jabatan'        => $request->input('jabatan'),
-            'harapan'        => $request->input('harapan'),
             'kategori'        => $request->input('kategori'),
             'email'          => $request->input('email'),
             'asal'           => $request->input('asal'),
             'hp'             => $request->input('hp'),
             'datang'         => $request->input('datang'),
             'pergi'          => $request->input('pergi'),
-            'maskapai'       => $request->input('maskapai'),
+            'harapan'       => $request->input('harapan'),
             'pic'            => ($request->input('pic')) ? '1' : '0',
             'role_id'        => $role->role_id,
             'foto'          =>  $request->file('foto'),
@@ -128,7 +127,7 @@ class PesertaController extends Controller
     {
         $rowspeserta = User::where('user_id', $id)->first();
 
-        if ($rowspeserta->kategori == "Kepala Dinas KOMINFO" || $rowspeserta->kategori == "DPRD" || $rowspeserta->kategori == "SEKDA") {
+        if ($rowspeserta->kategori == "Kepala Dinas KOMINFO" || $rowspeserta->kategori == "DPRD" || $rowspeserta->kategori == "SEKDA" || $rowspeserta->kategori == "Bupati") {
             $gambar = base64_encode(file_get_contents('admin/dprd-sekda.png'));
         } elseif ($rowspeserta->kategori == "Panitia") {
             $gambar = base64_encode(file_get_contents('admin/panitia.png'));
@@ -191,6 +190,7 @@ class PesertaController extends Controller
                 'KABUPATEN TIMOR TENGAH UTARA',
             ],
             'kategori' => [
+                'Bupati',
                 'DPRD',
                 'SEKDA',
                 'Kepala Dinas KOMINFO',
@@ -219,6 +219,113 @@ class PesertaController extends Controller
         return view('home.registrasi-result', [
             'pageTitle' => 'Registrasi',
             'pesertaRow' => User::find($id),
+        ]);
+    }
+
+    public function registrasiEdit($id)
+    {
+        $peserta = User::find($id);
+        return view('home.registrasi-edit', [
+            'pageTitle' => 'Edit Data',
+            'pesertaRow' => $peserta,
+            'kota' => [
+                'KOTA KUPANG',
+                'KABUPATEN ALOR',
+                'KABUPATEN BELU',
+                'KABUPATEN ENDE',
+                'KABUPATEN FLORES TIMUR',
+                'KABUPATEN KUPANG',
+                'KABUPATEN LEMBATA',
+                'KABUPATEN MALAKA',
+                'KABUPATEN MANGGARAI',
+                'KABUPATEN MANGGARAI BARAT',
+                'KABUPATEN MANGGARAI TIMUR',
+                'KABUPATEN NAGEKEO',
+                'KABUPATEN NGADA',
+                'KABUPATEN ROTE NDAO',
+                'KABUPATEN SABU RAIJUA',
+                'KABUPATEN SIKKA',
+                'KABUPATEN SUMBA BARAT',
+                'KABUPATEN SUMBA BARAT DAYA',
+                'KABUPATEN SUMBA TENGAH',
+                'KABUPATEN SUMBA TIMUR',
+                'KABUPATEN TIMOR TENGAH SELATAN',
+                'KABUPATEN TIMOR TENGAH UTARA',
+            ],
+            'kategori' => [
+                'Bupati',
+                'DPRD',
+                'SEKDA',
+                'Kepala Dinas KOMINFO',
+                'Pendamping',
+            ],
+        ]);
+    }
+
+    public function registrasiEditStore(Request $request, $id)
+    {
+
+        $role = Roles::where('role_name', 'User')->first();
+        $rules = [
+            'nama'          =>  'required',
+            'jabatan'       =>  'required',
+            'email'         =>  'email | required',
+            'asal'          =>  'required',
+            'kategori'      =>  'required',
+            'hp'            =>  'required|numeric|min:12',
+            'foto'          =>  'file | required',
+        ];
+
+        $input = [
+            'nama'           => $request->input('nama'),
+            'jabatan'        => $request->input('jabatan'),
+            'harapan'        => $request->input('harapan'),
+            'kategori'       => $request->input('kategori'),
+            'email'          => $request->input('email'),
+            'asal'           => $request->input('asal'),
+            'hp'             => $request->input('hp'),
+            'role_id'        => $role->role_id,
+            'foto'           => $request->file('foto'),
+        ];
+
+        $messages = [
+            'required'      => '*Kolom :attribute wajib diisi.',
+            'file'          => '*File :attribute wajib dipilih.',
+            'min'           => '*Nomor :attribute minimal :min digit.',
+            'mimes'         => '*Format file :attribute tidak didukung.',
+            'email'         => '*Email tidak valid',
+            'unique'        => '*Sudah terdaftar'
+        ];
+        $validator = Validator::make($input, $rules, $messages);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $doc_name = 'peserta/' . 'foto-' . date('Y-m-d_H-i-s') . rand(0, 100000) . '.' . $request->file('foto')->getClientOriginalExtension();
+
+        $input['foto'] = $doc_name;
+
+        User::where('user_id', $id)->update($input);
+
+        $request->file('foto')->move(public_path('peserta'), $doc_name);
+
+        return redirect('/registrasi-result/' . $id)->with('success', 'Data berhasil ditambahkan!');
+    }
+
+
+    public function registrasiPanitiaEdit($id)
+    {
+        $peserta = User::find($id);
+        return view('home.registrasi-panitia-edit', [
+            'pageTitle' => 'Registrasi',
+            'pesertaRow' => $peserta,
+            'kota' => [
+                'DISKOMINFO Provinsi NTT',
+                'DISKOMINFO Kota Kupang',
+            ],
+            'kategori' => [
+                'Panitia'
+            ],
         ]);
     }
 }

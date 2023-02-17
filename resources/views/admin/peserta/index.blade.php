@@ -35,6 +35,7 @@
                                         <th>HP</th>
                                         <th>Asal</th>
                                         <th>Harapan</th>
+                                        <th>Foto</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -50,6 +51,9 @@
                                                 <td>{{ $k->hp }}</td>
                                                 <td>{{ $k->asal }}</td>
                                                 <td>{{ $k->harapan }}</td>
+                                                <td><a target="_blank" href="/{{ $k->foto }}"><img
+                                                            src="/{{ $k->foto }}" width="100px" alt=""></a>
+                                                </td>
                                                 </td>
                                                 <td>
                                                     <a href="/admin/cetak-peserta/pdf/{{ $k->user_id }}"
@@ -59,7 +63,7 @@
                                                     <form action="/admin/peserta/{{ $k->user_id }}" method="post">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <a href="/admin/peserta/{{ $k->user_id }}/edit"
+                                                        <a href="/registrasi{{ $k->kategori == 'Panitia' ? '-panitia' : '' }}/edit/{{ $k->user_id }}"
                                                             class="btn btn-primary btn-sm w-50"><i class="fa fa-pencil"
                                                                 aria-hidden="true"></i></a>
                                                         <button onclick="return confirm('Yakin?')" type="submit"

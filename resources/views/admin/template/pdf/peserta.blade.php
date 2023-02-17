@@ -81,12 +81,12 @@
             height: 200px;
             display: inline-block;
             position: relative;
-            background-image: url(data:image/png;base64,{{ $foto }});
+            background-image: url();
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 200px auto;
             background-position: center center;
             border-radius: 100px;
-
+            overflow: hidden;
         }
     </style>
 </head>
@@ -99,6 +99,8 @@
         <center>
             <div class="profile">
                 <div class="frame">
+                    <img src="data:image/png;base64,{{ $foto }}"
+                        style="min-width: 200px; min-height:200px; max-width: 100%; position: absolute;" alt="">
                 </div>
             </div>
             <div class="title" style="font-size: 17px">{{ strtoupper($p->asal) }}</div>

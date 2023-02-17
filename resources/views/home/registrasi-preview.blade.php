@@ -28,20 +28,10 @@
                             <h5>Data anda berhasil dikirim, silahkan klik tombol dibawah untuk mengunduh ID Card anda</h5>
                             <br>
                             <div class="text-center">
-                                <a target="_blank" class="btn btn-primary" style="background-color: #0ea2bd"
+                                <a class="btn btn-primary" style="background-color: #0ea2bd"
                                     href="/admin/cetak-peserta/pdf/{{ $pesertaRow->user_id }}"><i
                                         class="bi bi-person-badge-fill"></i> Download ID Card Anda</a>
                             </div>
-                            <h6 class="text-muted mt-3">Atau</h6>
-                            @if ($pesertaRow->kategori == 'Panitia')
-                                <h6><a href="/registrasi-panitia/edit/{{ $pesertaRow->user_id }}">Ingin mengubah data ID
-                                        CARD
-                                        anda?</a>
-                                @else
-                                    <h6><a href="/registrasi/edit/{{ $pesertaRow->user_id }}">Ingin mengubah data ID CARD
-                                            anda?</a>
-                            @endif
-                            </h6>
                         </div>
                     </div>
                 </div><!-- End Service Item -->

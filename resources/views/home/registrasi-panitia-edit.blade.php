@@ -22,7 +22,8 @@
                             </p>
                             <br>
                             <div style="text-align: left;">
-                                <form action="/admin/peserta-panitia" method="post" enctype="multipart/form-data">
+                                <form action="/registrasi-panitia/edit/{{ $pesertaRow->user_id }}" method="post"
+                                    enctype="multipart/form-data">
                                     @method('post')
                                     @csrf
                                     <input type="hidden" name="user" value="user">
@@ -34,7 +35,9 @@
                                                     <span class="text-danger">*</span></label>
                                                 <select name="asal" class="form-select">
                                                     @foreach ($kota as $r)
-                                                        <option value="{{ $r }}">{{ $r }}</option>
+                                                        <option value="{{ $r }}"
+                                                            {{ $pesertaRow->asal == $r ? 'selected' : '' }}>
+                                                            {{ $r }}</option>
                                                     @endforeach
                                                 </select>
                                                 @error('asal')
@@ -52,7 +55,7 @@
                                                 <input type="text" name="nama" parsley-trigger="change"
                                                     placeholder="Nama Lengkap" required
                                                     class="form-control @error('nama') is-invalid @enderror" id="nama"
-                                                    value="{{ old('nama') }}" />
+                                                    value="{{ old('nama', $pesertaRow->nama) }}" />
                                                 @error('nama')
                                                     <div id="nama" class="invalid-feedback">
                                                         {{ $message }}
@@ -68,7 +71,7 @@
                                                 <input type="text" name="jabatan" parsley-trigger="change"
                                                     placeholder="Jabatan anda saat ini" required
                                                     class="form-control @error('jabatan') is-invalid @enderror"
-                                                    id="jabatan" value="{{ old('jabatan') }}" />
+                                                    id="jabatan" value="{{ old('jabatan', $pesertaRow->jabatan) }}" />
                                                 @error('jabatan')
                                                     <div id="jabatan" class="invalid-feedback">
                                                         {{ $message }}
@@ -84,7 +87,9 @@
                                                     <span class="text-danger">*</span></label>
                                                 <select name="kategori" class="form-select">
                                                     @foreach ($kategori as $d)
-                                                        <option selected value="{{ $d }}">{{ $d }}
+                                                        <option selected value="{{ $d }}"
+                                                            {{ $pesertaRow->kategori == $d ? 'selected' : '' }}>
+                                                            {{ $d }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -102,7 +107,7 @@
                                                     <span class="text-danger">*</span></label>
                                                 <input type="email" name="email" parsley-trigger="change" required
                                                     class="form-control @error('email') is-invalid @enderror" id="email"
-                                                    value="{{ old('email') }}" />
+                                                    value="{{ old('email', $pesertaRow->email) }}" />
                                                 @error('email')
                                                     <div id="email" class="invalid-feedback">
                                                         {{ $message }}
@@ -116,7 +121,7 @@
                                                     <span class="text-danger">*</span></label>
                                                 <input type="number" name="hp" parsley-trigger="change" required
                                                     class="form-control @error('hp') is-invalid @enderror" id="hp"
-                                                    value="{{ old('hp') }}" />
+                                                    value="{{ old('hp', $pesertaRow->hp) }}" />
                                                 @error('hp')
                                                     <div id="hp" class="invalid-feedback">
                                                         {{ $message }}
@@ -148,7 +153,7 @@
                                             <button class="btn waves-effect waves-light text-white"
                                                 style="background-color: #0ea2bd"
                                                 onClick="return confirm('Yakin data yang anda masukkan sudah benar?')"
-                                                type="submit"><i class="bi bi-plus"></i> Registrasi</button>
+                                                type="submit"><i class="bi bi-plus"></i> Ubah Data</button>
                                         </div>
                                     </div>
                                 </form>
