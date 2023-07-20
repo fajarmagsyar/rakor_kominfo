@@ -55,6 +55,8 @@
                                                 <th class="text-center">Kegiatan</th>
                                                 <th class="text-center">Peserta</th>
                                                 <th class="text-center">Status Peserta</th>
+                                                <th class="text-center">Asal</th>
+                                                <th class="text-center">Jabatan</th>
                                                 <th class="text-center">Timestamp</th>
                                             </tr>
                                         </thead>
@@ -78,9 +80,15 @@
                                                         <td class="align-middle  text-cente">
                                                             {{ $r->nama }}
                                                         </td>
-
                                                         <td class="align-middle  text-cente">
                                                             {{ $r->status_peserta }}
+                                                        </td>
+                                                        <td class="align-middle  text-cente">
+                                                            {{ $r->asal }}
+                                                        </td>
+
+                                                        <td class="align-middle  text-cente">
+                                                            {{ $r->jabatan }}
                                                         </td>
                                                         <td class="align-middle  text-cente">
                                                             {{ $r->created_at }}
